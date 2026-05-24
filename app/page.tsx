@@ -44,7 +44,7 @@ export default function LandingPage() {
           <h1 className="text-5xl md:text-7xl font-normal leading-[1.05] tracking-tight text-zinc-900 mb-8">
             Get your QuickBooks<br />
             <em className="italic text-emerald-700">eTIMS compliant</em><br />
-            the ezee way.
+            the easy way.
           </h1>
           <p className="text-xl text-zinc-500 max-w-2xl mx-auto mb-10 leading-relaxed"
             style={{ fontFamily: "system-ui, sans-serif", fontWeight: 400 }}>
@@ -67,9 +67,9 @@ export default function LandingPage() {
       {/* ── PROBLEM STATEMENT ───────────────────────────────────────── */}
       <section className="py-24 px-6 bg-zinc-50">
         <div className="max-w-3xl mx-auto text-center">
-             <h2 className="text-3xl md:text-4xl font-normal leading-snug text-zinc-900 mb-6">
-              eTIMS compliance shouldn&apos;t cost you weeks of your life.
-            </h2>
+          <h2 className="text-3xl md:text-4xl font-normal leading-snug text-zinc-900 mb-6">
+            eTIMS compliance shouldn&apos;t cost you weeks of your life.
+          </h2>
           <p className="text-lg text-zinc-700 leading-relaxed" style={{ fontFamily: "system-ui, sans-serif" }}>
             eConnector is an ERP-agnostic plugin that validates and submits
             your invoices directly to KRA — without the technical headache.
@@ -106,9 +106,9 @@ export default function LandingPage() {
             ].map((item) => (
               <div key={item.step}>
                 <p className="text-5xl font-normal text-emerald-500 mb-4 leading-none">{item.step}</p>
-                <h3 className="text-lg font-semibold text-white mb-2"
+                <h3 className="text-lg font-semibold text-zinc-900 mb-2"
                   style={{ fontFamily: "system-ui, sans-serif" }}>{item.title}</h3>
-                <p className="text-sm text-zinc-300 leading-relaxed"
+                <p className="text-sm text-zinc-500 leading-relaxed"
                   style={{ fontFamily: "system-ui, sans-serif" }}>{item.body}</p>
               </div>
             ))}
@@ -123,9 +123,9 @@ export default function LandingPage() {
             style={{ fontFamily: "system-ui, sans-serif" }}>
             Pricing
           </p>
-             <h2 className="text-3xl font-normal text-center text-zinc-900 mb-4">
-               Simple, honest pricing.
-            </h2>
+          <h2 className="text-3xl font-normal text-center text-zinc-900 mb-4">
+            Simple, honest pricing.
+          </h2>
           <p className="text-sm text-zinc-600 text-center mb-16"
             style={{ fontFamily: "system-ui, sans-serif" }}>
             All plans include the eTIMS compliance pass-on fee of $30–$50/mo per business KRA PIN.
@@ -209,7 +209,7 @@ export default function LandingPage() {
       {/* ── CTA BANNER ──────────────────────────────────────────────── */}
       <section className="py-24 px-6 bg-zinc-900">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl font-normal text-zinc-900 mb-6">
+          <h2 className="text-4xl font-normal text-white mb-6">
             Ready to be compliant?
           </h2>
           <a
