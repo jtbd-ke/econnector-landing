@@ -43,7 +43,7 @@ export default function LandingPage() {
           </p>
           <h1 className="text-5xl md:text-7xl font-normal leading-[1.05] tracking-tight text-zinc-900 mb-8">
             Get your <span className="text-[#2CA01C] font-medium">QuickBooks</span><br />
-            <em className="italic text-emerald-600">eTIMS compliant</em><br />
+            <em className="italic text-zinc-900">eTIMS compliant</em><br />
             the easy way.
           </h1>
           <p className="text-xl text-zinc-500 max-w-2xl mx-auto mb-10 leading-relaxed"
@@ -90,20 +90,38 @@ export default function LandingPage() {
                 step: '01',
                 title: 'Sign up',
                 body: 'Create your account and add your business KRA PIN. Takes under two minutes.',
+                icon: (
+                  <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
+                  </svg>
+                ),
               },
               {
                 step: '02',
                 title: 'Connect QuickBooks',
                 body: 'Authorise eConnector to read your QBO invoices. No credentials stored — ever.',
+                icon: (
+                  <svg className="w-8 h-8 text-[#2CA01C]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
+                ),
               },
               {
                 step: '03',
                 title: 'Done',
                 body: 'Every invoice you raise in QuickBooks is automatically submitted to KRA and stamped with a CU Invoice Number.',
+                icon: (
+                  <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                  </svg>
+                ),
               },
             ].map((item) => (
-              <div key={item.step}>
-                <p className="text-5xl font-normal text-emerald-500 mb-4 leading-none">{item.step}</p>
+              <div key={item.step} className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-50 mb-6">
+                  {item.icon}
+                </div>
+                <p className="text-5xl font-normal text-emerald-500/30 mb-4 leading-none">{item.step}</p>
                 <h3 className="text-lg font-semibold text-zinc-900 mb-2"
                   style={{ fontFamily: "system-ui, sans-serif" }}>{item.title}</h3>
                 <p className="text-sm text-zinc-500 leading-relaxed"
