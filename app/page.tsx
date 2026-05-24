@@ -197,7 +197,7 @@ export default function LandingPage() {
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm"
                       style={{ fontFamily: "system-ui, sans-serif", color: plan.highlight ? '#d4d4d8' : '#52525b' }}>
-                      <span className={`text-xs ${plan.highlight ? 'text-[#0D7377]' : 'text-[#0D7377]'}`}>✓</span>
+                      <span className="text-xs text-[#0D7377]">✓</span>
                       {f}
                     </li>
                   ))}
