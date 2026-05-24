@@ -38,10 +38,10 @@ export default function LandingPage() {
       <section className="pt-28 md:pt-40 pb-20 md:pb-28 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal leading-[1.1] md:leading-[1.05] tracking-tight text-zinc-900 mb-6 md:mb-8">
-            Get your <span className="text-[#2CA01C] font-medium">QuickBooks</span><br className="hidden md:block" />
-            {' '}<<em className="italic text-zinc-900">eTIMS compliant</em><br className="hidden md:block" />
-            the smart way.
-          </h1>
+  Get your <span className="text-[#2CA01C] font-medium">QuickBooks</span><br className="hidden md:block" />
+  {' '}<<em className="italic text-zinc-900">eTIMS compliant</em><br className="hidden md:block" />
+  the smart way.
+</h1>
           <p className="text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed"
             style={{ fontFamily: "system-ui, sans-serif", fontWeight: 400 }}>
             eConnector validates and submits your invoices directly to KRA,
