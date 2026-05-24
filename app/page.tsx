@@ -39,7 +39,7 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal leading-[1.1] md:leading-[1.05] tracking-tight text-zinc-900 mb-6 md:mb-8">
   Get your <span className="text-[#2CA01C] font-medium">QuickBooks</span><br className="hidden md:block" />
-  {' '}<<em className="italic text-zinc-900">eTIMS compliant</em><br className="hidden md:block" />
+  {' '}<em className="italic text-zinc-900">eTIMS compliant</em><br className="hidden md:block" />
   the smart way.
 </h1>
           <p className="text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed"
@@ -118,7 +118,7 @@ export default function LandingPage() {
                 <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-zinc-50 mb-5 md:mb-6">
                   {item.icon}
                 </div>
-                <p className="text-4xl md:text-5xl font-normal text-[#0D7377]/20 mb-3 md:mb-4 leading-none">{item.step}</p>
+                <p className="text-4xl md:text-5xl font-normal text-emerald-600 mb-3 md:mb-4 leading-none">{item.step}</p>
                 <h3 className="text-base md:text-lg font-semibold text-zinc-900 mb-2"
                   style={{ fontFamily: "system-ui, sans-serif" }}>{item.title}</h3>
                 <p className="text-sm text-zinc-500 leading-relaxed"
