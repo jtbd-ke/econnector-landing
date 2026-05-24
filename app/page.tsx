@@ -54,7 +54,7 @@ export default function LandingPage() {
           </p>
           <a
             href={`${DASHBOARD_URL}/sign-up`}
-            className="inline-block bg-zinc-900 text-white text-sm px-8 py-4 rounded-full hover:bg-zinc-700 transition-colors"
+            className="inline-block bg-[#2CA01C] text-white text-sm px-8 py-4 rounded-full hover:bg-[#248a18] transition-colors shadow-lg shadow-[#2CA01C]/20"
             style={{ fontFamily: "system-ui, sans-serif" }}
           >
             Connect QuickBooks →
@@ -230,7 +230,7 @@ export default function LandingPage() {
           </h2>
           <a
             href={`${DASHBOARD_URL}/sign-up`}
-            className="inline-block bg-white text-zinc-900 text-sm px-8 py-4 rounded-full hover:bg-zinc-100 transition-colors"
+            className="inline-block bg-[#2CA01C] text-white text-sm px-8 py-4 rounded-full hover:bg-[#248a18] transition-colors shadow-lg shadow-[#2CA01C]/30"
             style={{ fontFamily: "system-ui, sans-serif" }}
           >
             Connect QuickBooks →
