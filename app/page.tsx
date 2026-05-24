@@ -82,7 +82,7 @@ export default function LandingPage() {
       {/* ── HOW IT WORKS ────────────────────────────────────────────── */}
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest text-zinc-400 uppercase text-center mb-16"
+          <p className="text-xs font-semibold tracking-widest text-zinc-500 uppercase text-center mb-16"
             style={{ fontFamily: "system-ui, sans-serif" }}>
             How it works
           </p>
@@ -105,10 +105,10 @@ export default function LandingPage() {
               },
             ].map((item) => (
               <div key={item.step}>
-                <p className="text-5xl font-normal text-zinc-100 mb-4 leading-none">{item.step}</p>
-                <h3 className="text-lg font-semibold text-zinc-900 mb-2"
+                <p className="text-5xl font-normal text-zinc-300 mb-4 leading-none">{item.step}</p>
+                <h3 className="text-lg font-semibold text-white mb-2"
                   style={{ fontFamily: "system-ui, sans-serif" }}>{item.title}</h3>
-                <p className="text-sm text-zinc-500 leading-relaxed"
+                <p className="text-sm text-zinc-400 leading-relaxed"
                   style={{ fontFamily: "system-ui, sans-serif" }}>{item.body}</p>
               </div>
             ))}
@@ -207,14 +207,14 @@ export default function LandingPage() {
       </section>
 
       {/* ── CTA BANNER ──────────────────────────────────────────────── */}
-      <section className="py-24 px-6">
+      <section className="py-24 px-6 bg-zinc-900">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-4xl font-normal text-zinc-900 mb-6">
             Ready to be compliant?
           </h2>
           <a
             href={`${DASHBOARD_URL}/sign-up`}
-            className="inline-block bg-zinc-900 text-white text-sm px-8 py-4 rounded-full hover:bg-zinc-700 transition-colors"
+            className="inline-block bg-white text-zinc-900 text-sm px-8 py-4 rounded-full hover:bg-zinc-100 transition-colors"
             style={{ fontFamily: "system-ui, sans-serif" }}
           >
             Start for free →
