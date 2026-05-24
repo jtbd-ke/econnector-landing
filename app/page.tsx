@@ -42,25 +42,23 @@ export default function LandingPage() {
             KRA eTIMS Compliance
           </p>
           <h1 className="text-5xl md:text-7xl font-normal leading-[1.05] tracking-tight text-zinc-900 mb-8">
-            Get your QuickBooks<br />
-            <em className="italic text-emerald-700">eTIMS compliant</em><br />
+            Get your <span className="text-[#2CA01C] font-medium">QuickBooks</span><br />
+            <em className="italic text-emerald-600">eTIMS compliant</em><br />
             the easy way.
           </h1>
           <p className="text-xl text-zinc-500 max-w-2xl mx-auto mb-10 leading-relaxed"
             style={{ fontFamily: "system-ui, sans-serif", fontWeight: 400 }}>
-            Connect your accounting system to KRA eTIMS in minutes.
-            No technical team required.
+            eConnector validates and submits your invoices directly to KRA,
+            without the technical headache. Sign up, connect your QuickBooks,
+            and your invoices get tax-compliant immediately.
           </p>
           <a
             href={`${DASHBOARD_URL}/sign-up`}
             className="inline-block bg-zinc-900 text-white text-sm px-8 py-4 rounded-full hover:bg-zinc-700 transition-colors"
             style={{ fontFamily: "system-ui, sans-serif" }}
           >
-            Start for free →
+            Connect QuickBooks →
           </a>
-          <p className="text-xs text-zinc-400 mt-4" style={{ fontFamily: "system-ui, sans-serif" }}>
-            No credit card required
-          </p>
         </div>
       </section>
 
@@ -217,7 +215,7 @@ export default function LandingPage() {
             className="inline-block bg-white text-zinc-900 text-sm px-8 py-4 rounded-full hover:bg-zinc-100 transition-colors"
             style={{ fontFamily: "system-ui, sans-serif" }}
           >
-            Start for free →
+            Connect QuickBooks →
           </a>
         </div>
       </section>
