@@ -39,7 +39,7 @@ export default function LandingPage() {
       <section className="relative pt-32 sm:pt-36 pb-16 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto text-center">
           
-          {/* Dynamic Core Multi-Country Plugin Matrix */}
+          {/* East African Core Regional Dynamic Compliance Core Banner */}
           <div className="max-w-3xl mx-auto mb-10 font-sans">
             <div className="bg-zinc-50 border border-zinc-200/80 rounded-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 text-left shadow-sm">
               <div className="flex items-center gap-3">
@@ -48,18 +48,21 @@ export default function LandingPage() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2CA01C]"></span>
                 </span>
                 <p className="text-xs font-semibold text-zinc-700 tracking-tight">
-                  Global QuickBooks Online Compliance Core
+                  Regional East Africa QuickBooks Compliance Core
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
                 <span className="text-[11px] font-medium bg-blue-50 text-[#1E3A8A] border border-blue-100 px-2.5 py-1 rounded-md flex items-center gap-1.5">
                   <span className="font-bold">KE</span> eTIMS Active
                 </span>
-                <span className="text-[11px] font-medium bg-zinc-100 text-zinc-600 border border-zinc-200 px-2.5 py-1 rounded-md flex items-center gap-1.5">
-                  <span className="font-bold text-zinc-400">ZM</span> SmartInvoice Routing
+                <span className="text-[11px] font-medium bg-zinc-100 text-zinc-500 border border-zinc-200 px-2.5 py-1 rounded-md">
+                  <span className="font-bold text-zinc-400">UG</span> EFRIS Coming Soon
+                </span>
+                <span className="text-[11px] font-medium bg-zinc-100 text-zinc-500 border border-zinc-200 px-2.5 py-1 rounded-md">
+                  <span className="font-bold text-zinc-400">RW</span> EBM Coming Soon
                 </span>
                 <span className="text-[11px] font-medium bg-zinc-100 text-zinc-400 border border-zinc-200 border-dashed px-2.5 py-1 rounded-md">
-                  EG ETA Pipeline Coming Soon
+                  TZ TRA/TCRA Next
                 </span>
               </div>
             </div>
@@ -72,7 +75,7 @@ export default function LandingPage() {
             straight from <span className="text-[#2CA01C] font-semibold">QuickBooks.</span>
           </h1>
           
-          {/* Refined localized hero body copy */}
+          {/* Refened localized hero body copy */}
           <p className="text-base sm:text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed font-sans font-normal px-2">
             Stop wasting hours manually copy-pasting data into KRA portals. 
             eConnector bridges QuickBooks Online directly with eTIMS endpoints—automatically 
@@ -94,7 +97,7 @@ export default function LandingPage() {
             </a>
           </div>
 
-          {/* Upgraded Real-time Closed-Loop Pipeline Visual Component */}
+          {/* Upgraded Closed-Loop Pipeline Visual Component with Mirrored Writeback Layout */}
           <div className="relative max-w-5xl mx-auto rounded-2xl border border-zinc-200/80 bg-zinc-50/50 p-3 sm:p-4 shadow-xl shadow-zinc-200/40 font-sans">
             <div className="bg-white rounded-xl border border-zinc-200 shadow-sm overflow-hidden text-left">
               <div className="px-4 py-3 bg-zinc-50/80 border-b border-zinc-100 flex items-center justify-between text-xs text-zinc-400">
@@ -116,8 +119,8 @@ export default function LandingPage() {
                       <span className="w-2 h-2 rounded-full bg-[#2CA01C]" /> QuickBooks Online
                     </div>
                   </div>
-                  <div className="mt-4 pt-4 border-t border-zinc-100/80 text-xs font-mono text-zinc-500">
-                    Invoice: <span className="text-zinc-800 font-semibold">#INV-2026-04</span>
+                  <div className="mt-6 pt-4 border-t border-zinc-100 text-xs font-mono text-zinc-500">
+                    Invoice: <span className="text-zinc-800 font-semibold block mt-0.5">#INV-2026-04</span>
                   </div>
                 </div>
 
@@ -147,18 +150,24 @@ export default function LandingPage() {
                   </div>
                 </div>
 
-                {/* Node 4: The Loop Closer (Writeback) */}
-                <div className="p-4 rounded-xl border border-green-100 bg-green-50/30 shadow-sm flex flex-col justify-between relative overflow-hidden">
-                  <div className="absolute right-0 top-0 w-16 h-16 bg-green-500/5 rounded-full blur-md pointer-events-none" />
+                {/* Node 4: The Loop Closer - Perfectly Mirrored Writeback Layout */}
+                <div className="p-4 rounded-xl border border-zinc-100 bg-zinc-50/30 flex flex-col justify-between relative overflow-hidden">
                   <div>
                     <div className="text-[10px] uppercase font-bold tracking-wider text-green-600 mb-1">04. Writeback Sync</div>
-                    <div className="text-sm font-semibold text-green-700 flex items-center gap-1.5">
-                      ✓ QBO Updated
+                    <div className="text-sm font-semibold text-zinc-800 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#2CA01C]" /> QuickBooks Online
                     </div>
                   </div>
-                  <div className="mt-3 space-y-1 bg-white p-2 rounded border border-green-100 text-[10px] font-mono text-zinc-600">
-                    <div>• QR Code Attached</div>
-                    <div className="truncate text-green-700 font-semibold">• KRACU03000000004</div>
+                  
+                  {/* Metadata precisely attached right underneath original context reference */}
+                  <div className="mt-4 pt-4 border-t border-zinc-100 text-xs font-mono text-zinc-500 space-y-1.5">
+                    <div>
+                      Invoice: <span className="text-zinc-800 font-semibold block mt-0.5">#INV-2026-04</span>
+                    </div>
+                    <div className="bg-green-50/60 border border-green-100 rounded p-1.5 text-[10px] space-y-0.5 text-green-800 font-medium">
+                      <div className="flex items-center gap-1">🟢 QR Code: Attached</div>
+                      <div className="truncate font-semibold">CU No: KRACU03000000004</div>
+                    </div>
                   </div>
                 </div>
 
@@ -214,7 +223,7 @@ export default function LandingPage() {
                 body: 'Establish an immutable handshake with your QuickBooks accounts via official secure protocols. We never manage, touch, or store direct user credentials.',
                 icon: (
                   <svg className="w-5 h-5 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                   </svg>
                 ),
               },
