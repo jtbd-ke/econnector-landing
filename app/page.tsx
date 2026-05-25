@@ -39,16 +39,16 @@ export default function LandingPage() {
       <section className="relative pt-28 sm:pt-40 pb-20 px-5 sm:px-6">
         <div className="max-w-5xl mx-auto text-center">
           
-          {/* Context Pill - Clear Ad-to-Landing match */}
+          {/* Context Pill - Targeting autonomy instantly */}
           <div className="inline-flex items-center gap-2.5 bg-blue-50/50 border border-blue-100/80 rounded-full px-3.5 py-1.5 mb-8 shadow-[0_2px_12px_rgba(0,102,255,0.02)]">
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0066FF] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0066FF]"></span>
             </span>
             <span className="text-[11px] font-semibold text-zinc-600 tracking-tight flex items-center gap-1.5">
-              KRA eTIMS Integration Core 
+              QuickBooks Online 
               <span className="text-zinc-300 font-normal">|</span>
-              <span className="text-[#C61B23] font-bold text-[10px]">KE Active</span>
+              <span className="text-[#0066FF] font-bold text-[10px]">No Developers Required</span>
             </span>
           </div>
 
@@ -59,9 +59,9 @@ export default function LandingPage() {
           
           {/* Chronological Magic-Moment Description */}
           <p className="text-sm sm:text-base md:text-lg text-zinc-500 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed font-normal px-2 tracking-tight">
-            Connect eConnector to QuickBooks Online in two clicks—no developers required. 
-            The moment you hit save on an invoice, our engine handles KRA validation, formatting, 
-            and writes the official tax number and QR code straight back onto your document in under 60 seconds.
+            Connect eConnector to your ledger in two clicks. The moment you hit save or send on an invoice, 
+            our engine handles KRA formatting and validation securely, attaching the valid QR code and tax 
+            invoice number straight back onto your original document in under 60 seconds.
           </p>
           
           {/* Main Action Nodes */}
@@ -88,10 +88,10 @@ export default function LandingPage() {
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                   <span className="font-mono ml-1 text-[#0066FF] font-medium tracking-tight bg-blue-50/60 px-2 py-0.5 rounded">
-                    pipeline_loop: real_time_writeback
+                    sync_status: active_loop
                   </span>
                 </div>
-                <span className="px-2 py-0.5 rounded bg-blue-50/60 text-[#0066FF] font-medium tracking-tight text-[10px]">Zero Intermediaries</span>
+                <span className="px-2 py-0.5 rounded bg-green-50 text-[#2CA01C] font-semibold tracking-tight text-[10px]">Real-Time Sync</span>
               </div>
               
               <div className="p-3 sm:p-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 items-stretch bg-zinc-50/20">
@@ -99,58 +99,58 @@ export default function LandingPage() {
                 {/* Node 1: Action */}
                 <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 ease-out hover:border-[#0066FF]/30 hover:shadow-md hover:shadow-blue-50/20">
                   <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">01. Invoice Generated</div>
+                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">01. Invoice Saved</div>
                     <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#2CA01C]" /> QuickBooks Online
                     </div>
                   </div>
-                  <div className="mt-6 text-[11px] font-mono text-zinc-400 border-t border-zinc-100 pt-3">
-                    Status: <span className="text-zinc-800 font-medium">Awaiting Tax Stamping</span>
+                  <div className="mt-6 text-[11px] text-zinc-400 border-t border-zinc-100 pt-3 tracking-tight">
+                    You hit save or send on your standard workflow.
                   </div>
                 </div>
 
                 {/* Node 2: Formatting */}
                 <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 ease-out hover:border-[#0066FF]/30 hover:shadow-md hover:shadow-blue-50/20">
                   <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">02. Alignment Engine</div>
+                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">02. Auto-Formatting</div>
                     <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" /> eConnector Core
+                      <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" /> eConnector Engine
                     </div>
                   </div>
                   <div className="mt-6 text-[11px] text-zinc-400 leading-normal border-t border-zinc-100 pt-3 tracking-tight">
-                    Mapping items to KRA schemas instantly...
+                    Data structure aligned to KRA rules instantly without changing your content.
                   </div>
                 </div>
 
                 {/* Node 3: Validation */}
                 <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 ease-out hover:border-[#0066FF]/30 hover:shadow-md hover:shadow-blue-50/20">
                   <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">03. Fiscal Gateway</div>
+                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">03. KRA Validation</div>
                     <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#C61B23]" /> KRA eTIMS Endpoint
+                      <span className="w-2 h-2 rounded-full bg-[#C61B23]" /> eTIMS Gateway
                     </div>
                   </div>
-                  <div className="mt-6 text-[11px] font-mono text-zinc-500 border-t border-zinc-100 pt-3">
-                    Response: <span className="text-zinc-800 font-medium">Invoice Validated</span>
+                  <div className="mt-6 text-[11px] text-zinc-400 border-t border-zinc-100 pt-3 tracking-tight">
+                    Invoice received, processed, and officially tax-stamped by KRA systems.
                   </div>
                 </div>
 
                 {/* Node 4: Complete Magic writeback */}
                 <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 ease-out hover:border-[#0066FF]/30 hover:shadow-md hover:shadow-blue-50/20">
                   <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">04. Document Writeback</div>
+                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">04. Attached Back</div>
                     <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#2CA01C]" /> QuickBooks Online
                     </div>
                   </div>
                   
                   <div className="mt-5 text-[11px] font-mono text-zinc-400 border-t border-zinc-100 pt-3 space-y-2">
-                    <div className="bg-zinc-50 border border-zinc-200/80 rounded px-2 py-1 text-[10px] text-zinc-600 font-medium flex items-center gap-2">
-                      <svg className="w-3 h-3 text-zinc-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="bg-green-50/50 border border-green-200/40 rounded px-2 py-1.5 text-[10px] text-zinc-600 font-medium flex items-center gap-2">
+                      <svg className="w-3 h-3 text-[#2CA01C] shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 15h6v6H3v-6zm2 2v2h2v-2H5zm10-2h2v2h-2v-2zm2 2h2v2h-2v-2zm0-2h2v2h-2v-2zm-2 4h2v2h-2v-2zm4 0h2v2h-2v-2zM11 11h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm4-4h2v2h-2v-2zm2 2h2v2h-2v-2z" />
                       </svg>
-                      <div className="truncate text-[10px] font-sans tracking-tight text-zinc-600 font-semibold">
-                        QR & CU Number Appended
+                      <div className="truncate text-[10px] font-sans tracking-tight text-[#2CA01C] font-semibold">
+                        QR Code & CU Number Linked
                       </div>
                     </div>
                   </div>
@@ -167,12 +167,11 @@ export default function LandingPage() {
       <section className="py-24 px-5 sm:px-6 bg-zinc-50/50 border-y border-zinc-100">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-zinc-950 mb-5">
-            eTIMS compliance shouldn&apos;t cost you weeks of your life.
+            Built for modern finance teams and business owners.
           </h2>
-          <p className="text-xs sm:text-sm md:text-base text-zinc-500 leading-relaxed max-w-2xl mx-auto">
-            eConnector is an enterprise-grade, lightweight bridge built exclusively to map your 
-            QuickBooks accounts directly into Kenya Revenue Authority endpoints. No custom development, 
-            no infrastructure changes, completely seamless.
+          <p className="text-xs sm:text-sm md:text-base text-zinc-500 leading-relaxed max-w-2xl mx-auto font-normal tracking-tight">
+            eConnector loops directly into your existing ledger workspace, eliminating manual portals entirely. 
+            No middleware development, no structural changes, completely self-serve.
           </p>
         </div>
       </section>
@@ -186,15 +185,15 @@ export default function LandingPage() {
               The Engine Flow
             </span>
             <h2 className="text-2xl sm:text-4xl font-semibold text-zinc-950 mt-5 tracking-tight">
-              Three steps to absolute automation.
+              Three steps to complete autonomy.
             </h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 relative z-10">
             {[
               {
-                title: 'Secure Onboarding',
-                body: 'Register your secure administrative profile and declare your official business KRA PIN. Infrastructure provisions immediately inside a two-minute window.',
+                title: '1. Declare Business PIN',
+                body: 'Register your secure dashboard profile and state your target business KRA PIN details. Your custom data bridge spins up automatically in under two minutes.',
                 icon: (
                   <svg className="w-4 h-4 text-[#0066FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
@@ -202,8 +201,8 @@ export default function LandingPage() {
                 ),
               },
               {
-                title: 'Authorize QuickBooks',
-                body: 'Establish an immutable handshake with your QuickBooks accounts via official secure protocols. We never manage, touch, or store direct user credentials.',
+                title: '2. Link QuickBooks Securely',
+                body: 'Authorise an official secure connection to your ledger with two simple clicks. We inherit your account configurations instantly without managing password access.',
                 icon: (
                   <svg className="w-4 h-4 text-[#0066FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
@@ -211,8 +210,8 @@ export default function LandingPage() {
                 ),
               },
               {
-                title: 'Continuous Delivery',
-                body: 'Every individual invoice finalized in your system gets dynamically validated, structurally signed, and returned complete with a legitimate KRA CU system number.',
+                title: '3. Save and Automate',
+                body: 'Continue generating documents inside QuickBooks normally. Every invoice is processed seamlessly, verified with KRA, and updated with its official compliance stamp.',
                 icon: (
                   <svg className="w-4 h-4 text-[#0066FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
@@ -251,7 +250,7 @@ export default function LandingPage() {
             Simple, transparent billing.
           </h2>
           <p className="text-xs sm:text-sm text-zinc-500 text-center mb-16 max-w-lg mx-auto">
-            All tiers transparently pass through the baseline eTIMS dynamic core pass-on infrastructure fees of $30–$50/mo.
+            All plans pass through baseline eTIMS infrastructure fees of $30–$50/mo transparently.
           </p>
           
           <div className="grid md:grid-cols-3 gap-6 items-start">
@@ -261,7 +260,7 @@ export default function LandingPage() {
                 price: '$15',
                 period: '/mo',
                 who: 'Individual operators or sole traders',
-                features: ['1 unified business profile', '1 pipeline connector', '1 administrative user', 'Fully localized eTIMS pass-through', 'Standard cloud data logging'],
+                features: ['1 unified business profile', '1 active connector link', '1 administrative seat', 'Fully localized eTIMS mapping', 'Standard transaction log logs'],
                 cta: 'Get started',
                 highlight: false,
               },
@@ -269,8 +268,8 @@ export default function LandingPage() {
                 name: 'Business',
                 price: '$25',
                 period: '/mo per connector',
-                who: 'Growing SMEs running multiple branches',
-                features: ['Up to 3 unique businesses', '1 active connector per unit', 'Up to 5 collaborative seats', 'Fully localized eTIMS pass-through', 'Priority API pipeline queueing'],
+                who: 'Growing companies with multiple entities',
+                features: ['Up to 3 unique businesses', '1 active connector per unit', 'Up to 5 collaborative seats', 'Fully localized eTIMS mapping', 'Priority transaction routing queue'],
                 cta: 'Get started',
                 highlight: true,
               },
@@ -278,8 +277,8 @@ export default function LandingPage() {
                 name: 'Group',
                 price: '$20',
                 period: '/mo per connector',
-                who: 'Holding companies & large portfolios',
-                features: ['4+ active entity business configurations', '1 operational connector per unit', 'Unlimited administrative seats', 'Consolidated analytical log map', 'Dedicated priority account lead'],
+                who: 'Holding groups & corporate firms',
+                features: ['4+ active business profiles', '1 active connector per unit', 'Unlimited account seats', 'Consolidated analytical map views', 'Dedicated priority account manager'],
                 cta: 'Talk to us',
                 highlight: false,
               },
@@ -345,10 +344,10 @@ export default function LandingPage() {
         
         <div className="max-w-2xl mx-auto text-center relative z-10">
           <h2 className="text-2xl sm:text-4xl font-semibold text-white mb-5 tracking-tight">
-            Ready to secure your automated pipeline?
+            Ready to secure your automated bridge?
           </h2>
           <p className="text-zinc-400 text-xs sm:text-sm max-w-md mx-auto mb-8 leading-relaxed">
-            Connect your current erp or accounting system nodes within minutes and offload processing queues automatically.
+            Link your QuickBooks profile within minutes and authorize zero-friction automated tax-stamping immediately.
           </p>
           <a
             href={`${DASHBOARD_URL}/sign-up`}
