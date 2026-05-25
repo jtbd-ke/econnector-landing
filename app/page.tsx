@@ -10,7 +10,7 @@ export default function LandingPage() {
       <div className="absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_80%,transparent_100%)] h-[900px] pointer-events-none opacity-60" />
 
       {/* ── NAV ─────────────────────────────────────────────────────── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md border-b border-zinc-100/80">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-lg backdrop-saturate-150 border-b border-zinc-200/50 supports-[backdrop-filter]:bg-white/60">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5 group cursor-pointer">
             <div className="w-3 h-3 rounded-md bg-[#0066FF] transform rotate-45 transition-transform group-hover:rotate-90 duration-500 ease-out" />
@@ -27,7 +27,7 @@ export default function LandingPage() {
             </a>
             <a
               href={`${DASHBOARD_URL}/sign-up`}
-              className="text-xs font-medium bg-zinc-950 text-white px-4 py-2 rounded-full hover:bg-zinc-800 active:scale-[0.97] transition-all duration-300 shadow-sm"
+              className="text-xs font-medium bg-zinc-950 text-white px-4 py-2.5 rounded-full hover:bg-zinc-800 active:scale-[0.97] transition-all duration-300 shadow-sm"
             >
               Get started
             </a>
@@ -41,8 +41,8 @@ export default function LandingPage() {
           
           {/* Apple-style Premium Core Pill */}
           <div className="max-w-3xl mx-auto mb-10">
-            <div className="bg-blue-50/20 border border-blue-100/70 rounded-2xl p-3 sm:p-3.5 flex flex-col sm:flex-row items-center justify-between gap-3 text-left shadow-[0_2px_12px_rgba(0,102,255,0.02)]">
-              <div className="flex items-center gap-2.5 pl-1">
+            <div className="bg-blue-50/30 border border-blue-100/70 rounded-2xl p-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-left shadow-[0_2px_12px_rgba(0,102,255,0.03)]">
+              <div className="flex items-center gap-2.5 pl-2">
                 <span className="flex h-2 w-2 relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0066FF] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0066FF]"></span>
@@ -52,7 +52,7 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-1.5 sm:gap-2 items-center">
-                <span className="text-[10px] font-bold bg-red-50 text-[#C61B23] border border-red-100/50 px-2.5 py-0.5 rounded-md tracking-tight">
+                <span className="text-[10px] font-bold bg-red-50 text-[#C61B23] border border-red-100/60 px-2.5 py-0.5 rounded-md tracking-tight">
                   KE eTIMS Active
                 </span>
                 <span className="text-[10px] font-medium bg-zinc-50 text-zinc-500 border border-zinc-200/60 px-2.5 py-0.5 rounded-md tracking-tight">
@@ -69,7 +69,7 @@ export default function LandingPage() {
           </div>
 
           {/* Crisp, Balanced Hero Typography */}
-          <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-semibold tracking-tight text-zinc-950 mb-6 sm:mb-8 flex flex-col items-center gap-1 sm:gap-2 leading-[1.2] sm:leading-[1.1]">
+          <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-semibold tracking-tight text-zinc-950 mb-6 flex flex-col items-center gap-1 sm:gap-2 leading-[1.2] sm:leading-[1.1]">
             <span className="block max-w-full truncate">Stop exporting invoices.</span>
             <span className="block max-w-full text-zinc-900/90 font-medium">Automate your eTIMS compliance</span>
             <span className="block max-w-full font-medium">
@@ -78,7 +78,7 @@ export default function LandingPage() {
           </h1>
           
           {/* High-fidelity descriptive sub-text */}
-          <p className="text-sm sm:text-base md:text-lg text-zinc-500 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed tracking-tight font-normal px-2">
+          <p className="text-sm sm:text-base md:text-lg text-zinc-500 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed font-normal px-2">
             Stop wasting hours manually copy-pasting data into KRA portals. 
             eConnector bridges QuickBooks Online directly with eTIMS endpoints—automatically 
             generating valid, eTIMS QR Codes with tax invoice numbers the moment you hit save.
@@ -88,13 +88,13 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 sm:mb-24">
             <a
               href={`${DASHBOARD_URL}/sign-up`}
-              className="w-full sm:w-auto text-center bg-[#2CA01C] text-white text-xs font-semibold tracking-tight px-8 py-4 rounded-full hover:bg-[#248a18] active:scale-[0.98] transition-all duration-300 shadow-sm shadow-[#2CA01C]/10"
+              className="w-full sm:w-auto text-center bg-[#2CA01C] text-white text-xs font-semibold tracking-tight px-8 py-4 rounded-full hover:bg-[#248a18] active:scale-[0.98] transition-all duration-300 shadow-[0_8px_16px_-6px_rgba(44,160,28,0.5)]"
             >
               Connect QuickBooks Now
             </a>
             <a
               href="#how-it-works"
-              className="w-full sm:w-auto text-center text-xs font-semibold text-zinc-600 hover:text-zinc-900 px-6 py-3 transition-colors duration-300"
+              className="w-full sm:w-auto text-center text-xs font-medium text-zinc-600 hover:text-zinc-900 px-6 py-3 transition-colors duration-300"
             >
               See how it works →
             </a>
@@ -137,7 +137,7 @@ export default function LandingPage() {
                       <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" /> eConnector Engine
                     </div>
                   </div>
-                  <div className="mt-6 text-[11px] text-zinc-400 leading-normal border-t border-zinc-100 pt-3 tracking-tight">
+                  <div className="mt-6 text-[11px] text-zinc-400 leading-normal border-t border-zinc-100 pt-3">
                     Parsing account schema maps securely...
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export default function LandingPage() {
                       <span className="w-2 h-2 rounded-full bg-[#C61B23]" /> KRA eTIMS API
                     </div>
                   </div>
-                  <div className="mt-6 text-[11px] font-mono text-zinc-500 border-t border-zinc-100 pt-3 tracking-tight">
+                  <div className="mt-6 text-[11px] font-mono text-zinc-500 border-t border-zinc-100 pt-3">
                     Payload Stamped OK
                   </div>
                 </div>
@@ -192,7 +192,7 @@ export default function LandingPage() {
           <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-zinc-950 mb-5">
             eTIMS compliance shouldn&apos;t cost you weeks of your life.
           </h2>
-          <p className="text-xs sm:text-sm md:text-base text-zinc-500 leading-relaxed max-w-2xl mx-auto tracking-tight">
+          <p className="text-xs sm:text-sm md:text-base text-zinc-500 leading-relaxed max-w-2xl mx-auto">
             eConnector is an enterprise-grade, lightweight bridge built exclusively to map your 
             QuickBooks accounts directly into Kenya Revenue Authority endpoints. No custom development, 
             no infrastructure changes, completely seamless.
@@ -253,7 +253,7 @@ export default function LandingPage() {
                 <h3 className="text-sm sm:text-base font-semibold text-zinc-950 mb-2 tracking-tight">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-[13px] text-zinc-500 leading-relaxed font-normal tracking-tight">
+                <p className="text-xs sm:text-[13px] text-zinc-500 leading-relaxed font-normal">
                   {item.body}
                 </p>
                 <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-transparent group-hover:bg-[#0066FF] transition-colors duration-500 rounded-b-2xl" />
@@ -273,7 +273,7 @@ export default function LandingPage() {
           <h2 className="text-2xl sm:text-3xl font-semibold text-center text-zinc-950 mb-3 tracking-tight">
             Simple, transparent billing.
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-500 text-center mb-16 max-w-lg mx-auto tracking-tight">
+          <p className="text-xs sm:text-sm text-zinc-500 text-center mb-16 max-w-lg mx-auto">
             All tiers transparently pass through the baseline eTIMS dynamic core pass-on infrastructure fees of $30–$50/mo.
           </p>
           
@@ -320,13 +320,13 @@ export default function LandingPage() {
                     {plan.name}
                   </p>
                   {plan.highlight && (
-                    <span className="text-[10px] font-semibold bg-[#0066FF]/10 text-blue-400 px-2.5 py-0.5 rounded-full tracking-tight">
+                    <span className="text-[10px] font-medium bg-[#0066FF]/10 text-blue-400 px-2.5 py-0.5 rounded-full tracking-tight">
                       Most Selected
                     </span>
                   )}
                 </div>
                 
-                <p className="text-xs mb-4 tracking-tight" style={{ color: plan.highlight ? '#a1a1aa' : '#71717a' }}>
+                <p className="text-xs mb-4" style={{ color: plan.highlight ? '#a1a1aa' : '#71717a' }}>
                   {plan.who}
                 </p>
                 
@@ -337,7 +337,7 @@ export default function LandingPage() {
                 
                 <ul className="space-y-4 mb-8 border-t border-dashed pt-6 text-xs sm:text-[13px]" style={{ borderColor: plan.highlight ? '#27272a' : '#f4f4f5' }}>
                   {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 tracking-tight"
+                    <li key={f} className="flex items-start gap-2.5"
                       style={{ color: plan.highlight ? '#d4d4d8' : '#52525b' }}>
                       <span className={`text-xs font-bold ${plan.highlight ? 'text-blue-400' : 'text-[#0066FF]'}`}>✓</span>
                       <span className="leading-snug">{f}</span>
@@ -363,17 +363,19 @@ export default function LandingPage() {
 
       {/* ── CTA BANNER ──────────────────────────────────────── */}
       <section className="py-24 px-5 sm:px-6 bg-zinc-950 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
+        {/* Restored and Refined Dot Matrix Mask */}
+        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1.5px,transparent_1.5px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_50%,transparent_100%)] pointer-events-none" />
+        
         <div className="max-w-2xl mx-auto text-center relative z-10">
           <h2 className="text-2xl sm:text-4xl font-semibold text-white mb-5 tracking-tight">
             Ready to secure your automated pipeline?
           </h2>
-          <p className="text-zinc-400 text-xs sm:text-sm max-w-md mx-auto mb-8 leading-relaxed tracking-tight">
+          <p className="text-zinc-400 text-xs sm:text-sm max-w-md mx-auto mb-8 leading-relaxed">
             Connect your current erp or accounting system nodes within minutes and offload processing queues automatically.
           </p>
           <a
             href={`${DASHBOARD_URL}/sign-up`}
-            className="inline-block bg-[#2CA01C] text-white text-xs font-semibold tracking-tight px-8 py-4 rounded-full hover:bg-[#248a18] active:scale-[0.98] transition-all duration-300 shadow-xl shadow-[#2CA01C]/10"
+            className="inline-block bg-[#2CA01C] text-white text-xs font-semibold tracking-tight px-8 py-4 rounded-full hover:bg-[#248a18] active:scale-[0.98] transition-all duration-300 shadow-[0_8px_16px_-6px_rgba(44,160,28,0.4)]"
           >
             Connect QuickBooks Now
           </a>
@@ -387,7 +389,7 @@ export default function LandingPage() {
             <div className="w-2.5 h-2.5 rounded-md bg-[#0066FF] transform rotate-45" />
             <span className="text-sm font-semibold tracking-tight">eConnector</span>
           </div>
-          <p className="text-xs text-zinc-400 text-center md:text-left leading-relaxed tracking-tight">
+          <p className="text-xs text-zinc-400 text-center md:text-left leading-relaxed">
             Powered by{' '}
             <a href="https://tracksol.co.ke" target="_blank" rel="noopener noreferrer"
               className="text-zinc-500 hover:text-zinc-900 transition-colors underline underline-offset-4 decoration-zinc-200">
