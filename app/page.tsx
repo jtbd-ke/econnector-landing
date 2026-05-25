@@ -56,25 +56,28 @@ export default function LandingPage() {
             </span>
           </div>
 
-          {/* Headline Choice (Updated with green speed emphasis) */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-semibold tracking-tight text-zinc-950 mb-8 max-w-4xl mx-auto leading-[1.15] sm:leading-[1.1]">
+          {/* Headline Choice (With green speed emphasis) [cite: 1] */}
+          <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-semibold tracking-tight text-zinc-950 mb-10 max-w-4xl mx-auto leading-[1.15] sm:leading-[1.1]">
             Get eTIMS compliance without the headache,<br />in <span className="text-[#2CA01C] font-bold">a few clicks</span>.
           </h1>
           
-          {/* Precise Line-by-Line Sub-headline Structure */}
-          <div className="text-zinc-500 text-xs sm:text-sm md:text-base max-w-3xl mx-auto mb-10 sm:mb-12 space-y-3 font-normal tracking-tight leading-relaxed">
+          {/* Precise Line-by-Line Sub-headline Structure with Block Alignment [cite: 2, 3, 4, 5] */}
+          <div className="text-zinc-500 text-xs sm:text-sm md:text-[15px] max-w-4xl mx-auto mb-10 sm:mb-12 space-y-4 font-normal tracking-tight leading-relaxed text-center">
             <p className="block">
-              Link your accounting system in just two clicks.
+              Link your accounting system in just two clicks. [cite: 2]
             </p>
+            
             <p className="text-zinc-800 font-medium block">
-              Generate documents normally while the eConnector engine does the heavy lifting:{' '}
+              Generate your invoices and credit notes normally while the eConnector engine does the heavy lifting:{' '} [cite: 3]
               <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">formatting</span> |{' '}
               <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">validating</span> |{' '}
-              <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">submitting</span>
+              <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">submitting</span> |{' '}
+              <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">updating</span> 
             </p>
-            <p className="block">
-              Then, look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document{' '}
-              <span className="text-zinc-900 font-semibold underline decoration-2 decoration-green-400">in under 60 seconds.</span>
+            
+            <p className="block text-zinc-500">
+              Look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document{' '} 
+              <span className="text-zinc-900 font-semibold underline decoration-2 decoration-green-400 whitespace-nowrap">in under 60 seconds.</span> 
             </p>
           </div>
           
@@ -264,7 +267,6 @@ export default function LandingPage() {
             Simple, transparent billing.
           </h2>
           
-          {/* Updated structural pricing one-time context statement */}
           <p className="text-xs sm:text-sm text-zinc-500 text-center mb-16 max-w-lg mx-auto tracking-tight font-medium bg-white border border-zinc-200 px-4 py-2 rounded-full shadow-sm">
             All plans incur a one-time pass through setup cost for eTIMS infrastructure fees of $70.
           </p>
