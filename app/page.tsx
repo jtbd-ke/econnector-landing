@@ -1,45 +1,49 @@
-import Link from 'next/link'
+'use client'
+
+import { useState, useEffect } from 'react'
 
 const DASHBOARD_URL = process.env.NEXT_PUBLIC_DASHBOARD_URL || 'https://econnector-dashboard-10.vercel.app'
 
 export default function LandingPage() {
+  // Active pipeline step state tracker for the Proof Widget animation loop
+  const [activeStep, setActiveStep] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % 4)
+    }, 2800) // Transition step states smoothly every 2.8 seconds
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <main className="min-h-screen bg-white text-zinc-900 font-sans antialiased overflow-x-hidden selection:bg-blue-100 selection:text-blue-900">
       
-      {/* Stripe-inspired ambient grid overlay */}
+      {/* Ambient decorative grid system overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_80%,transparent_100%)] h-[900px] pointer-events-none opacity-60" />
 
-      {/* ── NAV ─────────────────────────────────────────────────────── */}
+      {/* ── NAVIGATION ────────────────────────────────────────────── */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-lg backdrop-saturate-150 border-b border-zinc-200/50 supports-[backdrop-filter]:bg-white/60">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5 group cursor-pointer">
             <div className="w-3 h-3 rounded-md bg-[#0066FF] transform rotate-45 transition-transform group-hover:rotate-90 duration-500 ease-out" />
-            <span className="font-semibold text-sm tracking-tight">
-              eConnector
-            </span>
+            <span className="font-semibold text-sm tracking-tight">eConnector</span>
           </div>
           <div className="flex items-center gap-6">
-            <a
-              href={`${DASHBOARD_URL}/sign-in`}
-              className="text-xs font-medium text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
-            >
+            <a href={`${DASHBOARD_URL}/sign-in`} className="text-xs font-medium text-zinc-500 hover:text-zinc-900 transition-colors duration-300">
               Sign in
             </a>
-            <a
-              href={`${DASHBOARD_URL}/sign-up`}
-              className="text-xs font-medium bg-zinc-950 text-white px-4 py-2.5 rounded-full hover:bg-zinc-800 active:scale-[0.97] transition-all duration-300 shadow-sm"
-            >
+            <a href={`${DASHBOARD_URL}/sign-up`} className="text-xs font-medium bg-zinc-950 text-white px-4 py-2.5 rounded-full hover:bg-zinc-800 active:scale-[0.97] transition-all duration-300 shadow-sm">
               Get started
             </a>
           </div>
         </div>
       </nav>
 
-      {/* ── HERO SECTION ────────────────────────────────────────────── */}
+      {/* ── HERO SECTION ───────────────────────────────────────────── */}
       <section className="relative pt-28 sm:pt-40 pb-20 px-5 sm:px-6">
         <div className="max-w-5xl mx-auto text-center">
           
-          {/* Context Pill */}
+          {/* Top Metadata Pill */}
           <div className="inline-flex items-center gap-2.5 bg-blue-50/50 border border-blue-100/80 rounded-full px-3.5 py-1.5 mb-8 shadow-[0_2px_12px_rgba(0,102,255,0.02)]">
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0066FF] opacity-75"></span>
@@ -52,107 +56,120 @@ export default function LandingPage() {
             </span>
           </div>
 
-          {/* Core Benefit Headline - Premium Green Highlight */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold tracking-tight text-zinc-950 mb-6 max-w-4xl mx-auto leading-[1.15] sm:leading-[1.1]">
-            eTIMS compliance made <span className="text-[#2CA01C] font-bold">quick</span>, without the headache.
+          {/* Headline Choice (Updated with green speed emphasis) */}
+          <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-semibold tracking-tight text-zinc-950 mb-8 max-w-4xl mx-auto leading-[1.15] sm:leading-[1.1]">
+            Get eTIMS compliance without the headache,<br />in <span className="text-[#2CA01C] font-bold">a few clicks</span>.
           </h1>
           
-          {/* Explicit Heavy-Lifting Sub-Headline */}
-          <p className="text-sm sm:text-base md:text-lg text-zinc-500 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed font-normal px-2 tracking-tight">
-            Link your accounting system in just two clicks. Your team generates documents normally, 
-            while the eConnector engine does the heavy lifting—validating and attaching an official 
-            eTIMS QR code and tax invoice number straight back to your original document in under 60 seconds.
-          </p>
+          {/* Precise Line-by-Line Sub-headline Structure */}
+          <div className="text-zinc-500 text-xs sm:text-sm md:text-base max-w-3xl mx-auto mb-10 sm:mb-12 space-y-3 font-normal tracking-tight leading-relaxed">
+            <p className="block">
+              Link your accounting system in just two clicks.
+            </p>
+            <p className="text-zinc-800 font-medium block">
+              Generate documents normally while the eConnector engine does the heavy lifting:{' '}
+              <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">formatting</span> |{' '}
+              <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">validating</span> |{' '}
+              <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">submitting</span>
+            </p>
+            <p className="block">
+              Then, look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document{' '}
+              <span className="text-zinc-900 font-semibold underline decoration-2 decoration-green-400">in under 60 seconds.</span>
+            </p>
+          </div>
           
-          {/* Main Action Nodes */}
+          {/* CTA Group */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 sm:mb-24">
-            <a
-              href={`${DASHBOARD_URL}/sign-up`}
-              className="w-full sm:w-auto text-center bg-[#2CA01C] text-white text-xs font-semibold tracking-tight px-8 py-4 rounded-full hover:bg-[#248a18] active:scale-[0.98] transition-all duration-300 shadow-[0_8px_16px_-6px_rgba(44,160,28,0.5)]"
-            >
+            <a href={`${DASHBOARD_URL}/sign-up`} className="w-full sm:w-auto text-center bg-[#2CA01C] text-white text-xs font-semibold tracking-tight px-8 py-4 rounded-full hover:bg-[#248a18] active:scale-[0.98] transition-all duration-300 shadow-[0_8px_16px_-6px_rgba(44,160,28,0.5)]">
               Connect QuickBooks Now
             </a>
-            <a
-              href="#how-it-works"
-              className="w-full sm:w-auto text-center text-xs font-medium text-zinc-600 hover:text-zinc-900 px-6 py-3 transition-colors duration-300"
-            >
+            <a href="#how-it-works" className="w-full sm:w-auto text-center text-xs font-medium text-zinc-600 hover:text-zinc-900 px-6 py-3 transition-colors duration-300">
               See how it works →
             </a>
           </div>
 
-          {/* ── THE PROOF WIDGET (Enhanced Real-Time Writeback Pipeline) ── */}
+          {/* ── THE PROOF WIDGET (With active looping pipeline states) ── */}
           <div className="relative max-w-5xl mx-auto rounded-2xl border border-blue-500/10 bg-blue-50/5 p-1.5 sm:p-2">
             <div className="bg-white rounded-xl border border-zinc-200/60 overflow-hidden text-left shadow-sm">
               
               <div className="px-4 py-3 bg-zinc-50/50 border-b border-zinc-100 flex items-center justify-between text-[11px] text-zinc-400">
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-                  <span className="font-mono ml-1 text-[#0066FF] font-medium tracking-tight bg-blue-50/60 px-2 py-0.5 rounded">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#0066FF] animate-pulse" />
+                  <span className="font-mono text-[#0066FF] font-medium tracking-tight bg-blue-50/60 px-2 py-0.5 rounded">
                     sync_pipeline: live_writeback
                   </span>
                 </div>
-                <span className="px-2 py-0.5 rounded bg-green-50 text-[#2CA01C] font-semibold tracking-tight text-[10px]">60s Automation Loop</span>
+                <div className="flex items-center gap-4">
+                  <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-mono">
+                    {[0, 1, 2, 3].map((idx) => (
+                      <span key={idx} className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${idx === activeStep ? 'bg-[#2CA01C]' : 'bg-zinc-200'}`} />
+                    ))}
+                  </div>
+                  <span className="px-2 py-0.5 rounded bg-green-50 text-[#2CA01C] font-semibold tracking-tight text-[10px]">60s Automation Loop</span>
+                </div>
               </div>
               
-              <div className="p-3 sm:p-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 items-stretch bg-zinc-50/20 relative">
+              <div className="p-3 sm:p-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 items-stretch bg-zinc-50/20">
                 
-                {/* Node 1: Origin */}
-                <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-sm flex flex-col justify-between transition-all duration-500 hover:border-[#0066FF]/30">
-                  <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">Step 01 · Trigger</div>
-                    <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#2CA01C]" /> QuickBooks Online
-                    </div>
+                {/* Node 1: Trigger Event */}
+                <div className={`p-4 rounded-xl border transition-all duration-500 bg-white ${activeStep === 0 ? 'border-[#2CA01C] ring-2 ring-green-100 shadow-md scale-[1.01]' : 'border-zinc-200/70 opacity-70'}`}>
+                  <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">Step 01 · Trigger</div>
+                  <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
+                    <span className={`w-2 h-2 rounded-full ${activeStep === 0 ? 'bg-[#2CA01C] animate-ping' : 'bg-[#2CA01C]'}`} /> QuickBooks Online
                   </div>
-                  <div className="mt-6 text-[11px] text-zinc-500 border-t border-zinc-100 pt-3 tracking-tight leading-normal">
+                  <div className="mt-5 text-[11px] font-mono bg-zinc-50 p-2 rounded text-zinc-500 border border-zinc-100">
+                    Invoice <span className="text-zinc-800 font-medium">#INV-2026-04</span>
+                  </div>
+                  <div className="mt-4 text-[11px] text-zinc-500 tracking-tight leading-normal">
                     You hit save or send on a standard invoice or sales receipt.
                   </div>
                 </div>
 
-                {/* Node 2: Heavy Lifting Engine */}
-                <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-sm flex flex-col justify-between transition-all duration-500 hover:border-[#0066FF]/30">
-                  <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">Step 02 · Heavy Lifting</div>
-                    <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-ping" /> eConnector Engine
-                    </div>
+                {/* Node 2: The Core Optimization Engine */}
+                <div className={`p-4 rounded-xl border transition-all duration-500 bg-white ${activeStep === 1 ? 'border-[#0066FF] ring-2 ring-blue-100 shadow-md scale-[1.01]' : 'border-zinc-200/70 opacity-70'}`}>
+                  <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">Step 02 · Processing</div>
+                  <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
+                    <span className={`w-2 h-2 rounded-full ${activeStep === 1 ? 'bg-[#0066FF] animate-spin' : 'bg-[#0066FF]'}`} /> eConnector Engine
                   </div>
-                  <div className="mt-6 text-[11px] text-zinc-500 border-t border-zinc-100 pt-3 tracking-tight leading-normal">
-                    Instantly extracts data, structures it, and maps it directly to KRA criteria schema.
+                  <div className="mt-5 h-9 flex items-center text-[10px] font-mono text-[#0066FF] bg-blue-50/40 border border-blue-100/50 rounded px-2">
+                    {activeStep === 1 ? '⚡ Mapping elements...' : 'Pipeline idle'}
                   </div>
-                </div>
-
-                {/* Node 3: Compliance Validation */}
-                <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-sm flex flex-col justify-between transition-all duration-500 hover:border-[#0066FF]/30">
-                  <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">Step 03 · Tax Stamping</div>
-                    <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#C61B23]" /> KRA eTIMS Gateway
-                    </div>
-                  </div>
-                  <div className="mt-6 text-[11px] text-zinc-500 border-t border-zinc-100 pt-3 tracking-tight leading-normal">
-                    Secure handshake processes validation codes, issuing a unique signature block.
+                  <div className="mt-4 text-[11px] text-zinc-500 tracking-tight leading-normal">
+                    Instantly extracts metadata, validates formulas, and maps parameters to KRA schema criteria.
                   </div>
                 </div>
 
-                {/* Node 4: The Closed Loop Magic */}
-                <div className="group p-4 rounded-xl border border-blue-200 bg-blue-50/10 shadow-sm flex flex-col justify-between transition-all duration-500 hover:border-[#0066FF]/50">
-                  <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-[#0066FF] mb-2">Step 04 · Pure Automation</div>
-                    <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#2CA01C]" /> QuickBooks Writeback
-                    </div>
+                {/* Node 3: The Tax Agency Gateway */}
+                <div className={`p-4 rounded-xl border transition-all duration-500 bg-white ${activeStep === 2 ? 'border-red-500 ring-2 ring-red-100 shadow-md scale-[1.01]' : 'border-zinc-200/70 opacity-70'}`}>
+                  <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">Step 03 · Handshake</div>
+                  <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#C61B23]" /> KRA eTIMS Gateway
+                  </div>
+                  <div className="mt-5 h-9 flex items-center text-[10px] font-mono text-red-600 bg-red-50/50 border border-red-100/50 rounded px-2">
+                    {activeStep >= 2 ? '✓ Payload Stamped OK' : 'Awaiting sync...'}
+                  </div>
+                  <div className="mt-4 text-[11px] text-zinc-500 tracking-tight leading-normal">
+                    Secure channel signs transactions, returning a verified unique serial profile.
+                  </div>
+                </div>
+
+                {/* Node 4: The Automated Writeback Action */}
+                <div className={`p-4 rounded-xl border transition-all duration-500 bg-white ${activeStep === 3 ? 'border-[#2CA01C] ring-2 ring-green-100 shadow-md scale-[1.01]' : 'border-zinc-200/70 opacity-70'}`}>
+                  <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">Step 04 · Writeback</div>
+                  <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#2CA01C]" /> QuickBooks Online
                   </div>
                   
-                  <div className="mt-5 text-[11px] font-mono text-zinc-400 border-t border-zinc-100 pt-3 space-y-2">
-                    <div className="bg-green-50/70 border border-green-200/60 rounded px-2 py-1.5 text-zinc-600 flex items-center gap-2">
+                  <div className="mt-4 space-y-1.5">
+                    <div className="bg-green-50/70 border border-green-200/60 rounded p-1.5 text-zinc-600 flex items-center gap-2 text-[10px] font-mono">
                       <svg className="w-3.5 h-3.5 text-[#2CA01C] shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 15h6v6H3v-6zm2 2v2h2v-2H5zm10-2h2v2h-2v-2zm2 2h2v2h-2v-2zm0-2h2v2h-2v-2zm-2 4h2v2h-2v-2zm4 0h2v2h-2v-2zM11 11h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm4-4h2v2h-2v-2zm2 2h2v2h-2v-2z" />
+                        <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 15h6v6H3v-6zm2 2v2h2v-2H5zm10-2h2v2h-2v-2zm2 2h2v2h-2v-2zm0-2h2v2h-2v-2zm-2 4h2v2h-2v-2zm4 0h2v2h-2v-2z" />
                       </svg>
-                      <div className="truncate text-[9px] font-sans tracking-tight text-[#248a18] font-bold">
-                        QR Code & CU Stamp Attached Back
-                      </div>
+                      <span className="text-[#248a18] font-bold">QR Code Appended</span>
                     </div>
+                  </div>
+                  <div className="mt-3 text-[11px] text-zinc-500 tracking-tight leading-normal">
+                    The valid system QR code and unique signature block map back onto the origin invoice.
                   </div>
                 </div>
 
@@ -163,15 +180,15 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── PROBLEM STATEMENT ───────────────────────────────────────── */}
+      {/* ── CORE FEATURES BLOCK ────────────────────────────────────── */}
       <section className="py-24 px-5 sm:px-6 bg-zinc-50/50 border-y border-zinc-100">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-zinc-950 mb-5">
             Built for modern finance teams and business owners.
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-zinc-500 leading-relaxed max-w-2xl mx-auto font-normal tracking-tight">
-            eConnector loops directly into your existing accounting system, eliminating manual portals entirely. 
-            No middleware development, no structural changes, completely self-serve.
+            eConnector loops directly into your existing accounting architecture, eliminating portal copy-pasting errors entirely. 
+            No custom middleware, no structural code changes, completely self-serve activation.
           </p>
         </div>
       </section>
@@ -204,7 +221,7 @@ export default function LandingPage() {
                 title: '2. Link to QuickBooks online Securely',
                 body: 'Authorise an official secure connection to your accounting system with two simple clicks.',
                 icon: (
-                  <svg className="w-4 h-4 text-[#0066FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                  <svg className="w-4.5 h-4.5 text-[#0066FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622a4.5 4.5 0 00-1.242-7.244l-4.5-4.5a4.5 4.5 0 00-6.364 6.364l1.756 1.756m3.96 1.98l1.5-1.5" />
                   </svg>
                 ),
@@ -219,10 +236,7 @@ export default function LandingPage() {
                 ),
               },
             ].map((item) => (
-              <div 
-                key={item.title} 
-                className="relative group p-6 sm:p-8 rounded-2xl border border-zinc-200/80 bg-white transition-all duration-500 ease-out text-left hover:border-[#0066FF]/30 hover:shadow-xl hover:shadow-blue-50/20"
-              >
+              <div key={item.title} className="relative group p-6 sm:p-8 rounded-2xl border border-zinc-200/80 bg-white transition-all duration-500 ease-out text-left hover:border-[#0066FF]/30 hover:shadow-xl hover:shadow-blue-50/20">
                 <div className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-blue-50/60 border border-blue-100/50 mb-6 transition-transform duration-500 group-hover:scale-105">
                   {item.icon}
                 </div>
@@ -240,7 +254,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── PRICING ─────────────────────────────────────────────────── */}
+      {/* ── PRICING SECTION ────────────────────────────────────────── */}
       <section className="py-24 px-5 sm:px-6 bg-zinc-50/40 border-t border-zinc-100">
         <div className="max-w-5xl mx-auto">
           <p className="text-[10px] font-bold tracking-wider text-zinc-400 uppercase text-center mb-4">
@@ -250,8 +264,8 @@ export default function LandingPage() {
             Simple, transparent billing.
           </h2>
           
-          {/* Revised One-Time Infrastructure Cost Context */}
-          <p className="text-xs sm:text-sm text-zinc-500 text-center mb-16 max-w-lg mx-auto tracking-tight font-medium">
+          {/* Updated structural pricing one-time context statement */}
+          <p className="text-xs sm:text-sm text-zinc-500 text-center mb-16 max-w-lg mx-auto tracking-tight font-medium bg-white border border-zinc-200 px-4 py-2 rounded-full shadow-sm">
             All plans incur a one-time pass through setup cost for eTIMS infrastructure fees of $70.
           </p>
           
@@ -288,14 +302,7 @@ export default function LandingPage() {
                 highlight: false,
               },
             ].map((plan) => (
-              <div
-                key={plan.name}
-                className={`rounded-2xl p-6 sm:p-8 border transition-all duration-500 ease-out ${
-                  plan.highlight
-                    ? 'bg-zinc-950 border-zinc-950 text-white md:-translate-y-2 shadow-xl shadow-zinc-950/10'
-                    : 'bg-white border-zinc-200/80 text-zinc-950 hover:border-zinc-300'
-                }`}
-              >
+              <div key={plan.name} className={`rounded-2xl p-6 sm:p-8 border transition-all duration-500 ease-out ${plan.highlight ? 'bg-zinc-950 border-zinc-950 text-white md:-translate-y-2 shadow-xl shadow-zinc-950/10' : 'bg-white border-zinc-200/80 text-zinc-950 hover:border-zinc-300'}`}>
                 <div className="flex items-center justify-between mb-4">
                   <p className={`text-[10px] font-bold tracking-wider uppercase ${plan.highlight ? 'text-blue-400' : 'text-zinc-400'}`}>
                     {plan.name}
@@ -322,29 +329,20 @@ export default function LandingPage() {
                 
                 <ul className="space-y-4 mb-8 border-t border-dashed pt-6 text-xs sm:text-[13px]" style={{ borderColor: plan.highlight ? '#27272a' : '#f4f4f5' }}>
                   {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5"
-                      style={{ color: plan.highlight ? '#d4d4d8' : '#52525b' }}>
+                    <li key={f} className="flex items-start gap-2.5" style={{ color: plan.highlight ? '#d4d4d8' : '#52525b' }}>
                       <span className={`text-xs font-bold ${plan.highlight ? 'text-blue-400' : 'text-[#0066FF]'}`}>✓</span>
                       <span className="leading-snug">{f}</span>
                     </li>
                   ))}
                 </ul>
                 
-                <a
-                  href={`${DASHBOARD_URL}/sign-up`}
-                  className="block text-center text-xs font-semibold py-3.5 rounded-full active:scale-[0.98] transition-all duration-300 tracking-tight"
-                  style={{
-                    backgroundColor: plan.highlight ? '#ffffff' : '#09090b',
-                    color: plan.highlight ? '#09090b' : '#ffffff'
-                  }}
-                >
+                <a href={`${DASHBOARD_URL}/sign-up`} className="block text-center text-xs font-semibold py-3.5 rounded-full active:scale-[0.98] transition-all duration-300 tracking-tight" style={{ backgroundColor: plan.highlight ? '#ffffff' : '#09090b', color: plan.highlight ? '#09090b' : '#ffffff' }}>
                   {plan.cta} →
                 </a>
               </div>
             ))}
           </div>
 
-          {/* Local Checkout Validation Badge Block */}
           <div className="mt-12 flex items-center justify-center gap-3 bg-white border border-zinc-200/60 rounded-xl p-4 max-w-sm mx-auto shadow-sm">
             <span className="flex h-2 w-2 relative shrink-0">
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2CA01C]" />
@@ -357,11 +355,9 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── CTA BANNER ──────────────────────────────────────── */}
+      {/* ── CTA BANNER ────────────────────────────────────────────── */}
       <section className="py-24 px-5 sm:px-6 bg-zinc-950 relative overflow-hidden">
-        {/* Beautiful, masked dot matrix background pattern */}
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1.5px,transparent_1.5px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_50%,transparent_100%)] pointer-events-none" />
-        
         <div className="max-w-2xl mx-auto text-center relative z-10">
           <h2 className="text-2xl sm:text-4xl font-semibold text-white mb-5 tracking-tight">
             Ready to secure your automated bridge?
@@ -369,16 +365,13 @@ export default function LandingPage() {
           <p className="text-zinc-400 text-xs sm:text-sm max-w-md mx-auto mb-8 leading-relaxed">
             Link your QuickBooks profile within minutes and authorize zero-friction automated tax-stamping immediately.
           </p>
-          <a
-            href={`${DASHBOARD_URL}/sign-up`}
-            className="inline-block bg-[#2CA01C] text-white text-xs font-semibold tracking-tight px-8 py-4 rounded-full hover:bg-[#248a18] active:scale-[0.98] transition-all duration-300 shadow-[0_8px_16px_-6px_rgba(44,160,28,0.4)]"
-          >
+          <a href={`${DASHBOARD_URL}/sign-up`} className="inline-block bg-[#2CA01C] text-white text-xs font-semibold tracking-tight px-8 py-4 rounded-full hover:bg-[#248a18] active:scale-[0.98] transition-all duration-300 shadow-[0_8px_16px_-6px_rgba(44,160,28,0.4)]">
             Connect QuickBooks Now
           </a>
         </div>
       </section>
 
-      {/* ── FOOTER ──────────────────────────────────────────────────── */}
+      {/* ── FOOTER ─────────────────────────────────────────────────── */}
       <footer className="border-t border-zinc-100 py-12 px-5 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
@@ -387,13 +380,11 @@ export default function LandingPage() {
           </div>
           <p className="text-xs text-zinc-400 text-center md:text-left leading-relaxed">
             Powered by{' '}
-            <a href="https://tracksol.co.ke" target="_blank" rel="noopener noreferrer"
-              className="text-zinc-500 hover:text-zinc-900 transition-colors underline underline-offset-4 decoration-zinc-200">
+            <a href="https://tracksol.co.ke" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-zinc-900 transition-colors underline underline-offset-4 decoration-zinc-200">
               TrackSol
             </a>
             {' '}· Inquiry channels:{' '}
-            <a href="mailto:info@ezeemoney.co.ke"
-              className="text-zinc-500 hover:text-zinc-900 transition-colors underline underline-offset-4 decoration-zinc-200">
+            <a href="mailto:info@ezeemoney.co.ke" className="text-zinc-500 hover:text-zinc-900 transition-colors underline underline-offset-4 decoration-zinc-200">
               info@ezeemoney.co.ke
             </a>
           </p>
