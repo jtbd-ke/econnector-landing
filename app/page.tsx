@@ -39,7 +39,7 @@ export default function LandingPage() {
       <section className="relative pt-24 sm:pt-36 pb-16 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto text-center">
           
-          {/* Condensed Single-Line Compliance Core Banner */}
+          {/* Compliance Core Banner */}
           <div className="max-w-3xl mx-auto mb-8 sm:mb-10 font-sans">
             <div className="bg-zinc-50 border border-zinc-200/80 rounded-2xl p-3 sm:p-3.5 flex flex-col sm:flex-row items-center justify-between gap-3 text-left shadow-sm">
               <div className="flex items-center gap-2">
@@ -68,11 +68,13 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Cleaned Pain-Point Punchline Heading with Mobile Fixes */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-normal leading-[1.2] sm:leading-[1.1] tracking-tight text-zinc-900 mb-6 sm:mb-8">
-            Stop exporting invoices.<br className="hidden sm:block" />
-            Automate your eTIMS&nbsp;compliance&nbsp;straight<br className="hidden sm:block" />
-            from <span className="text-[#2CA01C] font-semibold">QuickBooks.</span>
+          {/* 💎 FIXED MOBILE HERO TYPOGRAPHY */}
+          <h1 className="text-2xl sm:text-5xl lg:text-6xl font-normal leading-[1.3] sm:leading-[1.15] tracking-tight text-zinc-900 mb-6 sm:mb-8 flex flex-col items-center">
+            <span className="block max-w-full truncate">Stop exporting invoices.</span>
+            <span className="block max-w-full">Automate your eTIMS compliance</span>
+            <span className="block max-w-full">
+              straight from <span className="text-[#2CA01C] font-semibold">QuickBooks.</span>
+            </span>
           </h1>
           
           {/* Refined localized hero body copy */}
@@ -97,22 +99,22 @@ export default function LandingPage() {
             </a>
           </div>
 
-          {/* Symmetrical Pipeline Component Redesigned with Pricing Card Visual DNA */}
-          <div className="relative max-w-5xl mx-auto rounded-2xl border border-zinc-200/80 bg-zinc-50/50 p-2 sm:p-4 shadow-xl shadow-zinc-200/40 font-sans">
-            <div className="bg-white rounded-xl border border-zinc-200 shadow-sm overflow-hidden text-left">
-              <div className="px-4 py-3 bg-zinc-50/80 border-b border-zinc-100 flex items-center justify-between text-xs text-zinc-400">
+          {/* Symmetrical Pipeline Component with Soft Minimal Borders & Consistent Interactive Hover States */}
+          <div className="relative max-w-5xl mx-auto rounded-2xl border border-zinc-200/50 bg-zinc-50/30 p-2 sm:p-3 font-sans">
+            <div className="bg-white rounded-xl border border-zinc-200/80 overflow-hidden text-left shadow-sm">
+              <div className="px-4 py-3 bg-zinc-50/60 border-b border-zinc-100 flex items-center justify-between text-xs text-zinc-400">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-zinc-300" />
                   <div className="w-2.5 h-2.5 rounded-full bg-zinc-300" />
-                  <span className="font-mono ml-2 text-zinc-500 text-[11px] sm:text-xs">pipeline_loop: active_sync</span>
+                  <span className="font-mono ml-2 text-zinc-400 text-[11px] sm:text-xs">pipeline_loop: active_sync</span>
                 </div>
-                <span className="px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 font-medium text-[10px]">Bi-Directional Flow</span>
+                <span className="px-2 py-0.5 rounded bg-zinc-100 text-zinc-600 font-medium text-[10px]">Bi-Directional Flow</span>
               </div>
               
-              <div className="p-3 sm:p-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+              <div className="p-3 sm:p-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
                 
                 {/* Node 1: Origin */}
-                <div className="p-4 rounded-xl border border-zinc-200 bg-white shadow-sm flex flex-col justify-start">
+                <div className="group p-4 rounded-xl border border-zinc-200 bg-white shadow-sm flex flex-col justify-between transition-all duration-300 hover:border-[#0066FF]/40 hover:shadow-md hover:shadow-zinc-100">
                   <div>
                     <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-1.5">01. Source Event</div>
                     <div className="text-sm font-semibold text-zinc-900 flex items-center gap-1.5">
@@ -125,7 +127,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Node 2: Transmission */}
-                <div className="p-4 rounded-xl border border-zinc-200 bg-white shadow-sm flex flex-col justify-start">
+                <div className="group p-4 rounded-xl border border-zinc-200 bg-white shadow-sm flex flex-col justify-between transition-all duration-300 hover:border-[#0066FF]/40 hover:shadow-md hover:shadow-zinc-100">
                   <div>
                     <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-1.5">02. Transmission</div>
                     <div className="text-sm font-semibold text-zinc-900 flex items-center gap-1.5">
@@ -138,7 +140,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Node 3: Fiscal Gateway */}
-                <div className="p-4 rounded-xl border border-zinc-200 bg-white shadow-sm flex flex-col justify-start">
+                <div className="group p-4 rounded-xl border border-zinc-200 bg-white shadow-sm flex flex-col justify-between transition-all duration-300 hover:border-[#0066FF]/40 hover:shadow-md hover:shadow-zinc-100">
                   <div>
                     <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-1.5">03. Fiscal Gateway</div>
                     <div className="text-sm font-semibold text-zinc-900 flex items-center gap-1.5">
@@ -151,7 +153,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Node 4: Writeback Sync */}
-                <div className="p-4 rounded-xl border border-zinc-200 bg-white shadow-sm flex flex-col justify-start">
+                <div className="group p-4 rounded-xl border border-zinc-200 bg-white shadow-sm flex flex-col justify-between transition-all duration-300 hover:border-[#0066FF]/40 hover:shadow-md hover:shadow-zinc-100">
                   <div>
                     <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-1.5">04. Writeback Sync</div>
                     <div className="text-sm font-semibold text-zinc-900 flex items-center gap-1.5">
@@ -196,7 +198,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── REWRITTEN & POLISHED ENGINE FLOW SECTION ────────────────── */}
+      {/* ── ENGINE FLOW SECTION ─────────────────────────────────────── */}
       <section id="how-it-works" className="py-20 sm:py-32 px-4 sm:px-6 bg-white relative scroll-mt-12">
         <div className="max-w-5xl mx-auto">
           
@@ -357,7 +359,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── UPDATED CTA BANNER ──────────────────────────────────────── */}
+      {/* ── CTA BANNER ──────────────────────────────────────── */}
       <section className="py-20 px-4 sm:px-6 bg-zinc-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]" />
         <div className="max-w-2xl mx-auto text-center relative z-10">
