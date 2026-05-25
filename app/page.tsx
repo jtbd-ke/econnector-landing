@@ -6,7 +6,7 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white text-zinc-900 font-serif antialiased overflow-x-hidden selection:bg-blue-100 selection:text-blue-900">
       
-      {/* Subtle background decoration */}
+      {/* Subtle background matrix to eliminate empty space */}
       <div className="absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_0%,#000_70%,transparent_100%)] h-[800px] pointer-events-none opacity-70" />
 
       {/* ── NAV ─────────────────────────────────────────────────────── */}
@@ -39,21 +39,24 @@ export default function LandingPage() {
       <section className="relative pt-32 sm:pt-40 pb-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-50 border border-zinc-200/80 mb-6 font-sans text-xs font-medium text-zinc-600">
+          {/* Branded tech pill badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50/60 border border-blue-100 mb-6 font-sans text-xs font-semibold text-[#1E3A8A]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2CA01C] animate-pulse" />
-            <span>KRA eTIMS Integrated</span>
+            <span>Native QuickBooks Online Integration</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.15] sm:leading-[1.1] md:leading-[1.05] tracking-tight text-zinc-900 mb-6 sm:mb-8">
-            Get your <span className="text-[#2CA01C] font-medium tracking-tight">QuickBooks</span><br className="hidden sm:block" />
-            {' '}<em className="italic font-light text-zinc-900">eTIMS compliant</em><br className="hidden sm:block" />
-            the smart way.
+          {/* Pain-Point Punchline Heading */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.15] sm:leading-[1.1] md:leading-[1.05] tracking-tight text-zinc-900 mb-6 sm:mb-8">
+            Stop exporting invoices.<br className="hidden sm:block" />
+            Automate your <span className="text-[#1E3A8A] font-medium">eTIMS compliance</span><br className="hidden sm:block" />
+            straight from <span className="text-[#2CA01C] font-semibold">QuickBooks.</span>
           </h1>
           
+          {/* Refined localized hero body copy */}
           <p className="text-base sm:text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed font-sans font-normal px-2">
-            eConnector validates and submits your invoices directly to KRA,
-            without the technical headache and long wait times.
-            Connect QuickBooks, automate compliance instantly.
+            Stop wasting hours manually copy-pasting data into KRA portals. 
+            eConnector bridges QuickBooks Online directly with eTIMS endpoints—automatically 
+            generating valid, eTIMS QR Codes with tax invoice numbers the moment you hit save.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 font-sans">
@@ -61,7 +64,7 @@ export default function LandingPage() {
               href={`${DASHBOARD_URL}/sign-up`}
               className="w-full sm:w-auto text-center bg-[#2CA01C] text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-[#248a18] transition-all shadow-md shadow-[#2CA01C]/10 hover:shadow-lg"
             >
-              Connect QuickBooks →
+              Connect QuickBooks Now →
             </a>
             <a
               href="#how-it-works"
@@ -71,7 +74,7 @@ export default function LandingPage() {
             </a>
           </div>
 
-          {/* Pipeline Visual Component */}
+          {/* Real-time Interactive Pipeline Visual Component */}
           <div className="relative max-w-3xl mx-auto rounded-2xl border border-zinc-200/80 bg-zinc-50/50 p-3 sm:p-4 shadow-xl shadow-zinc-200/40 font-sans">
             <div className="bg-white rounded-xl border border-zinc-200 shadow-sm overflow-hidden text-left">
               <div className="px-4 py-3 bg-zinc-50/80 border-b border-zinc-100 flex items-center justify-between text-xs text-zinc-400">
@@ -182,12 +185,12 @@ export default function LandingPage() {
                 key={item.step} 
                 className="relative group p-6 sm:p-8 rounded-2xl border border-zinc-200/60 bg-white hover:bg-zinc-50/30 transition-all duration-300 text-left overflow-hidden hover:border-[#1E3A8A]/30 hover:shadow-xl hover:shadow-zinc-100/80"
               >
-                {/* Massive Architectural Floating Number Backdrop */}
+                {/* Architectural Floating Number Backdrop */}
                 <div className="absolute right-4 top-4 font-sans text-7xl font-bold text-blue-900/[0.03] group-hover:text-[#1E3A8A]/[0.06] transition-colors duration-300 select-none pointer-events-none">
                   {item.step}
                 </div>
 
-                {/* Refined Brand-Cohesive Icon Container */}
+                {/* Branded Icon Container */}
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-blue-50/80 border border-blue-100/50 mb-8 transition-transform group-hover:scale-105 duration-300">
                   {item.icon}
                 </div>
@@ -201,7 +204,7 @@ export default function LandingPage() {
                   {item.body}
                 </p>
 
-                {/* Modern Indicator accent border on active selection */}
+                {/* Active hover border indicator */}
                 <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-transparent group-hover:bg-[#1E3A8A] transition-colors duration-300" />
               </div>
             ))}
