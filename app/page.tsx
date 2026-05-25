@@ -63,40 +63,46 @@ export default function LandingPage() {
             <span className="block">in <span className="text-[#2CA01C]">a few clicks</span>.</span>
           </h1>
           
-          {/* Subtext Paragraph Blocks - Pristine Alignment */}
-          <div className="text-zinc-500 text-[14px] sm:text-[15px] max-w-3xl mx-auto mb-12 space-y-4 font-normal tracking-tight leading-relaxed text-center">
+          {/* ── SUB-HEADLINE: Premium Document Alignment & Typography ── */}
+          <div className="text-base sm:text-[17px] text-zinc-500 max-w-3xl mx-auto mb-14 space-y-6 font-normal tracking-tight leading-relaxed text-center">
             
-            <p className="block text-zinc-600">
+            {/* Hook */}
+            <p className="text-zinc-700 font-medium">
               Link your accounting system in just two clicks.
             </p>
             
-            <div className="text-zinc-900 font-medium block max-w-3xl mx-auto leading-loose">
+            {/* The "Heavy Lifting" Line with Tech Badges */}
+            <p className="block text-zinc-600">
               Generate your invoices and credit notes normally while the eConnector engine does the heavy lifting:{' '}
-              <span className="inline-flex items-center gap-1.5 bg-zinc-50 border border-zinc-200/60 px-2 py-1 rounded-md mx-1 font-normal text-xs text-zinc-700 whitespace-nowrap shadow-2xs">
-                <span className="text-[#0066FF] font-medium font-mono text-[11px]">formatting</span>
-                <span className="text-zinc-300">|</span>
-                <span className="text-[#0066FF] font-medium font-mono text-[11px]">validating</span>
-                <span className="text-zinc-300">|</span>
-                <span className="text-[#0066FF] font-medium font-mono text-[11px]">submitting</span>
-                <span className="text-zinc-300">|</span>
-                <span className="text-[#0066FF] font-medium font-mono text-[11px]">updating</span>
+              <span className="inline-flex items-center gap-2 bg-blue-50/50 border border-blue-100/60 px-3 py-1 rounded-md mx-1 font-mono text-[12px] sm:text-[13px] text-blue-600 shadow-sm whitespace-nowrap mt-2 md:mt-0 align-middle">
+                <span className="font-medium">formatting</span>
+                <span className="text-blue-200">|</span>
+                <span className="font-medium">validating</span>
+                <span className="text-blue-200">|</span>
+                <span className="font-medium">submitting</span>
+                <span className="text-blue-200">|</span>
+                <span className="font-medium">updating</span>
               </span>
-            </div>
+            </p>
             
-            <p className="block text-zinc-500 max-w-2xl mx-auto">
+            {/* The Payoff */}
+            <p className="block max-w-2xl mx-auto text-zinc-500">
               Look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document{' '}
-              <span className="text-zinc-900 font-semibold underline underline-offset-4 decoration-2 decoration-green-500/70 whitespace-nowrap">in under 60 seconds.</span>
+              <span className="text-zinc-900 font-semibold underline underline-offset-4 decoration-2 decoration-green-400 whitespace-nowrap">
+                in under 60 seconds.
+              </span>
             </p>
 
           </div>
           
           {/* CTA Group */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
-            <a href={`${DASHBOARD_URL}/sign-up`} className="w-full sm:w-auto text-center bg-[#2CA01C] text-white text-xs font-semibold tracking-tight px-8 py-3.5 rounded-full hover:bg-[#248a18] active:scale-[0.98] transition-all duration-200 shadow-md shadow-green-700/10">
+            <a href={`${DASHBOARD_URL}/sign-up`} className="w-full sm:w-auto text-center bg-[#2CA01C] text-white text-[14px] font-semibold tracking-tight px-8 py-3.5 rounded-full hover:bg-[#248a18] hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 shadow-md shadow-green-700/10">
               Connect QuickBooks Now
             </a>
-            <a href="#how-it-works" className="w-full sm:w-auto text-center text-xs font-medium text-zinc-500 hover:text-zinc-900 px-6 py-3 transition-colors duration-200 tracking-tight">
-              See how it works &rarr;
+            <a href="#how-it-works" className="w-full sm:w-auto text-center text-[14px] font-medium text-zinc-500 hover:text-zinc-900 px-6 py-3 transition-colors duration-300 tracking-tight group">
+              See how it works 
+              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1 ml-1">&rarr;</span>
             </a>
           </div>
 
