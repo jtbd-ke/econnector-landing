@@ -6,7 +6,7 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white text-zinc-900 font-serif antialiased overflow-x-hidden selection:bg-blue-100 selection:text-blue-900">
       
-      {/* Subtle background decoration to remove empty space */}
+      {/* Subtle background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_0%,#000_70%,transparent_100%)] h-[800px] pointer-events-none opacity-70" />
 
       {/* ── NAV ─────────────────────────────────────────────────────── */}
@@ -21,13 +21,13 @@ export default function LandingPage() {
           <div className="flex items-center gap-5">
             <a
               href={`${DASHBOARD_URL}/sign-in`}
-              className="text-xs sm:text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors font-sans"
+              className="text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors font-sans"
             >
               Sign in
             </a>
             <a
               href={`${DASHBOARD_URL}/sign-up`}
-              className="text-xs sm:text-sm font-medium bg-zinc-900 text-white px-4 py-2 rounded-full hover:bg-zinc-800 transition-all shadow-sm font-sans"
+              className="text-sm font-medium bg-zinc-900 text-white px-4 py-2 rounded-full hover:bg-zinc-800 transition-all shadow-sm font-sans"
             >
               Get started
             </a>
@@ -39,8 +39,7 @@ export default function LandingPage() {
       <section className="relative pt-32 sm:pt-40 pb-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           
-          {/* Elite micro-badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-50 border border-zinc-200/80 mb-6 font-sans text-xs font-medium text-zinc-600 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-50 border border-zinc-200/80 mb-6 font-sans text-xs font-medium text-zinc-600">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2CA01C] animate-pulse" />
             <span>KRA eTIMS Integrated</span>
           </div>
@@ -72,10 +71,9 @@ export default function LandingPage() {
             </a>
           </div>
 
-          {/* ── NEW VISUAL UI ANCHOR (Pure Tailwind Mock Dashboard) ── */}
+          {/* Pipeline Visual Component */}
           <div className="relative max-w-3xl mx-auto rounded-2xl border border-zinc-200/80 bg-zinc-50/50 p-3 sm:p-4 shadow-xl shadow-zinc-200/40 font-sans">
             <div className="bg-white rounded-xl border border-zinc-200 shadow-sm overflow-hidden text-left">
-              {/* Header block */}
               <div className="px-4 py-3 bg-zinc-50/80 border-b border-zinc-100 flex items-center justify-between text-xs text-zinc-400">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-zinc-200" />
@@ -85,9 +83,7 @@ export default function LandingPage() {
                 <span className="px-2 py-0.5 rounded bg-green-50 text-green-700 font-medium text-[10px]">Real-time Sync</span>
               </div>
               
-              {/* The Pipeline Interface Visual */}
               <div className="p-4 sm:p-6 grid sm:grid-cols-3 gap-4 items-center relative">
-                {/* Box 1: Source */}
                 <div className="p-4 rounded-xl border border-zinc-100 bg-zinc-50/30">
                   <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-400 mb-1">Source System</div>
                   <div className="text-sm font-semibold text-zinc-800 flex items-center gap-1.5">
@@ -96,7 +92,6 @@ export default function LandingPage() {
                   <div className="mt-3 text-xs font-mono text-zinc-500">Invoice #INV-2026-04</div>
                 </div>
 
-                {/* Box 2: Connector Step */}
                 <div className="p-4 rounded-xl border border-blue-100 bg-blue-50/20 relative">
                   <div className="text-[10px] uppercase font-bold tracking-wider text-blue-500 mb-1">eConnector Node</div>
                   <div className="text-sm font-semibold text-[#1E3A8A] flex items-center gap-1.5">
@@ -105,7 +100,6 @@ export default function LandingPage() {
                   <div className="mt-3 text-[11px] text-zinc-600">Auto-parsing tax codes</div>
                 </div>
 
-                {/* Box 3: Destination */}
                 <div className="p-4 rounded-xl border border-green-100 bg-green-50/20">
                   <div className="text-[10px] uppercase font-bold tracking-wider text-green-600 mb-1">KRA Response</div>
                   <div className="text-sm font-semibold text-green-700 flex items-center gap-1.5">
@@ -136,56 +130,83 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ────────────────────────────────────────────── */}
-      <section id="how-it-works" className="py-24 px-4 sm:px-6 scroll-mt-12">
+      {/* ── HIGHLY ENHANCED "HOW IT WORKS" SECTION ─────────────────── */}
+      <section id="how-it-works" className="py-24 sm:py-32 px-4 sm:px-6 bg-white relative scroll-mt-12">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest text-zinc-400 uppercase text-center mb-16 font-sans">
-            How it works
-          </p>
           
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          {/* Enhanced Layout Header utilizing Tech Blue */}
+          <div className="text-center max-w-2xl mx-auto mb-20 md:mb-24">
+            <span className="text-xs font-bold tracking-widest text-[#1E3A8A] uppercase bg-blue-50/70 border border-blue-100 px-3 py-1.5 rounded-full font-sans">
+              The Engine Flow
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-zinc-900 mt-5 tracking-tight leading-tight">
+              Three steps to absolute <em className="italic font-light text-[#1E3A8A]">automation.</em>
+            </h2>
+          </div>
+          
+          {/* Visual Step Cards */}
+          <div className="grid md:grid-cols-3 gap-8 relative z-10">
             {[
               {
                 step: '01',
-                title: 'Sign up in seconds',
-                body: 'Create your secure account profile and input your business KRA PIN. Setup takes less than two minutes.',
+                title: 'Secure Onboarding',
+                body: 'Register your secure administrative profile and declare your official business KRA PIN. Infrastructure provisions immediately inside a two-minute window.',
                 icon: (
-                  <svg className="w-6 h-6 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg className="w-5 h-5 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
                   </svg>
                 ),
               },
               {
                 step: '02',
-                title: 'Link QuickBooks',
-                body: 'Securely authorize eConnector via standard Intuit OAuth protocol. We access data layout, never passwords.',
+                title: 'Authorize QuickBooks',
+                body: 'Establish an immutable handshake with your QuickBooks accounts via official secure protocols. We never manage, touch, or store direct user credentials.',
                 icon: (
-                  <svg className="w-6 h-6 text-[#2CA01C]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg className="w-5 h-5 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                   </svg>
                 ),
               },
               {
                 step: '03',
-                title: 'Automated Transmission',
-                body: 'Every subsequent invoice you publish is systematically signed, formatted, sent to KRA, and written back.',
+                title: 'Continuous Delivery',
+                body: 'Every individual invoice finalized in your system gets dynamically validated, structurally signed, and returned complete with a legitimate KRA CU system number.',
                 icon: (
-                  <svg className="w-6 h-6 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg className="w-5 h-5 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                   </svg>
                 ),
               },
             ].map((item) => (
-              <div key={item.step} className="group p-6 sm:p-8 rounded-2xl border border-zinc-100 hover:border-zinc-200 bg-white hover:shadow-xl hover:shadow-zinc-100/50 transition-all duration-300 text-left">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-zinc-50 border border-zinc-100 mb-6 group-hover:scale-105 transition-transform duration-300">
+              <div 
+                key={item.step} 
+                className="relative group p-6 sm:p-8 rounded-2xl border border-zinc-200/60 bg-white hover:bg-zinc-50/30 transition-all duration-300 text-left overflow-hidden hover:border-[#1E3A8A]/30 hover:shadow-xl hover:shadow-zinc-100/80"
+              >
+                {/* Massive Architectural Floating Number Backdrop */}
+                <div className="absolute right-4 top-4 font-sans text-7xl font-bold text-blue-900/[0.03] group-hover:text-[#1E3A8A]/[0.06] transition-colors duration-300 select-none pointer-events-none">
+                  {item.step}
+                </div>
+
+                {/* Refined Brand-Cohesive Icon Container */}
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-blue-50/80 border border-blue-100/50 mb-8 transition-transform group-hover:scale-105 duration-300">
                   {item.icon}
                 </div>
-                <div className="font-mono text-xs text-zinc-400 font-semibold mb-2">{item.step}</div>
-                <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-2 font-sans tracking-tight">{item.title}</h3>
-                <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed font-sans">{item.body}</p>
+
+                {/* Text Layout */}
+                <h3 className="text-lg font-semibold text-zinc-900 mb-3 font-sans tracking-tight">
+                  {item.title}
+                </h3>
+                
+                <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed font-sans font-normal relative z-10">
+                  {item.body}
+                </p>
+
+                {/* Modern Indicator accent border on active selection */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-transparent group-hover:bg-[#1E3A8A] transition-colors duration-300" />
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
