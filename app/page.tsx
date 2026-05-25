@@ -39,7 +39,7 @@ export default function LandingPage() {
       <section className="relative pt-28 sm:pt-40 pb-20 px-5 sm:px-6">
         <div className="max-w-5xl mx-auto text-center">
           
-          {/* Context Pill - Targeting autonomy instantly */}
+          {/* Context Pill - Premium, clear, non-alienating hook */}
           <div className="inline-flex items-center gap-2.5 bg-blue-50/50 border border-blue-100/80 rounded-full px-3.5 py-1.5 mb-8 shadow-[0_2px_12px_rgba(0,102,255,0.02)]">
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0066FF] opacity-75"></span>
@@ -48,18 +48,18 @@ export default function LandingPage() {
             <span className="text-[11px] font-semibold text-zinc-600 tracking-tight flex items-center gap-1.5">
               QuickBooks Online 
               <span className="text-zinc-300 font-normal">|</span>
-              <span className="text-[#0066FF] font-bold text-[10px]">No Developers Required</span>
+              <span className="text-[#0066FF] font-bold text-[10px]">No Coding Required</span>
             </span>
           </div>
 
-          {/* Core Benefit Headline */}
+          {/* Core Benefit Headline - Shifts friction to the process, not the team */}
           <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold tracking-tight text-zinc-950 mb-6 max-w-4xl mx-auto leading-[1.15] sm:leading-[1.1]">
-            eTIMS compliance without the IT department.
+            eTIMS compliance without the headache.
           </h1>
           
-          {/* Chronological Magic-Moment Description */}
+          {/* Plain-spoken accounting system context */}
           <p className="text-sm sm:text-base md:text-lg text-zinc-500 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed font-normal px-2 tracking-tight">
-            Connect eConnector to your ledger in two clicks. The moment you hit save or send on an invoice, 
+            Connect eConnector to your accounting system in two clicks. The moment you hit save or send on an invoice, 
             our engine handles KRA formatting and validation securely, attaching the valid QR code and tax 
             invoice number straight back onto your original document in under 60 seconds.
           </p>
@@ -170,7 +170,7 @@ export default function LandingPage() {
             Built for modern finance teams and business owners.
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-zinc-500 leading-relaxed max-w-2xl mx-auto font-normal tracking-tight">
-            eConnector loops directly into your existing ledger workspace, eliminating manual portals entirely. 
+            eConnector loops directly into your existing accounting system, eliminating manual portals entirely. 
             No middleware development, no structural changes, completely self-serve.
           </p>
         </div>
@@ -202,7 +202,7 @@ export default function LandingPage() {
               },
               {
                 title: '2. Link QuickBooks Securely',
-                body: 'Authorise an official secure connection to your ledger with two simple clicks. We inherit your account configurations instantly without managing password access.',
+                body: 'Authorise an official secure connection to your accounting system with two simple clicks. We inherit your account configurations instantly without managing password access.',
                 icon: (
                   <svg className="w-4 h-4 text-[#0066FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
@@ -258,6 +258,7 @@ export default function LandingPage() {
               {
                 name: 'Starter',
                 price: '$15',
+                localPrice: 'Approx. KES 2,000',
                 period: '/mo',
                 who: 'Individual operators or sole traders',
                 features: ['1 unified business profile', '1 active connector link', '1 administrative seat', 'Fully localized eTIMS mapping', 'Standard transaction log logs'],
@@ -267,6 +268,7 @@ export default function LandingPage() {
               {
                 name: 'Business',
                 price: '$25',
+                localPrice: 'Approx. KES 3,300',
                 period: '/mo per connector',
                 who: 'Growing companies with multiple entities',
                 features: ['Up to 3 unique businesses', '1 active connector per unit', 'Up to 5 collaborative seats', 'Fully localized eTIMS mapping', 'Priority transaction routing queue'],
@@ -276,6 +278,7 @@ export default function LandingPage() {
               {
                 name: 'Group',
                 price: '$20',
+                localPrice: 'Approx. KES 2,600',
                 period: '/mo per connector',
                 who: 'Holding groups & corporate firms',
                 features: ['4+ active business profiles', '1 active connector per unit', 'Unlimited account seats', 'Consolidated analytical map views', 'Dedicated priority account manager'],
@@ -306,10 +309,15 @@ export default function LandingPage() {
                   {plan.who}
                 </p>
                 
-                <div className="flex items-baseline flex-wrap gap-1 mb-8">
+                <div className="flex items-baseline flex-wrap gap-1">
                   <span className="text-3xl sm:text-4xl font-semibold tracking-tight">{plan.price}</span>
                   <span className="text-xs text-zinc-400 font-normal tracking-tight">{plan.period}</span>
                 </div>
+
+                {/* Localized KES conversion line directly underneath */}
+                <p className={`text-[11px] font-medium mt-1 mb-8 ${plan.highlight ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                  {plan.localPrice}
+                </p>
                 
                 <ul className="space-y-4 mb-8 border-t border-dashed pt-6 text-xs sm:text-[13px]" style={{ borderColor: plan.highlight ? '#27272a' : '#f4f4f5' }}>
                   {plan.features.map((f) => (
@@ -334,6 +342,17 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
+
+          {/* Local Checkout Validation Badge Block */}
+          <div className="mt-12 flex items-center justify-center gap-3 bg-white border border-zinc-200/60 rounded-xl p-4 max-w-sm mx-auto shadow-sm">
+            <span className="flex h-2 w-2 relative shrink-0">
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2CA01C]" />
+            </span>
+            <p className="text-xs text-zinc-600 font-medium tracking-tight text-center">
+              We accept payments instantly via <span className="text-[#2CA01C] font-bold">M-Pesa</span> or Credit Card.
+            </p>
+          </div>
+
         </div>
       </section>
 
