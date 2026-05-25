@@ -56,29 +56,36 @@ export default function LandingPage() {
             </span>
           </div>
 
-          {/* Headline Choice (With green speed emphasis) [cite: 1] */}
+          {/* Headline Choice (With green speed emphasis) */}
           <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-semibold tracking-tight text-zinc-950 mb-10 max-w-4xl mx-auto leading-[1.15] sm:leading-[1.1]">
             Get eTIMS compliance without the headache,<br />in <span className="text-[#2CA01C] font-bold">a few clicks</span>.
           </h1>
           
-          {/* Precise Line-by-Line Sub-headline Structure with Block Alignment [cite: 2, 3, 4, 5] */}
-          <div className="text-zinc-500 text-xs sm:text-sm md:text-[15px] max-w-4xl mx-auto mb-10 sm:mb-12 space-y-4 font-normal tracking-tight leading-relaxed text-center">
+          {/* Precise Document Alignment Layout Container */}
+          <div className="text-zinc-500 text-xs sm:text-sm md:text-[15px] max-w-5xl mx-auto mb-10 sm:mb-12 space-y-4 font-normal tracking-tight leading-relaxed text-center">
+            
             <p className="block">
-              Link your accounting system in just two clicks. [cite: 2]
+              Link your accounting system in just two clicks.
             </p>
             
-            <p className="text-zinc-800 font-medium block">
-              Generate your invoices and credit notes normally while the eConnector engine does the heavy lifting:{' '} [cite: 3]
-              <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">formatting</span> |{' '}
-              <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">validating</span> |{' '}
-              <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">submitting</span> |{' '}
-              <span className="inline-flex items-center text-[#0066FF] bg-blue-50/70 px-2 py-0.5 rounded font-mono text-[11px] sm:text-xs mx-0.5">updating</span> 
+            <p className="text-zinc-800 font-medium block max-w-4xl mx-auto">
+              Generate your invoices and credit notes normally while the eConnector engine does the heavy lifting:{' '}
+              <span className="inline-block whitespace-nowrap mt-1 sm:mt-0">
+                <span className="text-[#0066FF] bg-blue-50/70 px-1.5 py-0.5 rounded font-mono text-[11px] sm:text-xs">formatting</span>
+                <span className="mx-1.5 text-zinc-300">|</span>
+                <span className="text-[#0066FF] bg-blue-50/70 px-1.5 py-0.5 rounded font-mono text-[11px] sm:text-xs">validating</span>
+                <span className="mx-1.5 text-zinc-300">|</span>
+                <span className="text-[#0066FF] bg-blue-50/70 px-1.5 py-0.5 rounded font-mono text-[11px] sm:text-xs">submitting</span>
+                <span className="mx-1.5 text-zinc-300">|</span>
+                <span className="text-[#0066FF] bg-blue-50/70 px-1.5 py-0.5 rounded font-mono text-[11px] sm:text-xs">updating</span>
+              </span>
             </p>
             
-            <p className="block text-zinc-500">
-              Look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document{' '} 
-              <span className="text-zinc-900 font-semibold underline decoration-2 decoration-green-400 whitespace-nowrap">in under 60 seconds.</span> 
+            <p className="block max-w-4xl mx-auto">
+              Look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document{' '}
+              <span className="text-zinc-900 font-semibold underline decoration-2 decoration-green-400 whitespace-nowrap">in under 60 seconds.</span>
             </p>
+
           </div>
           
           {/* CTA Group */}
