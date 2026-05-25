@@ -57,43 +57,16 @@ export default function LandingPage() {
           </div>
 
           {/* Headline - Rigidly structured for Apple/Stripe Cohesive Aesthetics */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tighter text-zinc-950 mb-10 leading-[1.08] max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tighter text-zinc-950 mb-8 leading-[1.08] max-w-3xl mx-auto">
             <span className="block">Get eTIMS compliance</span>
             <span className="block text-zinc-900/90">without the headache,</span>
             <span className="block">in <span className="text-[#2CA01C]">a few clicks</span>.</span>
           </h1>
           
-          {/* ── SUB-HEADLINE: Premium Document Alignment & Typography ── */}
-          <div className="text-base sm:text-[17px] text-zinc-500 max-w-3xl mx-auto mb-14 space-y-6 font-normal tracking-tight leading-relaxed text-center">
-            
-            {/* Hook */}
-            <p className="text-zinc-700 font-medium">
-              Link your accounting system in just two clicks.
-            </p>
-            
-            {/* The "Heavy Lifting" Line with Tech Badges */}
-            <p className="block text-zinc-600">
-              Generate your invoices and credit notes normally while the eConnector engine does the heavy lifting:{' '}
-              <span className="inline-flex items-center gap-2 bg-blue-50/50 border border-blue-100/60 px-3 py-1 rounded-md mx-1 font-mono text-[12px] sm:text-[13px] text-blue-600 shadow-sm whitespace-nowrap mt-2 md:mt-0 align-middle">
-                <span className="font-medium">formatting</span>
-                <span className="text-blue-200">|</span>
-                <span className="font-medium">validating</span>
-                <span className="text-blue-200">|</span>
-                <span className="font-medium">submitting</span>
-                <span className="text-blue-200">|</span>
-                <span className="font-medium">updating</span>
-              </span>
-            </p>
-            
-            {/* The Payoff */}
-            <p className="block max-w-2xl mx-auto text-zinc-500">
-              Look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document{' '}
-              <span className="text-zinc-900 font-semibold underline underline-offset-4 decoration-2 decoration-green-400 whitespace-nowrap">
-                in under 60 seconds.
-              </span>
-            </p>
-
-          </div>
+          {/* ── UNIFIED SUB-HEADLINE PARAGRAPH ───────────────────────── */}
+          <p className="text-base sm:text-[18px] text-zinc-500 max-w-3xl mx-auto mb-12 tracking-tight leading-relaxed text-center font-normal">
+            <span className="text-zinc-900 font-medium">Link your accounting system in just two clicks.</span> Generate your invoices and credit notes normally while the eConnector engine does the heavy lifting. Look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document <span className="text-zinc-900 font-semibold underline underline-offset-4 decoration-2 decoration-green-500/70 whitespace-nowrap">in under 60 seconds</span>.
+          </p>
           
           {/* CTA Group */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
