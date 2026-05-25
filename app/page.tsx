@@ -39,52 +39,32 @@ export default function LandingPage() {
       <section className="relative pt-28 sm:pt-40 pb-20 px-5 sm:px-6">
         <div className="max-w-5xl mx-auto text-center">
           
-          {/* Apple-style Premium Core Pill */}
-          <div className="max-w-3xl mx-auto mb-10">
-            <div className="bg-blue-50/30 border border-blue-100/70 rounded-2xl p-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-left shadow-[0_2px_12px_rgba(0,102,255,0.03)]">
-              <div className="flex items-center gap-2.5 pl-2">
-                <span className="flex h-2 w-2 relative">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0066FF] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0066FF]"></span>
-                </span>
-                <p className="text-xs font-medium text-zinc-600 tracking-tight">
-                  QuickBooks Compliance Core
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2 items-center">
-                <span className="text-[10px] font-bold bg-red-50 text-[#C61B23] border border-red-100/60 px-2.5 py-0.5 rounded-md tracking-tight">
-                  KE eTIMS Active
-                </span>
-                <span className="text-[10px] font-medium bg-zinc-50 text-zinc-500 border border-zinc-200/60 px-2.5 py-0.5 rounded-md tracking-tight">
-                  UG EFRIS
-                </span>
-                <span className="text-[10px] font-medium bg-zinc-50 text-zinc-500 border border-zinc-200/60 px-2.5 py-0.5 rounded-md tracking-tight">
-                  RW EBM
-                </span>
-                <span className="text-[10px] font-medium bg-zinc-50 text-zinc-400 border border-zinc-200/60 border-dashed px-2.5 py-0.5 rounded-md tracking-tight">
-                  TZ TRA
-                </span>
-              </div>
-            </div>
+          {/* Context Pill - Clear Ad-to-Landing match */}
+          <div className="inline-flex items-center gap-2.5 bg-blue-50/50 border border-blue-100/80 rounded-full px-3.5 py-1.5 mb-8 shadow-[0_2px_12px_rgba(0,102,255,0.02)]">
+            <span className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0066FF] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0066FF]"></span>
+            </span>
+            <span className="text-[11px] font-semibold text-zinc-600 tracking-tight flex items-center gap-1.5">
+              KRA eTIMS Integration Core 
+              <span className="text-zinc-300 font-normal">|</span>
+              <span className="text-[#C61B23] font-bold text-[10px]">KE Active</span>
+            </span>
           </div>
 
-          {/* Crisp, Balanced Hero Typography */}
-          <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-semibold tracking-tight text-zinc-950 mb-6 flex flex-col items-center gap-1 sm:gap-2 leading-[1.2] sm:leading-[1.1]">
-            <span className="block max-w-full truncate">Stop exporting invoices.</span>
-            <span className="block max-w-full text-zinc-900/90 font-medium">Automate your eTIMS compliance</span>
-            <span className="block max-w-full font-medium">
-              straight from <span className="text-[#2CA01C] font-semibold">QuickBooks.</span>
-            </span>
+          {/* Core Benefit Headline */}
+          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold tracking-tight text-zinc-950 mb-6 max-w-4xl mx-auto leading-[1.15] sm:leading-[1.1]">
+            eTIMS compliance without the IT department.
           </h1>
           
-          {/* High-fidelity descriptive sub-text */}
-          <p className="text-sm sm:text-base md:text-lg text-zinc-500 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed font-normal px-2">
-            Stop wasting hours manually copy-pasting data into KRA portals. 
-            eConnector bridges QuickBooks Online directly with eTIMS endpoints—automatically 
-            generating valid, eTIMS QR Codes with tax invoice numbers the moment you hit save.
+          {/* Chronological Magic-Moment Description */}
+          <p className="text-sm sm:text-base md:text-lg text-zinc-500 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed font-normal px-2 tracking-tight">
+            Connect eConnector to QuickBooks Online in two clicks—no developers required. 
+            The moment you hit save on an invoice, our engine handles KRA validation, formatting, 
+            and writes the official tax number and QR code straight back onto your document in under 60 seconds.
           </p>
           
-          {/* Tactile Action Framework */}
+          {/* Main Action Nodes */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 sm:mb-24">
             <a
               href={`${DASHBOARD_URL}/sign-up`}
@@ -100,80 +80,77 @@ export default function LandingPage() {
             </a>
           </div>
 
-          {/* Symmetrical Interface Map */}
+          {/* Symmetrical Proof-of-Flow Loop Container */}
           <div className="relative max-w-5xl mx-auto rounded-2xl border border-blue-500/10 bg-blue-50/5 p-1.5 sm:p-2">
             <div className="bg-white rounded-xl border border-zinc-200/60 overflow-hidden text-left shadow-sm">
+              
               <div className="px-4 py-3 bg-zinc-50/50 border-b border-zinc-100 flex items-center justify-between text-[11px] text-zinc-400">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-300" />
                   <span className="font-mono ml-1 text-[#0066FF] font-medium tracking-tight bg-blue-50/60 px-2 py-0.5 rounded">
-                    pipeline_loop: active_sync
+                    pipeline_loop: real_time_writeback
                   </span>
                 </div>
-                <span className="px-2 py-0.5 rounded bg-blue-50/60 text-[#0066FF] font-medium tracking-tight text-[10px]">Bi-Directional Flow</span>
+                <span className="px-2 py-0.5 rounded bg-blue-50/60 text-[#0066FF] font-medium tracking-tight text-[10px]">Zero Intermediaries</span>
               </div>
               
               <div className="p-3 sm:p-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 items-stretch bg-zinc-50/20">
                 
-                {/* Node 1 */}
+                {/* Node 1: Action */}
                 <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 ease-out hover:border-[#0066FF]/30 hover:shadow-md hover:shadow-blue-50/20">
                   <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">01. Source Event</div>
+                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">01. Invoice Generated</div>
                     <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#2CA01C]" /> QuickBooks Online
                     </div>
                   </div>
                   <div className="mt-6 text-[11px] font-mono text-zinc-400 border-t border-zinc-100 pt-3">
-                    Payload Vector: <span className="text-zinc-800 font-medium">#INV-2026-04</span>
+                    Status: <span className="text-zinc-800 font-medium">Awaiting Tax Stamping</span>
                   </div>
                 </div>
 
-                {/* Node 2 */}
+                {/* Node 2: Formatting */}
                 <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 ease-out hover:border-[#0066FF]/30 hover:shadow-md hover:shadow-blue-50/20">
                   <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">02. Transmission</div>
+                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">02. Alignment Engine</div>
                     <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" /> eConnector Engine
+                      <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" /> eConnector Core
                     </div>
                   </div>
-                  <div className="mt-6 text-[11px] text-zinc-400 leading-normal border-t border-zinc-100 pt-3">
-                    Parsing account schema maps securely...
+                  <div className="mt-6 text-[11px] text-zinc-400 leading-normal border-t border-zinc-100 pt-3 tracking-tight">
+                    Mapping items to KRA schemas instantly...
                   </div>
                 </div>
 
-                {/* Node 3 */}
+                {/* Node 3: Validation */}
                 <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 ease-out hover:border-[#0066FF]/30 hover:shadow-md hover:shadow-blue-50/20">
                   <div>
                     <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">03. Fiscal Gateway</div>
                     <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#C61B23]" /> KRA eTIMS API
+                      <span className="w-2 h-2 rounded-full bg-[#C61B23]" /> KRA eTIMS Endpoint
                     </div>
                   </div>
                   <div className="mt-6 text-[11px] font-mono text-zinc-500 border-t border-zinc-100 pt-3">
-                    Payload Stamped OK
+                    Response: <span className="text-zinc-800 font-medium">Invoice Validated</span>
                   </div>
                 </div>
 
-                {/* Node 4 */}
+                {/* Node 4: Complete Magic writeback */}
                 <div className="group p-4 rounded-xl border border-zinc-200/70 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 ease-out hover:border-[#0066FF]/30 hover:shadow-md hover:shadow-blue-50/20">
                   <div>
-                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">04. Writeback Sync</div>
+                    <div className="text-[9px] uppercase font-bold tracking-wider text-zinc-400 mb-2">04. Document Writeback</div>
                     <div className="text-xs font-semibold text-zinc-900 flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#2CA01C]" /> QuickBooks Online
                     </div>
                   </div>
                   
                   <div className="mt-5 text-[11px] font-mono text-zinc-400 border-t border-zinc-100 pt-3 space-y-2">
-                    <div>
-                      Appended Vector: <span className="text-zinc-800 font-medium">#INV-2026-04</span>
-                    </div>
                     <div className="bg-zinc-50 border border-zinc-200/80 rounded px-2 py-1 text-[10px] text-zinc-600 font-medium flex items-center gap-2">
                       <svg className="w-3 h-3 text-zinc-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 15h6v6H3v-6zm2 2v2h2v-2H5zm10-2h2v2h-2v-2zm2 2h2v2h-2v-2zm0-2h2v2h-2v-2zm-2 4h2v2h-2v-2zm4 0h2v2h-2v-2zM11 11h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm4-4h2v2h-2v-2zm2 2h2v2h-2v-2z" />
                       </svg>
-                      <div className="truncate text-[10px] font-sans tracking-tight text-zinc-500">
-                        QR Code Linked
+                      <div className="truncate text-[10px] font-sans tracking-tight text-zinc-600 font-semibold">
+                        QR & CU Number Appended
                       </div>
                     </div>
                   </div>
@@ -363,7 +340,7 @@ export default function LandingPage() {
 
       {/* ── CTA BANNER ──────────────────────────────────────── */}
       <section className="py-24 px-5 sm:px-6 bg-zinc-950 relative overflow-hidden">
-        {/* Restored and Refined Dot Matrix Mask */}
+        {/* Beautiful, masked dot matrix background pattern */}
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1.5px,transparent_1.5px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_50%,transparent_100%)] pointer-events-none" />
         
         <div className="max-w-2xl mx-auto text-center relative z-10">
