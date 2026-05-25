@@ -97,7 +97,7 @@ export default function LandingPage() {
             </a>
           </div>
 
-          {/* Upgraded Symmetrical & Completely Balanced Closed-Loop Pipeline Component */}
+          {/* Symmetrical & Vertically Centered Balanced Pipeline Component */}
           <div className="relative max-w-5xl mx-auto rounded-2xl border border-zinc-200/80 bg-zinc-50/50 p-3 sm:p-4 shadow-xl shadow-zinc-200/40 font-sans">
             <div className="bg-white rounded-xl border border-zinc-200 shadow-sm overflow-hidden text-left">
               <div className="px-4 py-3 bg-zinc-50/80 border-b border-zinc-100 flex items-center justify-between text-xs text-zinc-400">
@@ -111,48 +111,47 @@ export default function LandingPage() {
               
               <div className="p-4 sm:p-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
                 
-                {/* Node 1: QBO Origin (Restored to Clean Native Alignment) */}
-                <div className="p-4 rounded-xl border border-zinc-100 bg-zinc-50/30 flex flex-col justify-between">
+                {/* Node 1: QBO Origin */}
+                <div className="p-4 rounded-xl border border-zinc-100 bg-zinc-50/30 flex flex-col justify-start">
                   <div>
                     <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-400 mb-1">01. Source Event</div>
                     <div className="text-sm font-semibold text-zinc-800 flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#2CA01C]" /> QuickBooks Online
                     </div>
                   </div>
-                  <div className="mt-5 text-xs font-mono text-zinc-500">
-                    <span className="text-zinc-400 text-[10px] block font-sans uppercase font-medium tracking-wide mb-0.5">Payload Vector</span>
+                  <div className="mt-5 text-xs font-mono text-zinc-500 border-t border-zinc-100/80 pt-4">
                     Invoice: <span className="text-zinc-800 font-semibold">#INV-2026-04</span>
                   </div>
                 </div>
 
                 {/* Node 2: Processing Tunnel */}
-                <div className="p-4 rounded-xl border border-blue-100 bg-blue-50/10 flex flex-col justify-between">
+                <div className="p-4 rounded-xl border border-blue-100 bg-blue-50/10 flex flex-col justify-start">
                   <div>
                     <div className="text-[10px] uppercase font-bold tracking-wider text-blue-500 mb-1">02. Transmission</div>
                     <div className="text-sm font-semibold text-[#1E3A8A] flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#1E3A8A] animate-pulse" /> eConnector Core
                     </div>
                   </div>
-                  <div className="mt-5 text-[11px] text-zinc-500 leading-tight">
+                  <div className="mt-5 text-[11px] text-zinc-500 leading-tight border-t border-blue-100/30 pt-4">
                     Parsing metadata mapping schemas securely...
                   </div>
                 </div>
 
                 {/* Node 3: Fiscal Endpoint */}
-                <div className="p-4 rounded-xl border border-orange-100 bg-orange-50/20 flex flex-col justify-between">
+                <div className="p-4 rounded-xl border border-orange-100 bg-orange-50/20 flex flex-col justify-start">
                   <div>
                     <div className="text-[10px] uppercase font-bold tracking-wider text-orange-600 mb-1">03. Fiscal Gateway</div>
                     <div className="text-sm font-semibold text-orange-700 flex items-center gap-1.5">
                       🏛️ KRA eTIMS API
                     </div>
                   </div>
-                  <div className="mt-5 text-[11px] font-mono text-orange-800">
+                  <div className="mt-5 text-[11px] font-mono text-orange-800 border-t border-orange-100/30 pt-4">
                     Payload Stamped OK
                   </div>
                 </div>
 
-                {/* Node 4: The Loop Closer - Perfectly Cloned from Card 01 with QR Silhouette Insert */}
-                <div className="p-4 rounded-xl border border-zinc-100 bg-zinc-50/30 flex flex-col justify-between relative">
+                {/* Node 4: The Loop Closer - Perfectly Cloned and Synced layout without bullet point offsets */}
+                <div className="p-4 rounded-xl border border-zinc-100 bg-zinc-50/30 flex flex-col justify-start relative">
                   <div>
                     <div className="text-[10px] uppercase font-bold tracking-wider text-green-600 mb-1">04. Writeback Sync</div>
                     <div className="text-sm font-semibold text-zinc-800 flex items-center gap-1.5">
@@ -160,18 +159,16 @@ export default function LandingPage() {
                     </div>
                   </div>
                   
-                  {/* Perfectly mirrored tracking data structure embedding a custom vector QR glyph placeholder */}
-                  <div className="mt-5 text-xs font-mono text-zinc-500 space-y-1.5">
+                  <div className="mt-5 text-xs font-mono text-zinc-500 border-t border-zinc-100/80 pt-4 space-y-2">
                     <div>
-                      <span className="text-zinc-400 text-[10px] block font-sans uppercase font-medium tracking-wide mb-0.5">Appended Vector</span>
                       Invoice: <span className="text-zinc-800 font-semibold">#INV-2026-04</span>
                     </div>
-                    <div className="bg-green-50/70 border border-green-100 rounded px-2 py-1 text-[10px] text-green-800 font-medium flex items-center gap-2">
+                    <div className="bg-green-50/70 border border-green-100 rounded px-2 py-1.5 text-[10px] text-green-800 font-medium flex items-center gap-2">
                       <svg className="w-3.5 h-3.5 text-green-700 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 15h6v6H3v-6zm2 2v2h2v-2H5zm10-2h2v2h-2v-2zm2 2h2v2h-2v-2zm0-2h2v2h-2v-2zm-2 4h2v2h-2v-2zm4 0h2v2h-2v-2zM11 11h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm4-4h2v2h-2v-2zm2 2h2v2h-2v-2z" />
                       </svg>
-                      <div className="truncate leading-none">
-                        <span className="block text-[8px] uppercase tracking-wide text-green-600/80 font-sans font-bold mb-0.5">QR Code Linked</span>
+                      <div className="truncate leading-tight">
+                        <span className="block text-[7px] uppercase tracking-wider text-green-600 font-sans font-bold mb-0.5">QR Code Attached</span>
                         KRACU03000000004
                       </div>
                     </div>
@@ -199,7 +196,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── HIGHLY ENHANCED "HOW IT WORKS" SECTION ─────────────────── */}
+      {/* ── REWRITTEN "THE ENGINE FLOW" SECTION ─────────────────────── */}
       <section id="how-it-works" className="py-24 sm:py-32 px-4 sm:px-6 bg-white relative scroll-mt-12">
         <div className="max-w-5xl mx-auto">
           
@@ -216,8 +213,8 @@ export default function LandingPage() {
             {[
               {
                 step: '01',
-                title: 'Secure Onboarding',
-                body: 'Register your secure administrative profile and declare your official business KRA PIN. Infrastructure provisions immediately inside a two-minute window.',
+                title: 'Quick Setup',
+                body: 'Register your account and setup your business in just a few minutes.',
                 icon: (
                   <svg className="w-5 h-5 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
@@ -226,8 +223,8 @@ export default function LandingPage() {
               },
               {
                 step: '02',
-                title: 'Authorize QuickBooks',
-                body: 'Establish an immutable handshake with your QuickBooks accounts via official secure protocols. We never manage, touch, or store direct user credentials.',
+                title: 'One-click to connect QuickBooks Online',
+                body: 'Select your econnector plugin for QBO and approve the secure connection redirect from your QuickBooks Online account.',
                 icon: (
                   <svg className="w-5 h-5 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
@@ -237,7 +234,7 @@ export default function LandingPage() {
               {
                 step: '03',
                 title: 'Continuous Delivery',
-                body: 'Every individual invoice finalized in your system gets dynamically validated, structurally signed, and returned complete with a legitimate KRA CU system number.',
+                body: 'Every invoice generated on QBO gets received, validated, structurally signed, and returned complete with a legitimate KRA QR Code and CU Invoice number attached.',
                 icon: (
                   <svg className="w-5 h-5 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
@@ -255,7 +252,7 @@ export default function LandingPage() {
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-blue-50/80 border border-blue-100/50 mb-8 transition-transform group-hover:scale-105 duration-300">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-zinc-900 mb-3 font-sans tracking-tight">
+                <h3 className="text-lg font-semibold text-zinc-900 mb-3 font-sans tracking-tight max-w-[85%] leading-snug">
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed font-sans font-normal relative z-10">
@@ -366,7 +363,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── CTA BANNER ──────────────────────────────────────────────── */}
+      {/* ── UPDATED CTA BANNER ──────────────────────────────────────── */}
       <section className="py-24 px-4 sm:px-6 bg-zinc-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]" />
         <div className="max-w-2xl mx-auto text-center relative z-10">
@@ -374,7 +371,7 @@ export default function LandingPage() {
             Ready to secure your automated pipeline?
           </h2>
           <p className="text-zinc-400 font-sans text-sm sm:text-base max-w-md mx-auto mb-8 leading-relaxed">
-            Connect your current system nodes within minutes and offload processing queues automatically.
+            Connect your current erp or accounting system nodes within minutes and offload processing queues automatically.
           </p>
           <a
             href={`${DASHBOARD_URL}/sign-up`}
