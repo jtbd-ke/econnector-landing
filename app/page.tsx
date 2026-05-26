@@ -40,19 +40,8 @@ export default function LandingPage() {
       </nav>
 
       {/* ── HERO SECTION ───────────────────────────────────────────── */}
-      <section className="relative pt-32 sm:pt-44 pb-20 px-5 sm:px-6">
+      <section className="relative pt-36 sm:pt-48 pb-20 px-5 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          
-          {/* Top Status Pill - Re-engineered for Instant Domain Authenticity */}
-          <div className="inline-flex items-center gap-2 bg-zinc-50 border border-zinc-200 rounded-full px-3.5 py-1.5 mb-10 shadow-xs">
-            <span className="flex h-1.5 w-1.5 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2CA01C] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#2CA01C]"></span>
-            </span>
-            <span className="text-[11px] font-semibold text-zinc-800 tracking-tight flex items-center gap-1">
-              ✓ Certified QuickBooks Online Integration
-            </span>
-          </div>
 
           {/* Headline - Rigidly structured for Apple/Stripe Cohesive Aesthetics */}
           <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tighter text-zinc-950 mb-8 leading-[1.08] max-w-3xl mx-auto">
@@ -61,9 +50,9 @@ export default function LandingPage() {
             <span className="block">in <span className="text-[#2CA01C]">a few clicks</span>.</span>
           </h1>
           
-          {/* Unified Sub-headline Paragraph */}
-          <p className="text-base sm:text-[18px] text-zinc-500 max-w-3xl mx-auto mb-12 tracking-tight leading-relaxed text-center font-normal">
-            <span className="text-zinc-900 font-medium">Link your accounting system in just two clicks.</span> Generate your invoices and credit notes normally while the eConnector engine does the heavy lifting. Look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document <span className="text-zinc-900 font-semibold underline underline-offset-4 decoration-2 decoration-green-400 whitespace-nowrap">in under 60 seconds</span>.
+          {/* Streamlined, explanatory Sub-headline */}
+          <p className="text-base sm:text-[18px] text-zinc-500 max-w-2xl mx-auto mb-12 tracking-tight leading-relaxed text-center font-normal">
+            <span className="text-zinc-900 font-medium">Link your QuickBooks Online account in two clicks</span> and continue invoicing exactly as you do today. eConnector runs silently in the background, automatically appending verified eTIMS QR codes and tax signatures back onto your original documents <span className="text-zinc-900 font-semibold underline underline-offset-4 decoration-2 decoration-green-400 whitespace-nowrap">in under 60 seconds</span>.
           </p>
           
           {/* CTA Group */}
@@ -168,7 +157,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── NEW PRODUCT CAPABILITY MATRIX (REPLACED TEXT BLOCK) ─────── */}
+      {/* ── PRODUCT CAPABILITY MATRIX ──────────────────────────────── */}
       <section className="py-20 px-5 sm:px-6 bg-zinc-50/60 border-y border-zinc-200/50">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-3 gap-10">
