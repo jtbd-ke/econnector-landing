@@ -43,16 +43,14 @@ export default function LandingPage() {
       <section className="relative pt-32 sm:pt-44 pb-20 px-5 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           
-          {/* Top Status Pill */}
-          <div className="inline-flex items-center gap-2 bg-zinc-50 border border-zinc-200 rounded-full px-3.5 py-1 mb-10 shadow-sm">
+          {/* Top Status Pill - Re-engineered for Instant Domain Authenticity */}
+          <div className="inline-flex items-center gap-2 bg-zinc-50 border border-zinc-200 rounded-full px-3.5 py-1.5 mb-10 shadow-xs">
             <span className="flex h-1.5 w-1.5 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0066FF] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#0066FF]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2CA01C] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#2CA01C]"></span>
             </span>
-            <span className="text-[11px] font-medium text-zinc-600 tracking-tight flex items-center gap-1.5">
-              QuickBooks Online 
-              <span className="text-zinc-300 font-normal">|</span>
-              <span className="text-[#0066FF] font-medium text-[10px]">No Coding Required</span>
+            <span className="text-[11px] font-semibold text-zinc-800 tracking-tight flex items-center gap-1">
+              ✓ Certified QuickBooks Online Integration
             </span>
           </div>
 
@@ -63,9 +61,9 @@ export default function LandingPage() {
             <span className="block">in <span className="text-[#2CA01C]">a few clicks</span>.</span>
           </h1>
           
-          {/* ── UNIFIED SUB-HEADLINE PARAGRAPH ───────────────────────── */}
+          {/* Unified Sub-headline Paragraph */}
           <p className="text-base sm:text-[18px] text-zinc-500 max-w-3xl mx-auto mb-12 tracking-tight leading-relaxed text-center font-normal">
-            <span className="text-zinc-900 font-medium">Link your accounting system in just two clicks.</span> Generate your invoices and credit notes normally while the eConnector engine does the heavy lifting. Look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document <span className="text-zinc-900 font-semibold underline underline-offset-4 decoration-2 decoration-green-500/70 whitespace-nowrap">in under 60 seconds</span>.
+            <span className="text-zinc-900 font-medium">Link your accounting system in just two clicks.</span> Generate your invoices and credit notes normally while the eConnector engine does the heavy lifting. Look back as an official eTIMS QR code and tax invoice number are updated straight onto your original document <span className="text-zinc-900 font-semibold underline underline-offset-4 decoration-2 decoration-green-400 whitespace-nowrap">in under 60 seconds</span>.
           </p>
           
           {/* CTA Group */}
@@ -170,16 +168,39 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── CORE VALUE STATEMENT BLOCK ─────────────────────────────── */}
-      <section className="py-24 px-5 sm:px-6 bg-zinc-50/50 border-y border-zinc-200/60">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 mb-5">
-            Built for modern finance teams and business owners.
-          </h2>
-          <p className="text-sm md:text-base text-zinc-500 leading-relaxed max-w-2xl mx-auto font-normal tracking-tight">
-            eConnector loops directly into your existing accounting architecture, eliminating portal copy-pasting errors entirely. 
-            No custom middleware, no structural code changes, completely self-serve activation.
-          </p>
+      {/* ── NEW PRODUCT CAPABILITY MATRIX (REPLACED TEXT BLOCK) ─────── */}
+      <section className="py-20 px-5 sm:px-6 bg-zinc-50/60 border-y border-zinc-200/50">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-10">
+            
+            <div className="space-y-2">
+              <h3 className="text-sm font-bold text-zinc-950 tracking-tight flex items-center gap-2">
+                <span className="text-[#0066FF]">✦</span> Failsafe Retry Queue
+              </h3>
+              <p className="text-[13px] text-zinc-500 leading-relaxed tracking-tight">
+                If the government eTIMS portal undergoes unexpected latency or downtime, eConnector caches your transmission parameters and retries automatically the second services clear.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-sm font-bold text-zinc-950 tracking-tight flex items-center gap-2">
+                <span className="text-[#0066FF]">✦</span> Full Document Coverage
+              </h3>
+              <p className="text-[13px] text-zinc-500 leading-relaxed tracking-tight">
+                Unlike simple transaction plug-ins, we support standard Invoices, continuous Sales Receipts, and complex multi-item Credit Notes, writing clean audit trails back to each file.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-sm font-bold text-zinc-950 tracking-tight flex items-center gap-2">
+                <span className="text-[#0066FF]">✦</span> Pure Operational Freedom
+              </h3>
+              <p className="text-[13px] text-zinc-500 leading-relaxed tracking-tight">
+                Your accounting staff never leaves QuickBooks. There are zero new terminal procedures to memorize, zero CSV sheets to map manually, and zero portal copy-paste errors.
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
 
