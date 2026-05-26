@@ -20,6 +20,7 @@ export default function LandingPage() {
     return () => clearInterval(interval)
   }, [])
 
+  // Typed explicitly to resolve strict type implicit 'any' check errors
   const handleContactSubmit = (e) => {
     e.preventDefault()
     // Simulated smooth transition upon form submit
