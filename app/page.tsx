@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 
 export default function LandingPage() {
@@ -5,7 +7,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans antialiased">
       
       {/* ========================================== */}
-      {/* UPDATED: NAVIGATION BAR WITH DUAL CTAs     */}
+      {/* NAVIGATION BAR WITH DUAL CTAs             */}
       {/* ========================================== */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
