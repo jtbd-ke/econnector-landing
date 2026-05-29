@@ -36,33 +36,104 @@ export default function LandingPage() {
       </header>
 
       {/* ========================================== */}
-      {/* BLOCK 1: THE HERO SECTION                  */}
+      {/* BLOCK 1: THE HERO SECTION WITH LAPTOP MOCK  */}
       {/* ========================================== */}
-      <section className="px-6 pt-20 pb-16 max-w-5xl mx-auto text-center flex flex-col items-center">
-        <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-50 text-emerald-800 text-sm font-semibold mb-6 border border-emerald-200 tracking-wide shadow-sm">
-          <span className="relative flex h-2 w-2 mr-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          Now Live for QuickBooks Online
+      <section className="px-6 pt-12 md:pt-20 pb-16 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Left Side: Conversion Copy */}
+        <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-50 text-emerald-800 text-sm font-semibold mb-6 border border-emerald-200 tracking-wide shadow-sm">
+            <span className="relative flex h-2 w-2 mr-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            Now Live for QuickBooks Online
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-gray-900 leading-tight">
+            Get eTIMS compliant without changing how you invoice.
+          </h1>
+
+          <p className="text-lg text-gray-600 mb-8 max-w-xl leading-relaxed">
+            An automated background bridge that syncs your <strong className="text-gray-900">QuickBooks Online</strong> transactions directly to eTIMS. No manual entries, no workflow changes, and zero IT headaches.
+          </p>
+
+          <div className="flex flex-col items-center lg:items-start w-full sm:w-auto">
+            <a 
+              href="#/connector-dashboard/signup" 
+              className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-4 px-12 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+            >
+              Connect QuickBooks Now
+            </a>
+            <span className="text-sm text-gray-500 mt-3 font-medium">Setup takes less than 5 minutes.</span>
+          </div>
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-gray-900 max-w-4xl leading-tight md:leading-none">
-          Get eTIMS compliant without changing how you invoice.
-        </h1>
+        {/* Right Side: UX Simplified Laptop & Sync Visual */}
+        <div className="lg:col-span-6 w-full flex justify-center relative">
+          <div className="w-full max-w-md md:max-w-xl bg-gray-900 p-3 rounded-2xl shadow-2xl border border-gray-800">
+            {/* Laptop Screen Area */}
+            <div className="bg-white rounded-lg p-4 text-xs font-sans relative overflow-hidden shadow-inner border border-gray-200 aspect-[16/10] flex flex-col justify-between">
+              
+              {/* QBO Top Simulation Bar */}
+              <div className="flex items-center justify-between border-b border-gray-100 pb-2 mb-3">
+                <div className="flex items-center space-x-2">
+                  <div className="h-5 w-5 bg-emerald-600 rounded flex items-center justify-center text-white font-bold text-[10px]">qb</div>
+                  <span className="font-bold text-gray-700">QuickBooks Online Dashboard</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="text-[10px] text-emerald-600 font-semibold uppercase tracking-wider">Live Bridge Connected</span>
+                </div>
+              </div>
 
-        <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl leading-relaxed">
-          An automated background bridge that syncs your <strong className="text-gray-900">QuickBooks Online</strong> transactions directly to eTIMS. No manual entries, no workflow changes, and zero IT headaches.
-        </p>
+              {/* Minimal Invoice Body Wrapper */}
+              <div className="grid grid-cols-3 gap-3 items-start flex-1">
+                {/* Left Side: Mock Invoice Lines */}
+                <div className="col-span-2 space-y-2 border border-gray-100 p-2 rounded bg-gray-50/50">
+                  <div className="flex justify-between items-center border-b pb-1 mb-1">
+                    <span className="font-bold text-gray-800 text-[10px]">Tax Invoice #INV-0482</span>
+                    <span className="text-gray-400 text-[8px]">29 May 2026</span>
+                  </div>
+                  <div className="h-2 w-3/4 bg-gray-200 rounded"></div>
+                  <div className="h-2 w-1/2 bg-gray-200 rounded"></div>
+                  <div className="h-3 w-full bg-blue-50/50 rounded border border-blue-100 flex items-center justify-between px-1 text-[9px] text-blue-700 font-semibold mt-4">
+                    <span>Total Amount (Tax Incl.)</span>
+                    <span>KES 45,000.00</span>
+                  </div>
+                </div>
 
-        <div className="flex flex-col items-center w-full md:w-auto">
-          <a 
-            href="#/connector-dashboard/signup" 
-            className="w-full md:w-auto text-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-4 px-12 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 ease-in-out transform hover:-translate-y-0.5"
-          >
-            Connect QuickBooks Now
-          </a>
-          <span className="text-sm text-gray-500 mt-3 font-medium">Setup takes less than 5 minutes.</span>
+                {/* Right Side: Real-Time eTIMS Validation Result */}
+                <div className="col-span-1 border border-emerald-200 bg-emerald-50/40 p-2 rounded flex flex-col items-center justify-between h-full space-y-2 relative text-center">
+                  <div className="text-[8px] font-extrabold uppercase tracking-wider text-emerald-800">eTIMS Certified</div>
+                  
+                  {/* Generated QR Code Box Mockup */}
+                  <div className="w-14 h-14 bg-white border border-gray-300 rounded p-1 flex flex-wrap items-center justify-center gap-[2px] shadow-sm relative group">
+                    <div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-400"></div><div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-900"></div>
+                    <div className="w-2 h-2 bg-gray-300"></div><div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-300"></div><div className="w-2 h-2 bg-gray-400"></div>
+                    <div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-300"></div><div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-300"></div>
+                    <div className="w-2 h-2 bg-gray-400"></div><div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-400"></div><div className="w-2 h-2 bg-gray-900"></div>
+                    {/* Floating Glow Indicator */}
+                    <span className="absolute inset-0 bg-emerald-400/10 animate-pulse"></span>
+                  </div>
+
+                  <span className="text-[7px] text-emerald-700 font-bold tracking-tight">KRA QR Affixed</span>
+                </div>
+              </div>
+
+              {/* Bidirectional Sync Overlay Track */}
+              <div className="mt-2 pt-2 border-t border-gray-100 flex items-center justify-between text-gray-400 text-[9px] font-mono">
+                <span className="text-gray-500 font-medium">Auto Updates Complete</span>
+                <div className="flex items-center space-x-1 font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full text-[10px]">
+                  <span>QBO</span>
+                  <span className="animate-pulse tracking-tighter">◀ ⇆ ▶</span>
+                  <span>eTIMS</span>
+                </div>
+              </div>
+
+            </div>
+            {/* Laptop Base Stand Graphic element */}
+            <div className="h-1.5 w-1/3 bg-gray-700 mx-auto rounded-b-md"></div>
+          </div>
         </div>
       </section>
 
@@ -127,22 +198,37 @@ export default function LandingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <div className="flex flex-col items-center text-center p-4">
+          {/* Step 1 Card */}
+          <div className="flex flex-col justify-between items-center text-center p-6 bg-gray-800/40 rounded-xl border border-gray-800 h-full">
             <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-lg font-bold mb-4 shadow-md">1</div>
             <h3 className="font-bold text-lg mb-2">Profile Setup</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">Setup your business parameters and profile configurations in under two minutes.</p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">Setup your business parameters and profile configurations easily.</p>
+            {/* REPOSITIONED BADGE: BOTTOM OF THE CARD */}
+            <span className="inline-block text-[11px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 px-3 py-1 rounded border border-emerald-900/50 mt-auto">
+              [ Takes 2 Mins ]
+            </span>
           </div>
 
-          <div className="flex flex-col items-center text-center p-4">
+          {/* Step 2 Card */}
+          <div className="flex flex-col justify-between items-center text-center p-6 bg-gray-800/40 rounded-xl border border-gray-800 h-full">
             <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-lg font-bold mb-4 shadow-md">2</div>
             <h3 className="font-bold text-lg mb-2">Two-Click Linkage</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">Securely authorize the QuickBooks Online connector to establish the network background bridge.</p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">Securely authorize the QuickBooks Online connector to establish the network background bridge.</p>
+            {/* REPOSITIONED BADGE: BOTTOM OF THE CARD */}
+            <span className="inline-block text-[11px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 px-3 py-1 rounded border border-emerald-900/50 mt-auto">
+              [ Secure OAuth ]
+            </span>
           </div>
 
-          <div className="flex flex-col items-center text-center p-4">
+          {/* Step 3 Card */}
+          <div className="flex flex-col justify-between items-center text-center p-6 bg-gray-800/40 rounded-xl border border-gray-800 h-full">
             <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-lg font-bold mb-4 shadow-md">3</div>
             <h3 className="font-bold text-lg mb-2">Guided Product Mapper</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">Map your existing items and services to eTIMS tax categories for automatic configurations.</p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">Map your existing items and services to eTIMS tax categories for automatic configurations.</p>
+            {/* REPOSITIONED BADGE: BOTTOM OF THE CARD */}
+            <span className="inline-block text-[11px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 px-3 py-1 rounded border border-emerald-900/50 mt-auto">
+              [ Auto-Match ]
+            </span>
           </div>
         </div>
       </section>
@@ -175,9 +261,38 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
+      {/* RELOCATED & SIMPLIFIED: INTEGRATION REEL   */}
+      {/* ========================================== */}
+      <section className="px-6 py-12 bg-white border-y border-gray-100 overflow-hidden">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Supported Accounting Platforms</p>
+          
+          {/* Intuitively Dimmed Layout Matrix */}
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-80">
+            {/* Active Platform Asset */}
+            <div className="flex items-center space-x-1.5 grayscale-0 border border-emerald-200 bg-emerald-50 text-emerald-800 py-2 px-4 rounded-xl shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="font-extrabold text-sm tracking-tight">QuickBooks Online</span>
+              <span className="text-[9px] font-bold uppercase bg-emerald-600 text-white px-1.5 py-0.5 rounded">Active</span>
+            </div>
+
+            {/* Intuitive Dimmed Out Ecosystem Targets */}
+            <div className="opacity-25 grayscale font-bold text-gray-600 text-sm tracking-tight cursor-not-allowed">Xero</div>
+            <div className="opacity-25 grayscale font-bold text-gray-600 text-sm tracking-tight cursor-not-allowed">Zoho Books</div>
+            <div className="opacity-25 grayscale font-bold text-gray-600 text-sm tracking-tight cursor-not-allowed">Sage</div>
+            <div className="opacity-25 grayscale font-bold text-gray-600 text-sm tracking-tight cursor-not-allowed">Microsoft Dynamics</div>
+          </div>
+
+          <p className="text-xs text-gray-500 mt-6 font-medium">
+            Don't see your accounting platform? <a href="#inquiry" className="text-blue-600 hover:underline font-semibold">Request early access ➔</a>
+          </p>
+        </div>
+      </section>
+
+      {/* ========================================== */}
       {/* BLOCK 5: TRANSPARENT PRICING GRID          */}
       {/* ========================================== */}
-      <section className="px-6 py-16 bg-gray-100 rounded-[3rem]">
+      <section className="px-6 py-16 bg-gray-100 rounded-[3rem] mt-12">
         <div className="max-w-5xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-3 text-gray-900">Simple, transparent pricing</h2>
@@ -251,7 +366,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* REFACTORED: HIGH-PERFORMANCE SECURE PAYMENT LOGO PLACEMENT */}
+          {/* SINGLE MICRO-BADGE STRATEGY FOR MOBILE ALIGNMENT */}
           <div className="mt-12 text-center px-4">
             <p className="text-xs text-gray-500 max-w-xl mx-auto leading-relaxed">
               * Rates exclude a standard one-time $70 eTIMS gateway configuration fee applied securely during your live profile activation.
@@ -267,9 +382,9 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
-      {/* REPHRASED: INLINE CONTACT / SUPPORT DESK   */}
+      {/* INLINE CONTACT / SUPPORT DESK FORM        */}
       {/* ========================================== */}
-      <section className="px-6 py-16 max-w-5xl mx-auto border-t border-gray-100">
+      <section id="inquiry" className="px-6 py-16 max-w-5xl mx-auto border-t border-gray-100">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Need our help in figuring it out?</h2>
@@ -296,9 +411,11 @@ export default function LandingPage() {
                 <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Your Question</label>
                 <textarea rows={3} placeholder="How does the mapper handle tax-exempt items?" className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500 resize-none"></textarea>
               </div>
-              <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm py-3 px-4 rounded-lg transition-colors">
-                Send Inquiry
-              </button>
+              <div>
+                <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm py-3 px-4 rounded-lg transition-colors">
+                  Send Inquiry
+                </button>
+              </div>
             </form>
           </div>
         </div>
@@ -320,7 +437,7 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
-      {/* UPDATED: TRUST, LOGS & LEGAL INFO FOOTER   */}
+      {/* TRUST, LOGS & CORPORATE LEGAL FOOTER       */}
       {/* ========================================== */}
       <footer className="bg-gray-900 text-gray-400 py-12 px-6 text-xs md:text-sm border-t border-gray-800">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
