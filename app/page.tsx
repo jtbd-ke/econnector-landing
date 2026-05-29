@@ -4,8 +4,8 @@ import React from 'react';
 
 export default function LandingPage() {
   return (
-    /* Root viewport container with structural CSS Scroll Snapping enabled */
-    <div className="h-screen overflow-y-auto snap-y snap-proximity lg:snap-mandatory scroll-smooth bg-gray-50 text-gray-900 font-sans antialiased">
+    /* Root container: Snapping environments are modernly scoped to desktop viewports to protect mobile stacking height */
+    <div className="min-h-screen lg:h-screen lg:overflow-y-auto lg:snap-y lg:snap-mandatory scroll-smooth bg-gray-50 text-gray-900 font-sans antialiased">
       
       {/* ========================================== */}
       {/* NAVIGATION BAR (STAYS FLOATING)            */}
@@ -37,7 +37,7 @@ export default function LandingPage() {
       {/* ========================================== */}
       {/* SECTION 1: THE HERO VIEWPORT               */}
       {/* ========================================== */}
-      <section className="snap-start min-h-screen flex items-center justify-center px-6 py-12 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
+      <section className="snap-start scroll-mt-20 min-h-screen flex items-center justify-center px-6 py-12 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
         {/* Left Column: Symmetrical Persuasion Stack */}
         <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left h-full">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-50 text-emerald-800 text-sm font-semibold mb-6 border border-emerald-200 tracking-wide shadow-sm">
@@ -137,7 +137,7 @@ export default function LandingPage() {
       {/* ========================================== */}
       {/* SECTION 2: THE ADVANTAGE CARDS MATRIX      */}
       {/* ========================================== */}
-      <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-12 max-w-6xl mx-auto">
+      <section className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">The eConnector Advantage</h2>
           <p className="text-3xl font-extrabold text-gray-900 tracking-tight">Engineered to eliminate manual compliance loops</p>
@@ -188,7 +188,7 @@ export default function LandingPage() {
       {/* ========================================== */}
       {/* SECTION 3: THE 3-STEP CONFIG SYSTEM        */}
       {/* ========================================== */}
-      <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-12">
+      <section className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12">
         <div className="max-w-5xl mx-auto bg-gray-900 text-white rounded-3xl p-8 md:p-12 shadow-xl w-full">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-3">Up and running in 3 simple steps</h2>
@@ -201,7 +201,6 @@ export default function LandingPage() {
               <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-lg font-bold mb-4 shadow-md">1</div>
               <h3 className="font-bold text-lg mb-2">Profile Setup</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">Setup your business parameters and profile configurations easily.</p>
-              {/* Anchor Metric snapped explicitly to the container floor */}
               <span className="inline-block text-[10px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 px-3 py-1 rounded border border-emerald-900/50 mt-auto">
                 [ Takes 2 Mins ]
               </span>
@@ -233,7 +232,7 @@ export default function LandingPage() {
       {/* ========================================== */}
       {/* SECTION 4: WHY CHOOSE US & ECOSYSTEM REEL */}
       {/* ========================================== */}
-      <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-12 max-w-5xl mx-auto">
+      <section className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Why businesses choose eConnector</h2>
         </div>
@@ -256,19 +255,17 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* ECOSYSTEM TARGETING MATRIX: Clean, intuitive, no date restrictions */}
+        {/* ECOSYSTEM TARGETING MATRIX */}
         <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm">
           <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Supported Accounting Ecosystems</p>
           
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
-            {/* Standard Primary Active Core Flag */}
             <div className="flex items-center space-x-2 border border-emerald-200 bg-emerald-50 text-emerald-800 py-2 px-4 rounded-xl shadow-sm">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
               <span className="font-extrabold text-sm tracking-tight">QuickBooks Online</span>
               <span className="text-[9px] font-bold uppercase bg-emerald-600 text-white px-1.5 py-0.5 rounded">Active</span>
             </div>
 
-            {/* Seamless Dimmed Out Moving Pipeline Targets */}
             <div className="opacity-30 grayscale font-bold text-gray-500 text-sm tracking-tight select-none">Xero</div>
             <div className="opacity-30 grayscale font-bold text-gray-500 text-sm tracking-tight select-none">Zoho Books</div>
             <div className="opacity-30 grayscale font-bold text-gray-500 text-sm tracking-tight select-none">Sage</div>
@@ -284,7 +281,7 @@ export default function LandingPage() {
       {/* ========================================== */}
       {/* SECTION 5: TRANSPARENT PRICING GRID        */}
       {/* ========================================== */}
-      <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-12 bg-gray-100 rounded-[3rem]">
+      <section className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 bg-gray-100 rounded-[3rem]">
         <div className="max-w-5xl mx-auto w-full">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <h2 className="text-3xl font-bold mb-3 text-gray-900 tracking-tight">Simple, transparent pricing</h2>
@@ -379,7 +376,7 @@ export default function LandingPage() {
       {/* ========================================== */}
       {/* SECTION 6: INQUIRY MATRIX & FINAL CLOSURE  */}
       {/* ========================================== */}
-      <section id="inquiry" className="snap-start min-h-screen flex flex-col justify-between bg-white pt-16">
+      <section id="inquiry" className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-between bg-white pt-16">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start px-6 w-full flex-1">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 tracking-tight">Need our help in figuring it out?</h2>
