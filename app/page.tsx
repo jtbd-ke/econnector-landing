@@ -251,36 +251,37 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="mt-12 text-center">
+          {/* REFACTORED: HIGH-PERFORMANCE SECURE PAYMENT LOGO PLACEMENT */}
+          <div className="mt-12 text-center px-4">
             <p className="text-xs text-gray-500 max-w-xl mx-auto leading-relaxed">
               * Rates exclude a standard one-time $70 eTIMS gateway configuration fee applied securely during your live profile activation.
             </p>
-            <div className="mt-4 flex justify-center items-center space-x-4 opacity-60 grayscale hover:opacity-80 transition-opacity">
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Accepted Payments:</span>
-              <span className="text-sm font-extrabold text-emerald-600">M-PESA</span>
-              <span className="text-xs font-bold text-gray-600">|</span>
-              <span className="text-sm font-extrabold text-gray-700">CREDIT CARD</span>
+            <div className="mt-6 flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-3 text-xs">
+              <span className="font-bold uppercase tracking-wider text-gray-400">Accepted Payment Method:</span>
+              <span className="inline-flex items-center px-3 py-1 rounded-md bg-emerald-50 text-emerald-700 font-extrabold text-sm border border-emerald-100 shadow-sm">
+                M-PESA
+              </span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ========================================== */}
-      {/* INLINE CONTACT / INQUIRY COMPONENT         */}
+      {/* REPHRASED: INLINE CONTACT / SUPPORT DESK   */}
       {/* ========================================== */}
       <section className="px-6 py-16 max-w-5xl mx-auto border-t border-gray-100">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Have operational or custom security questions?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Need our help in figuring it out?</h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
-              Our integration desk handles complex setup cases, custom enterprise compliance paths, and consolidated group billing queries. Get a direct configuration consultation today.
+              Our support desk is here to understand your setup and eTIMs compliance requirements. Get a direct free consultation today.
             </p>
             <div className="space-y-3">
               <p className="text-sm font-semibold text-gray-700 flex items-center">
-                <span className="text-blue-600 mr-2">✉</span> support@tracksol.co.ke
+                <span className="text-blue-600 mr-2 text-base">✉</span> info@ezeemoney.co.ke
               </p>
               <p className="text-sm font-semibold text-gray-700 flex items-center">
-                <span className="text-emerald-600 mr-2">💬</span> Response time: Under 15 minutes
+                <span className="text-emerald-600 mr-2 text-base">💬</span> Response time: Under 15 minutes
               </p>
             </div>
           </div>
@@ -319,21 +320,21 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
-      {/* TRUST & LEGAL COMPLIANCE FOOTER            */}
+      {/* UPDATED: TRUST, LOGS & LEGAL INFO FOOTER   */}
       {/* ========================================== */}
       <footer className="bg-gray-900 text-gray-400 py-12 px-6 text-xs md:text-sm border-t border-gray-800">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           <div className="flex items-center space-x-3 text-center md:text-left">
             <div className="h-6 w-6 rounded bg-gray-800 flex items-center justify-center text-white font-black text-xs">eC</div>
-            <p>© 2026 eConnector. All rights reserved.</p>
+            <p>© 2026 Ezeemoney Ltd . All rights reserved.</p>
           </div>
           
-          <div className="text-center md:text-right text-gray-500">
-            <p className="mb-1">
-              eConnector is a dedicated product of <span className="text-gray-300 font-medium">Tracksol</span>.
-            </p>
+          <div className="text-center md:text-right text-gray-400 max-w-md md:max-w-none space-y-1">
             <p>
-              Operating securely over approved KRA gateway channels. Nairobi, Kenya.
+              The eConnector plugin is a product of <span className="text-gray-200 font-medium">Tracksol</span>.
+            </p>
+            <p className="text-gray-500 text-xs">
+              Tracksol operates securely over approved KRA vendor networks.
             </p>
           </div>
         </div>
