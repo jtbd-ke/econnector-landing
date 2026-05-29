@@ -5,10 +5,38 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans antialiased">
       
       {/* ========================================== */}
+      {/* UPDATED: NAVIGATION BAR WITH DUAL CTAs     */}
+      {/* ========================================== */}
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          {/* Product Brand Anchor */}
+          <div className="flex items-center space-x-2">
+            <span className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-sm">eC</span>
+            <span className="font-bold text-xl tracking-tight text-gray-900">eConnector</span>
+          </div>
+          
+          {/* Dashboard Auth Redirects */}
+          <div className="flex items-center space-x-4">
+            <a 
+              href="#/connector-dashboard/signin" 
+              className="text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Sign In
+            </a>
+            <a 
+              href="#/connector-dashboard/signup" 
+              className="bg-gray-900 hover:bg-gray-800 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-colors shadow-sm"
+            >
+              Sign Up
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* ========================================== */}
       {/* BLOCK 1: THE HERO SECTION                  */}
       {/* ========================================== */}
-      <section className="px-6 pt-24 pb-16 max-w-5xl mx-auto text-center flex flex-col items-center">
-        {/* The Pill Badge */}
+      <section className="px-6 pt-20 pb-16 max-w-5xl mx-auto text-center flex flex-col items-center">
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-50 text-emerald-800 text-sm font-semibold mb-6 border border-emerald-200 tracking-wide shadow-sm">
           <span className="relative flex h-2 w-2 mr-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -17,27 +45,27 @@ export default function LandingPage() {
           Now Live for QuickBooks Online
         </div>
 
-        {/* Main Headline */}
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-gray-900 max-w-4xl leading-tight md:leading-none">
           Get eTIMS compliant without changing how you invoice.
         </h1>
 
-        {/* Sub-headline */}
         <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl leading-relaxed">
           An automated background bridge that syncs your <strong className="text-gray-900">QuickBooks Online</strong> transactions directly to eTIMS. No manual entries, no workflow changes, and zero IT headaches.
         </p>
 
-        {/* CTA Button */}
         <div className="flex flex-col items-center w-full md:w-auto">
-          <button className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-4 px-12 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 ease-in-out transform hover:-translate-y-0.5">
+          <a 
+            href="#/connector-dashboard/signup" 
+            className="w-full md:w-auto text-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-4 px-12 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 ease-in-out transform hover:-translate-y-0.5"
+          >
             Connect QuickBooks Now
-          </button>
+          </a>
           <span className="text-sm text-gray-500 mt-3 font-medium">Setup takes less than 5 minutes.</span>
         </div>
       </section>
 
       {/* ========================================== */}
-      {/* BLOCK 2: THE CONTRAST (UPGRADED TO CARDS)  */}
+      {/* BLOCK 2: THE CONTRAST (CARDS MATRIX)       */}
       {/* ========================================== */}
       <section className="px-6 py-12 max-w-6xl mx-auto">
         <div className="text-center mb-10 hidden md:block">
@@ -45,10 +73,7 @@ export default function LandingPage() {
           <p className="text-2xl font-bold text-gray-900">Engineered to eliminate manual compliance loops</p>
         </div>
 
-        {/* Unified Card Layout (USP-First for both Desktop & Mobile) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          
-          {/* Card 1 */}
           <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between">
             <div>
               <div className="h-10 w-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold mb-4">01</div>
@@ -62,7 +87,6 @@ export default function LandingPage() {
             </p>
           </div>
 
-          {/* Card 2 */}
           <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between">
             <div>
               <div className="h-10 w-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold mb-4">02</div>
@@ -76,7 +100,6 @@ export default function LandingPage() {
             </p>
           </div>
 
-          {/* Card 3 */}
           <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between">
             <div>
               <div className="h-10 w-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold mb-4">03</div>
@@ -89,7 +112,6 @@ export default function LandingPage() {
               Less time spent invoicing manually means reclaiming wasted administrative hours for other tasks.
             </p>
           </div>
-
         </div>
       </section>
 
@@ -103,21 +125,18 @@ export default function LandingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          {/* Step 1 */}
           <div className="flex flex-col items-center text-center p-4">
             <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-lg font-bold mb-4 shadow-md">1</div>
             <h3 className="font-bold text-lg mb-2">Profile Setup</h3>
             <p className="text-gray-400 text-sm leading-relaxed">Setup your business parameters and profile configurations in under two minutes.</p>
           </div>
 
-          {/* Step 2 */}
           <div className="flex flex-col items-center text-center p-4">
             <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-lg font-bold mb-4 shadow-md">2</div>
             <h3 className="font-bold text-lg mb-2">Two-Click Linkage</h3>
             <p className="text-gray-400 text-sm leading-relaxed">Securely authorize the QuickBooks Online connector to establish the network background bridge.</p>
           </div>
 
-          {/* Step 3 */}
           <div className="flex flex-col items-center text-center p-4">
             <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-lg font-bold mb-4 shadow-md">3</div>
             <h3 className="font-bold text-lg mb-2">Guided Product Mapper</h3>
@@ -135,7 +154,6 @@ export default function LandingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Feature 1 */}
           <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
             <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-1">Simplified Tax Invoicing</span>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Designed for Accountants, Backed by IT</h3>
@@ -144,7 +162,6 @@ export default function LandingPage() {
             </p>
           </div>
 
-          {/* Feature 2 */}
           <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 block mb-1">Secure and Reliable</span>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Running on Approved Vendor Rails</h3>
@@ -158,7 +175,7 @@ export default function LandingPage() {
       {/* ========================================== */}
       {/* BLOCK 5: TRANSPARENT PRICING GRID          */}
       {/* ========================================== */}
-      <section className="px-6 py-16 bg-gray-100 rounded-t-[3rem]">
+      <section className="px-6 py-16 bg-gray-100 rounded-[3rem]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-3 text-gray-900">Simple, transparent pricing</h2>
@@ -166,7 +183,6 @@ export default function LandingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            {/* Tier 1 */}
             <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1">Starter</h3>
@@ -182,12 +198,11 @@ export default function LandingPage() {
                   <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Background automated syncing</li>
                 </ul>
               </div>
-              <button className="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl mt-8 transition-colors">
+              <a href="#/connector-dashboard/signup" className="w-text text-center bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl mt-8 transition-colors block">
                 Get Started
-              </button>
+              </a>
             </div>
 
-            {/* Tier 2 (Highlighted) */}
             <div className="bg-white p-8 rounded-2xl border-2 border-blue-600 shadow-md flex flex-col justify-between relative transform md:-translate-y-2">
               <div className="absolute top-0 right-6 transform -translate-y-1/2 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                 Popular
@@ -207,12 +222,11 @@ export default function LandingPage() {
                   <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Multi-user dashboard access</li>
                 </ul>
               </div>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl mt-8 transition-colors shadow-sm">
+              <a href="#/connector-dashboard/signup" className="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl mt-8 transition-colors shadow-sm block">
                 Select Business
-              </button>
+              </a>
             </div>
 
-            {/* Tier 3 */}
             <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1">Group</h3>
@@ -229,13 +243,12 @@ export default function LandingPage() {
                   <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Dedicated support line</li>
                 </ul>
               </div>
-              <button className="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl mt-8 transition-colors">
+              <a href="#/connector-dashboard/signup" className="w-full text-center bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl mt-8 transition-colors block">
                 Contact Sales
-              </button>
+              </a>
             </div>
           </div>
 
-          {/* Subtle Footnote & M-Pesa Badges */}
           <div className="mt-12 text-center">
             <p className="text-xs text-gray-500 max-w-xl mx-auto leading-relaxed">
               * Rates exclude a standard one-time $70 eTIMS gateway configuration fee applied securely during your live profile activation.
@@ -251,6 +264,44 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
+      {/* INLINE CONTACT / INQUIRY COMPONENT         */}
+      {/* ========================================== */}
+      <section className="px-6 py-16 max-w-5xl mx-auto border-t border-gray-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Have operational or custom security questions?</h2>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+              Our integration desk handles complex setup cases, custom enterprise compliance paths, and consolidated group billing queries. Get a direct configuration consultation today.
+            </p>
+            <div className="space-y-3">
+              <p className="text-sm font-semibold text-gray-700 flex items-center">
+                <span className="text-blue-600 mr-2">✉</span> support@tracksol.co.ke
+              </p>
+              <p className="text-sm font-semibold text-gray-700 flex items-center">
+                <span className="text-emerald-600 mr-2">💬</span> Response time: Under 15 minutes
+              </p>
+            </div>
+          </div>
+          
+          <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm">
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Work Email</label>
+                <input type="email" placeholder="name@company.co.ke" className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Your Question</label>
+                <textarea rows={3} placeholder="How does the mapper handle tax-exempt items?" className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500 resize-none"></textarea>
+              </div>
+              <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm py-3 px-4 rounded-lg transition-colors">
+                Send Inquiry
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================== */}
       {/* BLOCK 6: BOTTOM CTA (THE FINAL PUSH)       */}
       {/* ========================================== */}
       <section className="bg-blue-600 text-white py-20 px-6 text-center">
@@ -259,11 +310,32 @@ export default function LandingPage() {
           <p className="text-blue-100 text-base md:text-lg mb-8 max-w-xl mx-auto">
             Join accountants and smart business owners running automated QuickBooks eTIMS linkages.
           </p>
-          <button className="bg-white text-blue-600 font-bold text-lg py-4 px-12 rounded-lg shadow-md hover:bg-gray-50 transition-all duration-200">
+          <a href="#/connector-dashboard/signup" className="bg-white text-blue-600 font-bold text-lg py-4 px-12 rounded-lg shadow-md hover:bg-gray-50 transition-all duration-200 inline-block">
             Connect Your QuickBooks Profile
-          </button>
+          </a>
         </div>
       </section>
+
+      {/* ========================================== */}
+      {/* TRUST & LEGAL COMPLIANCE FOOTER            */}
+      {/* ========================================== */}
+      <footer className="bg-gray-900 text-gray-400 py-12 px-6 text-xs md:text-sm border-t border-gray-800">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+          <div className="flex items-center space-x-3 text-center md:text-left">
+            <div className="h-6 w-6 rounded bg-gray-800 flex items-center justify-center text-white font-black text-xs">eC</div>
+            <p>© 2026 eConnector. All rights reserved.</p>
+          </div>
+          
+          <div className="text-center md:text-right text-gray-500">
+            <p className="mb-1">
+              eConnector is a dedicated product of <span className="text-gray-300 font-medium">Tracksol</span>.
+            </p>
+            <p>
+              Operating securely over approved KRA gateway channels. Nairobi, Kenya.
+            </p>
+          </div>
+        </div>
+      </footer>
 
     </div>
   );
