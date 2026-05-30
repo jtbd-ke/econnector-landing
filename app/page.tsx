@@ -4,30 +4,45 @@ import React from 'react';
 
 export default function LandingPage() {
   return (
-    /* Root container: Snapping environments are modernly scoped to desktop viewports to protect mobile stacking height */
-    <div className="min-h-screen lg:h-screen lg:overflow-y-auto lg:snap-y lg:snap-mandatory scroll-smooth bg-gray-50 text-gray-900 font-sans antialiased">
+    /* Root container with Framer aesthetic canvas backdrop rules applied */
+    <div className="min-h-screen lg:h-screen lg:overflow-y-auto lg:snap-y lg:snap-mandatory scroll-smooth bg-slate-950 text-slate-100 font-sans antialiased bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.15),transparent)]">
       
+      {/* Self-contained high-end Framer motion physics engine fallback style block */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-10px) rotate(0.5deg); }
+        }
+        @keyframes laser-beam {
+          0% { left: -100%; }
+          100% { left: 200%; }
+        }
+        @keyframes radial-pulse {
+          0%, 100% { opacity: 0.2; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(1.05); }
+        }
+        .animate-framer-float { animation: float 6s ease-in-out infinite; }
+        .animate-laser-beam { animation: laser-beam 3s linear infinite; }
+        .animate-ambient-pulse { animation: radial-pulse 8s ease-in-out infinite; }
+        .premium-grid-pattern {
+          background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+          background-size: 24px 24px;
+        }
+      `}</style>
+
       {/* ========================================== */}
-      {/* NAVIGATION BAR (STAYS FLOATING)            */}
+      {/* FLOATING GLASS NAVIGATION HEADER           */}
       {/* ========================================== */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4">
+      <header className="sticky top-0 z-50 bg-slate-950/70 backdrop-blur-md border-b border-slate-900 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-sm">eC</span>
-            <span className="font-bold text-xl tracking-tight text-gray-900">eConnector</span>
+            <span className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-sm shadow-[0_0_15px_rgba(37,99,235,0.4)]">eC</span>
+            <span className="font-bold text-xl tracking-tight text-white">eConnector</span>
           </div>
           
           <div className="flex items-center space-x-4">
-            <a 
-              href="#/connector-dashboard/signin" 
-              className="text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Sign In
-            </a>
-            <a 
-              href="#/connector-dashboard/signup" 
-              className="bg-gray-900 hover:bg-gray-800 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-colors shadow-sm"
-            >
+            <a href="#/connector-dashboard/signin" className="text-sm font-semibold text-slate-400 hover:text-white transition-colors">Sign In</a>
+            <a href="#/connector-dashboard/signup" className="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]">
               Sign Up
             </a>
           </div>
@@ -35,194 +50,226 @@ export default function LandingPage() {
       </header>
 
       {/* ========================================== */}
-      {/* SECTION 1: THE HERO VIEWPORT               */}
+      {/* SECTION 1: THE HIGH-GLOW HERO AREA         */}
       {/* ========================================== */}
-      <section className="snap-start scroll-mt-20 min-h-screen flex items-center justify-center px-6 py-12 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
-        {/* Left Column: Symmetrical Persuasion Stack */}
-        <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left h-full">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-50 text-emerald-800 text-sm font-semibold mb-6 border border-emerald-200 tracking-wide shadow-sm">
+      <section className="premium-grid-pattern snap-start scroll-mt-20 min-h-screen flex items-center justify-center px-6 py-12 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
+        
+        {/* Left Column: Premium Typography Cluster */}
+        <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left h-full z-10">
+          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold mb-6 border border-emerald-500/20 tracking-wider uppercase shadow-[0_0_15px_rgba(16,185,129,0.1)]">
             <span className="relative flex h-2 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Now Live for QuickBooks Online
+            Live QuickBooks Online Sync
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-gray-900 leading-tight">
-            Get eTIMS compliant without changing how you invoice.
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 text-white leading-[1.1] bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400">
+            Get eTIMS compliant without moving an inch.
           </h1>
 
-          <p className="text-lg text-gray-600 mb-8 max-w-xl leading-relaxed">
-            An automated background bridge that syncs your <strong className="text-gray-900">QuickBooks Online</strong> transactions directly to eTIMS. No manual entries, no workflow changes, and zero IT headaches.
+          <p className="text-base md:text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+            An elegant background pipeline that intercepts your native <strong className="text-white font-semibold">QuickBooks Online</strong> actions and pairs them instantly to eTIMS. No behavior shifts, no manual data duplication loops.
           </p>
 
           <div className="flex flex-col items-center lg:items-start w-full sm:w-auto">
             <a 
               href="#/connector-dashboard/signup" 
-              className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-4 px-12 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+              className="w-full sm:w-auto text-center bg-white hover:bg-slate-100 text-slate-950 font-bold text-base py-4 px-10 rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300"
             >
               Connect QuickBooks Now
             </a>
-            <span className="text-sm text-gray-500 mt-3 font-medium">Setup takes less than 5 minutes.</span>
+            <span className="text-xs text-slate-500 mt-3 font-medium tracking-wide">Automated onboarding takes under 5 minutes.</span>
           </div>
         </div>
 
-        {/* Right Column: Vertically Centered Simplified Theme Dashboard */}
-        <div className="lg:col-span-6 w-full flex items-center justify-center h-full">
-          <div className="w-full max-w-md md:max-w-xl bg-gray-900 p-3 rounded-2xl shadow-2xl border border-gray-800 transform hover:scale-[1.01] transition-transform duration-300">
-            {/* Screen Viewport */}
-            <div className="bg-white rounded-lg p-4 text-xs font-sans relative overflow-hidden shadow-inner border border-gray-200 aspect-[16/10] flex flex-col justify-between">
+        {/* Right Column: Floating Glow Dashboard Box */}
+        <div className="lg:col-span-6 w-full flex items-center justify-center h-full relative">
+          
+          {/* Framer Ambient Glow behind the device card container */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-blue-500/20 rounded-full blur-[80px] pointer-events-none animate-ambient-pulse"></div>
+          <div className="absolute top-1/3 left-2/3 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none animate-ambient-pulse" style={{ animationDelay: '-3s' }}></div>
+
+          <div className="w-full max-w-md md:max-w-xl bg-slate-900/80 p-3 rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] border border-slate-800/80 transform hover:scale-[1.02] transition-all duration-500 backdrop-blur-sm animate-framer-float">
+            {/* Screen Viewport Wrapper with fine custom glass highlight border */}
+            <div className="bg-slate-950 rounded-xl p-5 text-xs font-sans relative overflow-hidden aspect-[16/10] flex flex-col justify-between border border-slate-800 shadow-inner">
               
-              {/* Top Navigation Simulation */}
-              <div className="flex items-center justify-between border-b border-gray-100 pb-2 mb-3">
+              {/* Top Navigation Frame simulation */}
+              <div className="flex items-center justify-between border-b border-slate-900 pb-3 mb-4">
                 <div className="flex items-center space-x-2">
-                  <div className="h-5 w-5 bg-emerald-600 rounded flex items-center justify-center text-white font-bold text-[10px]">qb</div>
-                  <span className="font-bold text-gray-700">QuickBooks Online Dashboard</span>
+                  <div className="h-5 w-5 bg-emerald-600 rounded flex items-center justify-center text-white font-bold text-[10px] shadow-[0_0_10px_rgba(16,185,129,0.3)]">qb</div>
+                  <span className="font-bold text-slate-300 tracking-wide">QuickBooks Pipeline</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span className="text-[10px] text-emerald-600 font-semibold uppercase tracking-wider">Live Bridge Connected</span>
+                <div className="flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-wider">Live Bridge Syncing</span>
                 </div>
               </div>
 
-              {/* Core Invoice Context Loop */}
-              <div className="grid grid-cols-3 gap-3 items-start flex-1">
-                <div className="col-span-2 space-y-2 border border-gray-100 p-2 rounded bg-gray-50/50">
-                  <div className="flex justify-between items-center border-b pb-1 mb-1">
-                    <span className="font-bold text-gray-800 text-[10px]">Tax Invoice #INV-0482</span>
-                    <span className="text-gray-400 text-[8px]">29 May 2026</span>
+              {/* Central Operational Frame tracking details */}
+              <div className="grid grid-cols-3 gap-4 items-start flex-1 relative">
+                <div className="col-span-2 space-y-3 border border-slate-900 p-3 rounded-xl bg-slate-900/30">
+                  <div className="flex justify-between items-center border-b border-slate-900 pb-2 mb-1">
+                    <span className="font-bold text-slate-200 text-[10px]">Tax Document #INV-0482</span>
+                    <span className="text-slate-500 text-[8px] font-mono">2026-05-30</span>
                   </div>
-                  <div className="h-2 w-3/4 bg-gray-200 rounded"></div>
-                  <div className="h-2 w-1/2 bg-gray-200 rounded"></div>
-                  <div className="h-3 w-full bg-blue-50/50 rounded border border-blue-100 flex items-center justify-between px-1 text-[9px] text-blue-700 font-semibold mt-4">
-                    <span>Total Amount (Tax Incl.)</span>
-                    <span>KES 45,000.00</span>
-                  </div>
-                </div>
-
-                {/* Secure KRA Validation Node */}
-                <div className="col-span-1 border border-emerald-200 bg-emerald-50/40 p-2 rounded flex flex-col items-center justify-between h-full space-y-2 relative text-center">
-                  <div className="text-[8px] font-extrabold uppercase tracking-wider text-emerald-800">eTIMS Certified</div>
+                  <div className="h-2 w-3/4 bg-slate-800 rounded-full"></div>
+                  <div className="h-2 w-1/2 bg-slate-800 rounded-full"></div>
                   
-                  {/* Generated QR Code Representation */}
-                  <div className="w-14 h-14 bg-white border border-gray-300 rounded p-1 flex flex-wrap items-center justify-center gap-[2px] shadow-sm relative">
-                    <div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-400"></div><div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-900"></div>
-                    <div className="w-2 h-2 bg-gray-300"></div><div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-300"></div><div className="w-2 h-2 bg-gray-400"></div>
-                    <div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-300"></div><div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-300"></div>
-                    <div className="w-2 h-2 bg-gray-400"></div><div className="w-2 h-2 bg-gray-900"></div><div className="w-2 h-2 bg-gray-400"></div><div className="w-2 h-2 bg-gray-900"></div>
-                    <span className="absolute inset-0 bg-emerald-400/10 animate-pulse"></span>
+                  <div className="h-7 w-full bg-blue-500/5 rounded-lg border border-blue-500/10 flex items-center justify-between px-2 text-[10px] text-blue-400 font-bold mt-4">
+                    <span>Amount (Tax Incl.)</span>
+                    <span className="font-mono text-white">KES 45,000.00</span>
+                  </div>
+                </div>
+
+                {/* Secure Certified Node Block Container */}
+                <div className="col-span-1 border border-emerald-500/20 bg-emerald-500/5 p-3 rounded-xl flex flex-col items-center justify-between h-full space-y-2 text-center relative overflow-hidden">
+                  <div className="text-[8px] font-black uppercase tracking-widest text-emerald-400">eTIMS Core</div>
+                  
+                  {/* Digital Generated Code Frame Block layout */}
+                  <div className="w-16 h-16 bg-slate-900 border border-slate-800 rounded-lg p-1.5 flex flex-wrap items-center justify-center gap-[2px] shadow-inner relative">
+                    <div className="w-2.5 h-2.5 bg-white"></div><div className="w-2.5 h-2.5 bg-slate-700"></div><div className="w-2.5 h-2.5 bg-white"></div><div className="w-2.5 h-2.5 bg-white"></div>
+                    <div className="w-2.5 h-2.5 bg-slate-600"></div><div className="w-2.5 h-2.5 bg-white"></div><div className="w-2.5 h-2.5 bg-slate-600"></div><div className="w-2.5 h-2.5 bg-slate-700"></div>
+                    <div className="w-2.5 h-2.5 bg-white"></div><div className="w-2.5 h-2.5 bg-slate-700"></div><div className="w-2.5 h-2.5 bg-white"></div><div className="w-2.5 h-2.5 bg-slate-600"></div>
+                    <span className="absolute inset-0 bg-emerald-500/5 animate-pulse"></span>
                   </div>
 
-                  <span className="text-[7px] text-emerald-700 font-bold tracking-tight">KRA QR Affixed</span>
+                  <span className="text-[8px] text-emerald-400 font-bold uppercase tracking-wider">QR Certified</span>
                 </div>
               </div>
 
-              {/* Status Tracker */}
-              <div className="mt-2 pt-2 border-t border-gray-100 flex items-center justify-between text-gray-400 text-[9px] font-mono">
-                <span className="text-gray-500 font-medium">Auto Updates Complete</span>
-                <div className="flex items-center space-x-1 font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full text-[10px]">
+              {/* Status Footer pipeline simulation showing laser-beam physics */}
+              <div className="mt-3 pt-3 border-t border-slate-900 flex items-center justify-between text-slate-500 text-[9px] font-mono relative overflow-hidden">
+                <span className="text-slate-400 font-medium">Automatic verification cycle secure</span>
+                
+                <div className="flex items-center space-x-1.5 font-bold text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2 py-0.5 rounded-full text-[10px] relative overflow-hidden">
+                  <div className="absolute top-0 bottom-0 left-0 w-8 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent animate-laser-beam"></div>
                   <span>QBO</span>
-                  <span className="tracking-tighter text-blue-400 animate-pulse">◀ ⇆ ▶</span>
+                  <span className="text-slate-600 text-[8px]">⇆</span>
                   <span>eTIMS</span>
                 </div>
               </div>
 
             </div>
-            {/* Chassis Baserail Accent */}
-            <div className="h-1.5 w-1/3 bg-gray-700 mx-auto rounded-b-md"></div>
           </div>
         </div>
       </section>
 
       {/* ========================================== */}
-      {/* SECTION 2: THE ADVANTAGE CARDS MATRIX      */}
+      {/* SECTION 2: THE ASYMMETRIC BENTO GRID       */}
       {/* ========================================== */}
-      <section className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">The eConnector Advantage</h2>
-          <p className="text-3xl font-extrabold text-gray-900 tracking-tight">Engineered to eliminate manual compliance loops</p>
+      <section className="premium-grid-pattern snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">Product Infrastructure</h2>
+          <p className="text-3xl md:text-5xl font-black text-white tracking-tight bg-clip-text bg-gradient-to-b from-white to-slate-400">
+            Engineered for complete workflow invisibility
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-500/20 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+        {/* Asymmetric Bento Grid Configuration */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-[220px]">
+          
+          {/* Bento Card 1: Wide Principal Card */}
+          <div className="lg:col-span-2 lg:row-span-2 group relative rounded-3xl bg-slate-900/40 border border-slate-900 hover:border-slate-800 p-8 flex flex-col justify-between overflow-hidden transition-all duration-300 backdrop-blur-sm shadow-xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[50px] pointer-events-none transition-all group-hover:bg-blue-500/10"></div>
             <div>
-              <div className="h-10 w-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold mb-4">01</div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-snug">
-                Direct QBO link provides accurate 1-to-1 eTIMS invoice issuance.
+              <div className="h-9 w-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-sm mb-6">01</div>
+              <h3 className="text-xl md:text-2xl font-black text-white mb-3 max-w-md leading-snug">
+                Direct QBO link provides accurate 1-to-1 eTIMS validation vectors.
               </h3>
+              <p className="text-slate-400 text-sm md:text-base max-w-xl leading-relaxed">
+                Every transaction maps instantly without creating separate external steps or record mismatches. Complete accounting integrity without manual operational interventions.
+              </p>
             </div>
-            <p className="text-gray-500 text-sm md:text-base border-t border-gray-50 pt-4 mt-4 flex items-start">
-              <span className="text-red-400 mr-2 font-bold">↳</span>
-              No more double-tax invoicing challenges because of manual ETR tax invoice issuance.
+            <p className="text-xs font-mono text-slate-500 border-t border-slate-900/60 pt-4 flex items-center">
+              <span className="text-emerald-500 mr-2">●</span> Operational status: Eliminating manual ETR dependencies.
             </p>
           </div>
 
-          <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-500/20 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+          {/* Bento Card 2: Square Secondary Alert Box */}
+          <div className="lg:col-span-1 group relative rounded-3xl bg-slate-900/40 border border-slate-900 hover:border-slate-800 p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 backdrop-blur-sm shadow-xl">
+            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-[30px] pointer-events-none"></div>
             <div>
-              <div className="h-10 w-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold mb-4">02</div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-snug">
-                Accurate data mapping directly from your QBO source data.
+              <div className="h-8 w-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-xs mb-4">02</div>
+              <h3 className="text-base font-bold text-white mb-2 leading-snug">
+                Immutable Data Mapping Matrix
               </h3>
+              <p className="text-slate-400 text-xs leading-relaxed">
+                Locks down structural integrity, permanently eradicating transcription typos or human reporting errors.
+              </p>
             </div>
-            <p className="text-gray-500 text-sm md:text-base border-t border-gray-50 pt-4 mt-4 flex items-start">
-              <span className="text-red-400 mr-2 font-bold">↳</span>
-              Permanently eliminates data entry typos and mismatched QBO vs. ETR reconciliations.
-            </p>
+            <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest bg-emerald-500/5 border border-emerald-500/10 px-2 py-0.5 rounded-md self-start">
+              Zero Entry Vulnerabilities
+            </span>
           </div>
 
-          <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-500/20 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+          {/* Bento Card 3: Square Metric Display Box */}
+          <div className="lg:col-span-1 group relative rounded-3xl bg-slate-900/40 border border-slate-900 hover:border-slate-800 p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 backdrop-blur-sm shadow-xl">
             <div>
-              <div className="h-10 w-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold mb-4">03</div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-snug">
-                Automated background eTIMS tax invoice generation.
+              <div className="h-8 w-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-bold text-xs mb-4">03</div>
+              <h3 className="text-base font-bold text-white mb-2 leading-snug">
+                Background Ledger Engine
               </h3>
+              <p className="text-slate-400 text-xs leading-relaxed">
+                Silently claims wasted administrative hours, allowing accounting nodes to re-allocate focus to strategic objectives.
+              </p>
             </div>
-            <p className="text-gray-500 text-sm md:text-base border-t border-gray-50 pt-4 mt-4 flex items-start">
-              <span className="text-red-400 mr-2 font-bold">↳</span>
-              Less time spent invoicing manually means reclaiming wasted administrative hours for other tasks.
-            </p>
+            <span className="text-[10px] font-mono text-slate-400 tracking-tight flex items-center">
+              <span className="h-1 w-1 rounded-full bg-blue-500 mr-1.5 animate-ping"></span> Real-time execution metric
+            </span>
           </div>
+
         </div>
       </section>
 
       {/* ========================================== */}
-      {/* SECTION 3: THE 3-STEP CONFIG SYSTEM        */}
+      {/* SECTION 3: PREMIUM DARK CONFIG SYSTEM      */}
       {/* ========================================== */}
       <section className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12">
-        <div className="max-w-5xl mx-auto bg-gray-900 text-white rounded-3xl p-8 md:p-12 shadow-xl w-full">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-3">Up and running in 3 simple steps</h2>
-            <p className="text-gray-400">Zero integration skills required. Fully manageable by your finance team.</p>
+        <div className="max-w-5xl mx-auto bg-slate-900/40 border border-slate-900 rounded-3xl p-8 md:p-16 shadow-2xl w-full relative overflow-hidden backdrop-blur-sm">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-2xl md:text-4xl font-black text-white mb-4 bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">
+              Onboarding Architecture
+            </h2>
+            <p className="text-sm md:text-base text-slate-400">Zero engineering skills demanded. Configured in real-time by your core accounting team.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Step Card 1 */}
-            <div className="flex flex-col justify-between items-center text-center p-6 bg-gray-800/40 rounded-xl border border-gray-800/80 min-h-[260px]">
-              <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-lg font-bold mb-4 shadow-md">1</div>
-              <h3 className="font-bold text-lg mb-2">Profile Setup</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">Setup your business parameters and profile configurations easily.</p>
-              <span className="inline-block text-[10px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 px-3 py-1 rounded border border-emerald-900/50 mt-auto">
-                [ Takes 2 Mins ]
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+            {/* Step 1 */}
+            <div className="flex flex-col justify-between items-center text-center p-6 bg-slate-950/50 rounded-2xl border border-slate-900 min-h-[250px] transform hover:translate-y-[-4px] transition-transform duration-300">
+              <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-sm font-bold text-white shadow-md">1</div>
+              <div>
+                <h3 className="font-bold text-base text-white mb-2">Corporate Settings</h3>
+                <p className="text-slate-400 text-xs leading-relaxed">Establish base operational definitions and parameter alignments.</p>
+              </div>
+              <span className="inline-block text-[9px] font-mono tracking-widest uppercase bg-blue-500/10 text-blue-400 px-3 py-1 rounded border border-blue-500/20 mt-4">
+                Est. Time: 2 Mins
               </span>
             </div>
 
-            {/* Step Card 2 */}
-            <div className="flex flex-col justify-between items-center text-center p-6 bg-gray-800/40 rounded-xl border border-gray-800/80 min-h-[260px]">
-              <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-lg font-bold mb-4 shadow-md">2</div>
-              <h3 className="font-bold text-lg mb-2">Two-Click Linkage</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">Securely authorize the QuickBooks Online connector to establish the network background bridge.</p>
-              <span className="inline-block text-[10px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 px-3 py-1 rounded border border-emerald-900/50 mt-auto">
-                [ Secure OAuth ]
+            {/* Step 2 */}
+            <div className="flex flex-col justify-between items-center text-center p-6 bg-slate-950/50 rounded-2xl border border-slate-900 min-h-[250px] transform hover:translate-y-[-4px] transition-transform duration-300">
+              <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-sm font-bold text-white shadow-md">2</div>
+              <div>
+                <h3 className="font-bold text-base text-white mb-2">OAuth Linkage</h3>
+                <p className="text-slate-400 text-xs leading-relaxed">Securely authorize the eConnector background relay matrix via QuickBooks protocols.</p>
+              </div>
+              <span className="inline-block text-[9px] font-mono tracking-widest uppercase bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded border border-emerald-500/20 mt-4">
+                Secure Handshake
               </span>
             </div>
 
-            {/* Step Card 3 */}
-            <div className="flex flex-col justify-between items-center text-center p-6 bg-gray-800/40 rounded-xl border border-gray-800/80 min-h-[260px]">
-              <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-lg font-bold mb-4 shadow-md">3</div>
-              <h3 className="font-bold text-lg mb-2">Guided Product Mapper</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">Map your existing items and services to eTIMS tax categories for automatic configurations.</p>
-              <span className="inline-block text-[10px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 px-3 py-1 rounded border border-emerald-900/50 mt-auto">
-                [ Auto-Match ]
+            {/* Step 3 */}
+            <div className="flex flex-col justify-between items-center text-center p-6 bg-slate-950/50 rounded-2xl border border-slate-900 min-h-[250px] transform hover:translate-y-[-4px] transition-transform duration-300">
+              <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-sm font-bold text-white shadow-md">3</div>
+              <div>
+                <h3 className="font-bold text-base text-white mb-2">Tax Mapping Index</h3>
+                <p className="text-slate-400 text-xs leading-relaxed">Map functional business categories directly to eTIMS structural pillars.</p>
+              </div>
+              <span className="inline-block text-[9px] font-mono tracking-widest uppercase bg-purple-500/10 text-purple-400 px-3 py-1 rounded border border-purple-500/20 mt-4">
+                Auto Alignment
               </span>
             </div>
           </div>
@@ -230,142 +277,138 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
-      {/* SECTION 4: WHY CHOOSE US & ECOSYSTEM REEL */}
+      {/* SECTION 4: ECOSYSTEM MATRIX & PARTNERS     */}
       {/* ========================================== */}
-      <section className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Why businesses choose eConnector</h2>
-        </div>
-
+      <section className="premium-grid-pattern snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-1">Simplified Tax Invoicing</span>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Designed for Accountants, Backed by IT</h3>
-            <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              No change to your current software or your daily invoicing method. Issue invoices, receipts, and credit notes exactly like you always have. Enjoy zero infrastructure overhead and zero maintenance headaches.
+          <div className="bg-slate-900/40 border border-slate-900 p-8 rounded-3xl backdrop-blur-sm">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-blue-500 block mb-2">Operational Freedom</span>
+            <h3 className="text-xl font-bold text-white mb-3">Tailored for Modern Financial Ops</h3>
+            <p className="text-slate-400 leading-relaxed text-sm">
+              Your software configuration metrics stay exactly the same. Generate statements, adjustments, and documentation within your legacy workflows while our pipeline executes KRA compliance downstream.
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 block mb-1">Secure and Reliable</span>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Running on Approved Vendor Rails</h3>
-            <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              Tax-compliant automated operations running via approved KRA integration vendors using our corporate-grade API invoicing engine, <strong className="text-gray-800">Tracksol Connect</strong>. Your original QuickBooks documents are automatically updated with valid tax invoice numbers and live QR codes in real-time.
+          <div className="bg-slate-900/40 border border-slate-900 p-8 rounded-3xl backdrop-blur-sm">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-500 block mb-2">Network Protocol Compliance</span>
+            <h3 className="text-xl font-bold text-white mb-3">Approved Vendor Framework</h3>
+            <p className="text-slate-400 leading-relaxed text-sm">
+              Automated operations route exclusively over validated, secure structures in compliance with KRA system directives via our underlying integration array, <strong className="text-slate-200">Tracksol Connect</strong>.
             </p>
           </div>
         </div>
 
-        {/* ECOSYSTEM TARGETING MATRIX */}
-        <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm">
-          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Supported Accounting Ecosystems</p>
+        {/* ECOSYSTEM TARGETING COMPONENT */}
+        <div className="bg-slate-900/20 border border-slate-900 rounded-3xl p-8 text-center backdrop-blur-sm">
+          <p className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-8">Supported Accounting Ecosystem Arrays</p>
           
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
-            <div className="flex items-center space-x-2 border border-emerald-200 bg-emerald-50 text-emerald-800 py-2 px-4 rounded-xl shadow-sm">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="font-extrabold text-sm tracking-tight">QuickBooks Online</span>
-              <span className="text-[9px] font-bold uppercase bg-emerald-600 text-white px-1.5 py-0.5 rounded">Active</span>
+            <div className="flex items-center space-x-2.5 border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 py-2 px-4 rounded-xl shadow-md">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="font-extrabold text-sm tracking-tight text-white">QuickBooks Online</span>
+              <span className="text-[9px] font-mono bg-emerald-500 text-slate-950 font-bold px-1.5 py-0.5 rounded">Active</span>
             </div>
 
-            <div className="opacity-30 grayscale font-bold text-gray-500 text-sm tracking-tight select-none">Xero</div>
-            <div className="opacity-30 grayscale font-bold text-gray-500 text-sm tracking-tight select-none">Zoho Books</div>
-            <div className="opacity-30 grayscale font-bold text-gray-500 text-sm tracking-tight select-none">Sage</div>
-            <div className="opacity-30 grayscale font-bold text-gray-500 text-sm tracking-tight select-none">Microsoft Dynamics</div>
+            <div className="opacity-20 grayscale font-bold text-slate-400 text-sm tracking-tight select-none">Xero</div>
+            <div className="opacity-20 grayscale font-bold text-slate-400 text-sm tracking-tight select-none">Zoho Books</div>
+            <div className="opacity-20 grayscale font-bold text-slate-400 text-sm tracking-tight select-none">Sage</div>
+            <div className="opacity-20 grayscale font-bold text-slate-400 text-sm tracking-tight select-none">Microsoft Dynamics</div>
           </div>
 
-          <p className="text-xs text-gray-500 mt-6 font-medium">
-            Don't see your accounting platform? <a href="#inquiry" className="text-blue-600 hover:underline font-semibold">Request early access ➔</a>
+          <p className="text-xs text-slate-500 mt-8 font-medium">
+            Operating outside these core ecosystems? <a href="#inquiry" className="text-blue-400 hover:underline font-semibold">Request deployment mapping ➔</a>
           </p>
         </div>
       </section>
 
       {/* ========================================== */}
-      {/* SECTION 5: TRANSPARENT PRICING GRID        */}
+      {/* SECTION 5: HIGH-CONTRAST PRICING GRID      */}
       {/* ========================================== */}
-      <section className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 bg-gray-100 rounded-[3rem]">
+      <section className="premium-grid-pattern snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 bg-slate-900/20 rounded-[3rem] border-t border-slate-900">
         <div className="max-w-5xl mx-auto w-full">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="text-3xl font-bold mb-3 text-gray-900 tracking-tight">Simple, transparent pricing</h2>
-            <p className="text-gray-600">Choose the perfect path to absolute automation. No hidden processing surcharges.</p>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Predictable Operational Tiers</h2>
+            <p className="text-slate-400 text-sm md:text-base">Absolute transactional alignment. Zero processing surcharges or surprise operational fees.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {/* Tier 1 */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div className="bg-slate-950 p-8 rounded-3xl border border-slate-900 shadow-xl flex flex-col justify-between transform hover:scale-[1.01] transition-transform">
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">Starter</h3>
-                <p className="text-xs text-gray-500 mb-6">For individual operators.</p>
+                <h3 className="text-lg font-bold text-white mb-1">Starter</h3>
+                <p className="text-xs text-slate-500 mb-6">Optimized for single operators.</p>
                 <div className="mb-6">
-                  <span className="text-4xl font-extrabold text-gray-900">$15</span>
-                  <span className="text-gray-500 text-sm font-medium"> / mo</span>
-                  <p className="text-xs text-emerald-600 font-semibold mt-1">Approx. KES 2,000 / mo</p>
+                  <span className="text-4xl font-black text-white">$15</span>
+                  <span className="text-slate-500 text-sm font-mono"> / mo</span>
+                  <p className="text-xs text-emerald-400 font-semibold mt-1">Approx. KES 2,000 / mo</p>
                 </div>
-                <ul className="space-y-3 text-sm text-gray-600 border-t pt-6">
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> 1 Business profile</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> 1 Active link connector</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Background automated syncing</li>
+                <ul className="space-y-3 text-sm text-slate-400 border-t border-slate-900 pt-6">
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> 1 Business profile configuration</li>
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Active loop synchronization</li>
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Automated background reporting</li>
                 </ul>
               </div>
-              <a href="#/connector-dashboard/signup" className="w-full text-center bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl mt-8 transition-colors block">
-                Get Started
+              <a href="#/connector-dashboard/signup" className="w-full text-center bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white font-semibold py-3 px-4 rounded-xl mt-8 transition-colors block">
+                Deploy Node
               </a>
             </div>
 
-            {/* Tier 2 */}
-            <div className="bg-white p-8 rounded-2xl border-2 border-blue-600 shadow-md flex flex-col justify-between relative transform lg:-translate-y-2">
-              <div className="absolute top-0 right-6 transform -translate-y-1/2 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                Popular
+            {/* Tier 2: The Premium Featured Block */}
+            <div className="bg-slate-900/60 p-8 rounded-3xl border-2 border-blue-600 shadow-[0_0_40px_rgba(37,99,235,0.15)] flex flex-col justify-between relative transform lg:-translate-y-3 transition-all">
+              <div className="absolute top-0 right-6 transform -translate-y-1/2 bg-blue-600 text-white text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
+                Standard Operational Base
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">Business</h3>
-                <p className="text-xs text-gray-500 mb-6">For growing teams.</p>
+                <h3 className="text-lg font-bold text-white mb-1">Business</h3>
+                <p className="text-xs text-slate-400 mb-6">Designed for expanding metrics.</p>
                 <div className="mb-6">
-                  <span className="text-4xl font-extrabold text-gray-900">$25</span>
-                  <span className="text-gray-500 text-sm font-medium"> / mo</span>
-                  <p className="text-xs text-emerald-600 font-semibold mt-1">Approx. KES 3,300 / mo</p>
+                  <span className="text-4xl font-black text-white">$25</span>
+                  <span className="text-slate-500 text-sm font-mono"> / mo</span>
+                  <p className="text-xs text-emerald-400 font-semibold mt-1">Approx. KES 3,300 / mo</p>
                 </div>
-                <ul className="space-y-3 text-sm text-gray-600 border-t pt-6">
-                  <li className="flex items-center font-medium text-gray-900"><span className="text-emerald-500 mr-2">✓</span> Up to 3 Business profiles</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Priority routing queues</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Background automated syncing</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Multi-user dashboard access</li>
+                <ul className="space-y-3 text-sm text-slate-300 border-t border-slate-800 pt-6">
+                  <li className="flex items-center font-semibold text-white"><span className="text-emerald-500 mr-2">✓</span> Up to 3 Linked profiles</li>
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Priority processing queues</li>
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Automated background reporting</li>
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Multi-user dashboard tracking</li>
                 </ul>
               </div>
-              <a href="#/connector-dashboard/signup" className="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl mt-8 transition-colors shadow-sm block">
-                Select Business
+              <a href="#/connector-dashboard/signup" className="w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-xl mt-8 transition-all shadow-[0_4px_20px_rgba(37,99,235,0.3)] block">
+                Select Business Tier
               </a>
             </div>
 
             {/* Tier 3 */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div className="bg-slate-950 p-8 rounded-3xl border border-slate-900 shadow-xl flex flex-col justify-between transform hover:scale-[1.01] transition-transform">
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">Group</h3>
-                <p className="text-xs text-gray-500 mb-6">For corporate firms.</p>
+                <h3 className="text-lg font-bold text-white mb-1">Group</h3>
+                <p className="text-xs text-slate-500 mb-6">Engineered for accounting firms.</p>
                 <div className="mb-6">
-                  <span className="text-4xl font-extrabold text-gray-900">$20</span>
-                  <span className="text-gray-500 text-sm font-medium"> / connector / mo</span>
-                  <p className="text-xs text-emerald-600 font-semibold mt-1">Approx. KES 2,600 / connector / mo</p>
+                  <span className="text-4xl font-black text-white">$20</span>
+                  <span className="text-slate-500 text-sm font-mono"> / active link / mo</span>
+                  <p className="text-xs text-emerald-400 font-semibold mt-1">Approx. KES 2,600 / active link / mo</p>
                 </div>
-                <ul className="space-y-3 text-sm text-gray-600 border-t pt-6">
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> 4+ Business profiles</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Consolidated firm views</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Background automated syncing</li>
-                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Dedicated support line</li>
+                <ul className="space-y-3 text-sm text-slate-400 border-t border-slate-900 pt-6">
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> 4+ Linked corporate profiles</li>
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Consolidated practice dashboards</li>
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Automated background reporting</li>
+                  <li className="flex items-center"><span className="text-emerald-500 mr-2">✓</span> Dedicated engineering contact line</li>
                 </ul>
               </div>
-              <a href="#/connector-dashboard/signup" className="w-full text-center bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl mt-8 transition-colors block">
-                Contact Sales
+              <a href="#/connector-dashboard/signup" className="w-full text-center bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white font-semibold py-3 px-4 rounded-xl mt-8 transition-colors block">
+                Contact Operations
               </a>
             </div>
           </div>
 
-          {/* Payment Disclaimers */}
-          <div className="mt-8 text-center px-4">
-            <p className="text-xs text-gray-500 max-w-xl mx-auto leading-relaxed">
-              * Rates exclude a standard one-time $70 eTIMS gateway configuration fee applied securely during your live profile activation.
+          {/* Payment metadata parameters */}
+          <div className="mt-12 text-center px-4 opacity-70">
+            <p className="text-xs text-slate-500 max-w-xl mx-auto leading-relaxed">
+              * Base subscriptions exclude a standard one-time $70 gateway structural configuration fee applied during live ledger environment validation.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-3 text-xs">
-              <span className="font-bold uppercase tracking-wider text-gray-400">Accepted Payment Method:</span>
-              <span className="inline-flex items-center px-3 py-1 rounded-md bg-emerald-50 text-emerald-700 font-extrabold text-sm border border-emerald-100 shadow-sm">
+              <span className="font-mono uppercase tracking-widest text-slate-500">Primary Payment Routing Network:</span>
+              <span className="inline-flex items-center px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-400 font-black text-xs border border-emerald-500/20 shadow-sm">
                 M-PESA
               </span>
             </div>
@@ -374,68 +417,69 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
-      {/* SECTION 6: INQUIRY MATRIX & FINAL CLOSURE  */}
+      {/* SECTION 6: INQUIRY CORE & FOOTER ARRAYS    */}
       {/* ========================================== */}
-      <section id="inquiry" className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-between bg-white pt-16">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start px-6 w-full flex-1">
+      <section id="inquiry" className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-between bg-slate-950 pt-20">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6 w-full flex-1">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 tracking-tight">Need our help in figuring it out?</h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
-              Our support desk is here to understand your setup and eTIMs compliance requirements. Get a direct free consultation today.
+            <h2 className="text-2xl md:text-4xl font-black text-white mb-4 tracking-tight">Direct Support Routing</h2>
+            <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6">
+              Our engineering support line helps verify structural parameters and operational setup protocols. Connect instantly today.
             </p>
-            <div className="space-y-3">
-              <p className="text-sm font-semibold text-gray-700 flex items-center">
-                <span className="text-blue-600 mr-2 text-base">✉</span> info@ezeemoney.co.ke
+            <div className="space-y-3 font-mono text-xs">
+              <p className="text-slate-300 flex items-center">
+                <span className="text-blue-500 mr-2 text-sm">✉</span> info@ezeemoney.co.ke
               </p>
-              <p className="text-sm font-semibold text-gray-700 flex items-center">
-                <span className="text-emerald-600 mr-2 text-base">💬</span> Response time: Under 15 minutes
+              <p className="text-slate-300 flex items-center">
+                <span className="text-emerald-500 mr-2 text-sm">💬</span> SLA Response Interval: &lt; 15 Mins
               </p>
             </div>
           </div>
           
-          <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm">
+          <div className="bg-slate-900/30 p-6 md:p-8 rounded-3xl border border-slate-900 backdrop-blur-sm">
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Work Email</label>
-                <input type="email" placeholder="name@company.co.ke" className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500" />
+                <label className="block text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-2">Corporate Email</label>
+                <input type="email" placeholder="name@company.co.ke" className="w-full bg-slate-950 border border-slate-900 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors" />
               </div>
               <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Your Question</label>
-                <textarea rows={3} placeholder="How does the mapper handle tax-exempt items?" className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500 resize-none"></textarea>
+                <label className="block text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-2">Technical / Operational Query</label>
+                <textarea rows={3} placeholder="How does the indexing protocol treat custom tax exempt items?" className="w-full bg-slate-950 border border-slate-900 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"></textarea>
               </div>
               <div>
-                <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm py-3 px-4 rounded-lg transition-colors">
-                  Send Inquiry
+                <button type="submit" className="w-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-sm py-3.5 px-4 rounded-xl transition-all shadow-md">
+                  Dispatch Query
                 </button>
               </div>
             </form>
           </div>
         </div>
 
-        {/* Closing conversion bumper element */}
-        <div className="bg-blue-600 text-white py-16 px-6 text-center mt-12">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">Ready to put your eTIMS compliance on autopilot?</h2>
-            <p className="text-blue-100 text-sm md:text-base mb-6 max-w-xl mx-auto">
-              Join accountants and smart business owners running automated QuickBooks eTIMS linkages.
+        {/* Closing Bumper Core Conversion Array */}
+        <div className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-16 px-6 text-center mt-16 relative overflow-hidden">
+          <div className="absolute inset-0 premium-grid-pattern opacity-20"></div>
+          <div className="max-w-3xl mx-auto relative z-10">
+            <h2 className="text-2xl md:text-4xl font-black mb-4 tracking-tight">Automate your eTIMS workflow vectors today</h2>
+            <p className="text-blue-100 text-sm md:text-base mb-8 max-w-xl mx-auto opacity-90">
+              Join accounting personnel scaling operational efficiency via silent, background QuickBooks data links.
             </p>
-            <a href="#/connector-dashboard/signup" className="bg-white text-blue-600 font-bold text-base py-3 px-10 rounded-lg shadow-md hover:bg-gray-50 transition-all duration-200 inline-block">
-              Connect Your QuickBooks Profile
+            <a href="#/connector-dashboard/signup" className="bg-white text-slate-950 font-bold text-base py-4 px-10 rounded-xl shadow-xl hover:bg-slate-50 transition-all inline-block">
+              Deploy Your Integration Node
             </a>
           </div>
         </div>
 
-        {/* Global Footer element */}
-        <footer className="bg-gray-900 text-gray-400 py-10 px-6 text-xs md:text-sm border-t border-gray-800 w-full">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        {/* Global Structural Footer */}
+        <footer className="bg-slate-950 text-slate-600 py-12 px-6 text-xs border-t border-slate-900 w-full">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="flex items-center space-x-3 text-center md:text-left">
-              <div className="h-6 w-6 rounded bg-gray-800 flex items-center justify-center text-white font-black text-xs">eC</div>
-              <p>© 2026 Ezeemoney Ltd. All rights reserved.</p>
+              <div className="h-6 w-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-white font-black text-xs">eC</div>
+              <p>© 2026 Ezeemoney Ltd. Secure pipeline metrics active.</p>
             </div>
             
-            <div className="text-center md:text-right text-gray-400 space-y-1 text-xs">
-              <p>The eConnector plugin is a product of <span className="text-gray-200 font-medium">Tracksol</span>.</p>
-              <p className="text-gray-500">Tracksol operates securely over approved KRA vendor networks.</p>
+            <div className="text-center md:text-right space-y-1 text-slate-500">
+              <p>The eConnector application array is a registered utility of <span className="text-slate-400 font-medium">Tracksol</span>.</p>
+              <p className="text-slate-600">Tracksol operational frameworks map seamlessly through approved regulatory pathways.</p>
             </div>
           </div>
         </footer>
