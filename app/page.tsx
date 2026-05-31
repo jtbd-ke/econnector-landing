@@ -52,6 +52,7 @@ export default function LandingPage() {
             transform: rotateX(0deg) rotateZ(0deg) translateY(0px) !important;
           }
           :root {
+            /* HIGH-SPEED CLEARANCE CHOREOGRAPHY: Lift stamper completely out of view */
             --tz-entering: 0px;    --ty-entering: -30px; --rx-entering: 0deg;  --sc-entering: 0.3;  --op-entering: 0;
             --tz-ready: 0px;       --ty-ready: -8px;    --rx-ready: 0deg;     --sc-ready: 1;    --op-ready: 1;
             --tz-impact: 0px;      --ty-impact: 0px;     --rx-impact: 0deg;    --sc-impact: 0.95; --op-impact: 1;
@@ -78,7 +79,7 @@ export default function LandingPage() {
         }
       `}</style>
 
-      {/* FLOATING NAVIGATION ARRAY */}
+      {/* COMPACT FLOATING HEADER */}
       <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-100 px-6 py-3 lg:py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -94,13 +95,13 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* SECTION 1: HERO CONTAINER - Maximized Headline Scale & Compressed Spacing */}
-      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-[calc(100vh-65px)] flex flex-col lg:grid lg:grid-cols-12 gap-5 lg:gap-4 justify-start lg:items-center px-4 md:px-6 py-4 lg:py-12 max-w-7xl mx-auto relative overflow-hidden">
+      {/* SECTION 1: HERO VIEWPORT CONTAINER - Clean Stack Architecture */}
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-[calc(100vh-65px)] flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-4 justify-start lg:items-center px-4 md:px-6 py-6 lg:py-12 max-w-7xl mx-auto relative overflow-hidden">
         
-        {/* Left Column Text Stack */}
-        <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left z-10 pt-2 lg:pt-0">
+        {/* Left Side Conversion Content Deck */}
+        <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left z-10">
           
-          {/* Desktop Only Pill Badge - Hidden completely on mobile to clean the header ceiling */}
+          {/* Desktop Only Context Ribbon - Wholly removed from mobile to free up primary vertical sightlines */}
           <div className="hidden lg:inline-flex items-center px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold mb-6 border border-emerald-200 tracking-wide shadow-sm">
             <span className="relative flex h-2 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -109,43 +110,35 @@ export default function LandingPage() {
             Real-Time eTIMS Sync Loop Active
           </div>
 
-          {/* High Attention Punchline - Amplified back to full attention weight on mobile */}
+          {/* Heavyweight Mobile Title Punchline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black tracking-tight mb-3 lg:mb-6 text-gray-950 leading-[1.12] lg:leading-[1.05] max-w-2xl">
             Get eTIMS compliant without changing how you invoice.
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-5 lg:mb-8 max-w-md leading-relaxed">
+          {/* Breathing Sub-Headline Context Block */}
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 lg:mb-8 max-w-md leading-relaxed">
             An automated background bridge that syncs your <strong className="text-gray-950 font-semibold">QuickBooks Online</strong> transactions directly to eTIMS. No manual entries, no workflow changes, and zero IT headaches.
           </p>
 
-          <div className="flex flex-col items-center lg:items-start w-full sm:w-auto">
+          {/* Primary Action Button - Cleared of redundant mobile status bar text block below it */}
+          <div className="w-full sm:w-auto">
             <button className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white font-bold text-base py-3.5 px-8 lg:py-4 lg:px-10 rounded-xl shadow-[0_10px_25px_-5px_rgba(37,99,235,0.3)] transition-all duration-300">
               Connect QuickBooks Now
             </button>
-            
-            {/* Integrated Mobile Micro Indicator Status */}
-            <div className="lg:hidden flex items-center space-x-1.5 mt-2.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-100/60">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-              </span>
-              <span>Active background loop tracking live</span>
-            </div>
-
             <span className="hidden lg:block text-xs text-gray-500 mt-3 font-medium tracking-wide">Setup takes less than 5 minutes.</span>
           </div>
         </div>
 
-        {/* Right Column Visual Frame - Perfectly utilizes remaining fold area */}
-        <div className="lg:col-span-7 w-full flex items-center justify-center min-h-[18rem] sm:min-h-[22rem] lg:min-h-[34rem] relative perspective-canvas select-none mt-1 lg:mt-0">
+        {/* Right Side Visual Module Frame */}
+        <div className="lg:col-span-7 w-full flex items-center justify-center min-h-[18rem] sm:min-h-[22rem] lg:min-h-[34rem] relative perspective-canvas select-none mt-2 lg:mt-0">
           
           <div className="relative w-full max-w-[20rem] sm:max-w-[24rem] md:max-w-[28rem] h-[18rem] sm:h-[22rem] lg:h-[30rem] platform-tilt preserve-3d-layers scale-100 transition-transform origin-center">
             
-            {/* STACK DEPTH DECK */}
+            {/* PLATFORM LAYERS FOR DESKTOP */}
             <div className="absolute inset-0 bg-white/40 rounded-2xl border border-gray-200/40 pointer-events-none shadow-sm hidden lg:block" style={{ transform: 'translateZ(-24px) scale(0.94) translateX(12px) translateY(12px)' }}></div>
             <div className="absolute inset-0 bg-white/70 rounded-2xl border border-gray-200/60 pointer-events-none shadow-sm hidden lg:block" style={{ transform: 'translateZ(-12px) scale(0.97) translateX(6px) translateY(6px)' }}></div>
 
-            {/* THE INVOICE SHEET CONTAINER */}
+            {/* MOCK COMMERCIAL INVOICE DOCUMENT */}
             <div 
               style={{
                 transition: 'all 600ms cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -218,7 +211,7 @@ export default function LandingPage() {
                     Awaiting eTIMS Validation
                   </div>
                   
-                  {/* REVEAL MATRIX CONTAINER */}
+                  {/* DYNAMIC TARGET BOX & QR CODE CONTAINER */}
                   <div className={`relative w-14 h-14 lg:w-24 lg:h-24 rounded-lg lg:rounded-xl transition-all duration-300 flex items-center justify-center overflow-hidden ${
                     stage === "impact" ? "border-2 border-emerald-500 bg-emerald-50/20 scale-95" :
                     isFiscalised ? "border-2 border-emerald-500/30 bg-white shadow-sm" : "border-2 border-dashed border-gray-300 bg-gray-50/50"
@@ -247,7 +240,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* AUTOMATION STAMPER MODULE */}
+            {/* INDUSTRIAL AUTOMATION STAMPER MODULE */}
             <div 
               style={{
                 bottom: '14px',
@@ -373,7 +366,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* SECTION 4: TRANSPARENT COMPLIANCE PRICING TIERS */}
+      {/* SECTION 4: COMPLIANCE PRICING TIERS */}
       <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-16 max-w-5xl mx-auto w-full">
         <div className="text-center mb-16">
           <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-3">Simple Pricing</h2>
@@ -461,7 +454,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* SECTION 6: CONVERTING TERMINATION BANNER */}
+      {/* SECTION 6: FOOTER CONVERSION BANNER */}
       <footer className="snap-start bg-gray-950 text-white px-6 py-16 text-center relative overflow-hidden flex flex-col justify-center min-h-[360px]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_120%,rgba(37,99,235,0.18),transparent)] pointer-events-none"></div>
         <div className="max-w-2xl mx-auto relative z-10">
