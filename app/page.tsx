@@ -1,55 +1,106 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function LandingPage() {
+  // Batch processing system state engine
+  const [activeBatchIndex, setActiveBatchIndex] = useState(0);
+  const [isStamping, setIsStamping] = useState(false);
+
+  const batchInvoices = [
+    { id: "INV-01", date: "31 May 2026", amount: "KES 45,000.00", client: "Acme Corp Ltd" },
+    { id: "INV-02", date: "31 May 2026", amount: "KES 128,500.00", client: "Safari Ventures" },
+    { id: "INV-03", date: "31 May 2026", amount: "KES 64,200.00", client: "Kilimanjaro Tech" },
+    { id: "INV-04", date: "31 May 2026", amount: "KES 19,000.00", client: "Delta Hauliers" },
+  ];
+
+  // Synchronize state rotations with physical CSS stamp cycles
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Trigger impact flash effect slightly before updating data fields
+      setIsStamping(true);
+      
+      setTimeout(() => {
+        setIsStamping(false);
+        setActiveBatchIndex((prev) => (prev + 1) % batchInvoices.length);
+      }, 600); // Duration matches bottom peak of physical CSS keyframe sequence
+
+    }, 3500); // Total duration loop per statement unit
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen lg:h-screen lg:overflow-y-auto lg:snap-y lg:snap-mandatory scroll-smooth bg-white text-gray-900 font-sans antialiased bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),transparent)]">
       
-      {/* Embedded High-End 3D Physics & Animation Engine */}
+      {/* 3D Core Structural & Kinetic Layout Styles */}
       <style>{`
-        /* 3D Isometric Setup */
-        .perspective-container { perspective: 1200px; }
-        .preserve-3d { transform-style: preserve-3d; }
+        .perspective-canvas { perspective: 1400px; }
+        .preserve-3d-layers { transform-style: preserve-3d; }
         
-        /* The main tilt for the isometric view */
-        .iso-tilt {
-          transform: rotateX(55deg) rotateZ(-40deg);
-          transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Master base platform 3D orientation tilt mapping */
+        .platform-tilt {
+          transform: rotateX(54deg) rotateZ(-36deg) translateY(-20px);
+          transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         
-        /* Subtle interactive tilt on hover */
-        .perspective-container:hover .iso-tilt {
-          transform: rotateX(55deg) rotateZ(-35deg) scale3d(1.02, 1.02, 1.02);
+        .perspective-canvas:hover .platform-tilt {
+          transform: rotateX(52deg) rotateZ(-32deg) translateY(-25px) scale3d(1.01, 1.01, 1.01);
         }
 
-        /* The vertical Z-axis stamping motion */
-        @keyframes isometric-stamp {
-          0%, 100% { transform: translateZ(140px); box-shadow: -30px 30px 40px rgba(0,0,0,0.15); }
-          50% { transform: translateZ(10px); box-shadow: -5px 5px 10px rgba(0,0,0,0.3); }
+        /* eTIMS Engine Mechanical Stamping Automation Profile */
+        @keyframes dynamic-engine-stamp {
+          0%, 100% { 
+            transform: translateZ(150px) translateX(0px) translateY(0px); 
+            box-shadow: -40px 40px 50px rgba(0, 0, 0, 0.12);
+          }
+          45% {
+            transform: translateZ(150px) translateX(0px) translateY(0px);
+            box-shadow: -40px 40px 50px rgba(0, 0, 0, 0.12);
+          }
+          52% { 
+            transform: translateZ(12px) translateX(2px) translateY(-2px); 
+            box-shadow: -4px 4px 10px rgba(16, 185, 129, 0.4);
+          }
+          62% {
+            transform: translateZ(150px) translateX(0px) translateY(0px);
+            box-shadow: -40px 40px 50px rgba(0, 0, 0, 0.12);
+          }
         }
-        .animate-iso-stamp {
-          animation: isometric-stamp 4s cubic-bezier(0.5, 0, 0.2, 1) infinite;
+        .animate-mechanical-stamp {
+          animation: dynamic-engine-stamp 3.5s cubic-bezier(0.4, 0, 0.1, 1) infinite;
         }
 
-        /* Scanner beam down the QR code */
-        @keyframes scanner-beam {
-          0% { top: 0%; opacity: 0; }
-          20% { opacity: 1; }
-          80% { opacity: 1; }
-          100% { top: 100%; opacity: 0; }
+        /* Active tracking statement horizontal feed loop animation */
+        @keyframes page-feed-deck {
+          0% { transform: translateZ(0px) translateY(40px) opacity(0); }
+          12% { transform: translateZ(0px) translateY(0px) opacity(1); }
+          45% { transform: translateZ(0px) translateY(0px) opacity(1); }
+          52% { transform: translateZ(0px) translateY(0px) scale(0.99); }
+          65% { transform: translateZ(20px) translateY(-120px) opacity(0); }
+          100% { transform: translateZ(20px) translateY(-120px) opacity(0); }
         }
-        .animate-scanner-beam {
-          animation: scanner-beam 2s linear infinite;
+        .animate-statement-feed {
+          animation: page-feed-deck 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
 
-        .canvas-grid-pattern {
-          background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-          background-size: 24px 24px;
+        /* Kinetic wave emitting from execution targets */
+        @keyframes data-impact-pulse {
+          0% { transform: scale(0.8); opacity: 0; }
+          50% { transform: scale(0.8); opacity: 0; }
+          53% { transform: scale(0.9) opacity(1); }
+          100% { transform: scale(2.2); opacity: 0; }
+        }
+        .animate-impact-pulse {
+          animation: data-impact-pulse 3.5s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+        }
+
+        .canvas-grid-dots {
+          background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1.5px, transparent 1.5px);
+          background-size: 32px 32px;
         }
       `}</style>
 
-      {/* FLOATING CRYSTAL NAVIGATION BAR */}
+      {/* FLOATING NAVIGATION ARRAY */}
       <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-100 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -66,18 +117,18 @@ export default function LandingPage() {
       </header>
 
       {/* ========================================== */}
-      {/* SECTION 1: HERO WITH 3D ISOMETRIC STAMP    */}
+      {/* SECTION 1: HERO CONTAINER WITH ACTIVE MOCK */}
       {/* ========================================== */}
-      <section className="canvas-grid-pattern snap-start scroll-mt-20 min-h-screen flex items-center justify-center px-6 py-12 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative overflow-hidden">
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex items-center justify-center px-6 py-12 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative overflow-hidden">
         
-        {/* Left Column: Typography */}
-        <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left h-full z-10">
+        {/* Left Column: Core Value Propositions */}
+        <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left z-10">
           <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold mb-6 border border-emerald-200 tracking-wide shadow-sm">
             <span className="relative flex h-2 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Now Live for QuickBooks Online
+            Real-Time eTIMS Sync Loop Active
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-gray-950 leading-[1.1] bg-clip-text bg-gradient-to-b from-gray-950 to-gray-800">
@@ -96,74 +147,147 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Right Column: 3D Isometric Animation */}
-        <div className="lg:col-span-6 w-full flex items-center justify-center h-full relative perspective-container group">
+        {/* Right Column: High-End Batch Automation Platform */}
+        <div className="lg:col-span-6 w-full flex items-center justify-center min-h-[32rem] relative perspective-canvas">
           
-          {/* Main Tilt Container */}
-          <div className="relative w-72 md:w-80 h-[28rem] iso-tilt preserve-3d">
+          {/* Main 3D Matrix Transform Frame */}
+          <div className="relative w-80 md:w-96 h-[26rem] platform-tilt preserve-3d-layers">
             
-            {/* BASE LAYER: The QuickBooks Invoice */}
-            <div className="absolute inset-0 bg-white rounded-2xl shadow-[-20px_20px_40px_rgba(0,0,0,0.08)] border border-gray-200 p-6 flex flex-col justify-between preserve-3d">
+            {/* BACKGROUND BATCH DECK - UNDERLAY CARDS (FANNED COPIES SIMULATING REAL PIPELINE) */}
+            <div className="absolute inset-0 bg-white/40 rounded-2xl border border-gray-200/50 p-6 translate-z-[-30px] translate-x-[-16px] translateY([16px]) pointer-events-none blur-[1px]"></div>
+            <div className="absolute inset-0 bg-white/70 rounded-2xl border border-gray-200/80 p-6 translate-z-[-15px] translate-x-[-8px] translateY([8px]) pointer-events-none"></div>
+
+            {/* LIVE EXECUTING INVOICE CARD CONTAINER (SLIDES & UPDATES VIA TIMED LOOP) */}
+            <div className="absolute inset-0 bg-white rounded-2xl shadow-[-25px_25px_40px_rgba(0,0,0,0.06)] border border-gray-200 p-6 flex flex-col justify-between preserve-3d-layers animate-statement-feed">
               
-              {/* Invoice Header Mockup */}
-              <div className="flex justify-between items-start border-b border-gray-100 pb-4 mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="h-6 w-6 bg-emerald-600 rounded-md flex items-center justify-center text-white font-bold text-[10px]">qb</div>
-                  <div>
-                    <div className="w-20 h-2 bg-gray-200 rounded-full mb-1.5"></div>
-                    <div className="w-12 h-1.5 bg-gray-100 rounded-full"></div>
+              {/* Invoice Head Mock */}
+              <div>
+                <div className="flex justify-between items-start border-b border-gray-100 pb-4 mb-4">
+                  <div className="flex items-center space-x-2">
+                    <div className="h-6 w-6 bg-emerald-600 rounded-md flex items-center justify-center text-white font-bold text-[10px]">qb</div>
+                    <div>
+                      <span className="text-[10px] font-black text-gray-950 uppercase tracking-tight block">QuickBooks</span>
+                      <span className="text-[8px] font-medium text-gray-400 block -mt-0.5">Online Document</span>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-xs font-mono font-bold text-gray-900 block">
+                      {batchInvoices[activeBatchIndex].id}
+                    </span>
+                    <span className="text-[9px] text-gray-400 font-medium block">
+                      {batchInvoices[activeBatchIndex].date}
+                    </span>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="w-16 h-2 bg-gray-800 rounded-full mb-1.5"></div>
-                  <div className="w-24 h-1.5 bg-gray-200 rounded-full"></div>
+
+                {/* Internal Ledger Profile Metadata */}
+                <div className="bg-gray-50 rounded-lg p-2.5 border border-gray-100 mb-4">
+                  <div className="text-[9px] uppercase font-bold tracking-wider text-gray-400">Bill To:</div>
+                  <div className="text-xs font-bold text-gray-800 mt-0.5">{batchInvoices[activeBatchIndex].client}</div>
+                </div>
+
+                {/* Line Item Structures */}
+                <div className="space-y-2.5">
+                  <div className="flex justify-between items-center bg-gray-50/50 px-2 py-1.5 rounded border border-gray-100/50">
+                    <div className="w-24 h-2 bg-gray-200 rounded-full"></div>
+                    <div className="w-10 h-2 bg-gray-300 rounded-full"></div>
+                  </div>
+                  <div className="flex justify-between items-center bg-gray-50/50 px-2 py-1.5 rounded border border-gray-100/50">
+                    <div className="w-32 h-2 bg-gray-200 rounded-full"></div>
+                    <div className="w-6 h-2 bg-gray-300 rounded-full"></div>
+                  </div>
                 </div>
               </div>
 
-              {/* Invoice Line Items Mockup */}
-              <div className="space-y-4 flex-1">
-                <div className="w-full h-3 bg-gray-50 rounded border border-gray-100"></div>
-                <div className="w-3/4 h-3 bg-gray-50 rounded border border-gray-100"></div>
-                <div className="w-5/6 h-3 bg-gray-50 rounded border border-gray-100"></div>
-                
-                {/* Total Block */}
-                <div className="mt-6 flex justify-end">
-                  <div className="w-32 h-6 bg-blue-50 rounded-lg border border-blue-100 flex items-center justify-end px-3">
-                    <div className="w-16 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
+              {/* Lower Section: Transaction Ledger Balance & Target Node */}
+              <div>
+                <div className="flex justify-between items-center border-t border-gray-100 pt-4 mb-2">
+                  <span className="text-[10px] font-bold text-gray-400 uppercase">Total Amount</span>
+                  <span className="text-sm font-mono font-black text-blue-600 bg-blue-50/70 px-2.5 py-1 rounded-md border border-blue-100">
+                    {batchInvoices[activeBatchIndex].amount}
+                  </span>
                 </div>
-              </div>
 
-              {/* TARGET ZONE: Where the QR code gets stamped */}
-              <div className="w-24 h-24 border-2 border-dashed border-emerald-300 rounded-xl bg-emerald-50/50 flex flex-col items-center justify-center space-y-2 mt-4 relative overflow-hidden self-end">
-                <span className="text-[8px] font-black tracking-widest text-emerald-600 uppercase">QR Target Area</span>
-                <div className="w-12 h-12 bg-white rounded border border-emerald-100 flex items-center justify-center">
-                   <div className="w-4 h-4 border-2 border-emerald-200 rounded-full opacity-50"></div>
+                {/* TARGET REGULATORY ANCHORMENT SQUARE */}
+                <div className="flex justify-between items-end mt-4 pt-2 border-t border-dashed border-gray-100">
+                  <div className="flex items-center space-x-1.5 text-gray-400">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span className="text-[8px] font-mono tracking-tight text-gray-500">Pipeline Bridge Live</span>
+                  </div>
+                  
+                  {/* Anchor Point where the physical compliance stamp imprints */}
+                  <div className="relative w-20 h-20 border-2 border-dashed border-blue-500/30 rounded-xl bg-gray-50/50 flex flex-col items-center justify-center overflow-hidden transition-all">
+                    
+                    {/* Synchronized Vector QR Deployment Array */}
+                    <div className="w-16 h-16 bg-white rounded-lg p-1.5 grid grid-cols-4 gap-0.5 shadow-sm transition-all duration-300 transform scale-100 opacity-100">
+                      {/* Detailed Custom High-Density Matrix Representation */}
+                      <div className="bg-gray-900 rounded-[1px]"></div><div className="bg-gray-900 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-gray-900 rounded-[1px]"></div>
+                      <div className="bg-gray-900 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-gray-900 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div>
+                      <div className="bg-gray-200 rounded-[1px]"></div><div className="bg-gray-900 rounded-[1px]"></div><div className="bg-gray-900 rounded-[1px]"></div><div className="bg-gray-900 rounded-[1px]"></div>
+                      <div className="bg-gray-900 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-gray-900 rounded-[1px]"></div>
+                      
+                      {/* Emerald glow filter overlay simulating fresh ink/fiscal confirmation stamp */}
+                      <div className={`absolute inset-0 bg-emerald-500/20 mix-blend-color transition-opacity duration-300 ${isStamping ? 'opacity-100' : 'opacity-0'}`}></div>
+                    </div>
+
+                    {/* Outer concentric impact ring animation */}
+                    <div className="absolute inset-0 border-2 border-emerald-400 rounded-xl pointer-events-none scale-90 animate-impact-pulse -z-10"></div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* STAMPING MODULE LAYER: Hovering eConnector Hardware/Software block */}
-            <div className="absolute bottom-6 right-6 w-24 h-28 bg-gray-950 rounded-2xl animate-iso-stamp flex flex-col items-center justify-between border border-gray-800 preserve-3d overflow-hidden p-3 z-20">
+            {/* FLOATING STATUS METRIC LABELS LOOP ARRAY */}
+            <div className="absolute -left-12 top-10 flex flex-col space-y-2.5 pointer-events-none translate-z-[60px]">
+              {batchInvoices.map((inv, idx) => {
+                const isActive = idx === activeBatchIndex;
+                return (
+                  <div 
+                    key={inv.id}
+                    className={`px-3 py-1.5 rounded-lg border text-[10px] font-mono font-bold tracking-tight shadow-md flex items-center space-x-2 transition-all duration-500 ${
+                      isActive 
+                        ? 'bg-emerald-950 border-emerald-500 text-emerald-400 scale-105 opacity-100 translate-x-2' 
+                        : 'bg-white/80 border-gray-200 text-gray-400 opacity-40 scale-95 translate-x-0'
+                    }`}
+                  >
+                    <span className={`h-1.5 w-1.5 rounded-full ${isActive ? 'bg-emerald-400 animate-pulse' : 'bg-gray-300'}`}></span>
+                    <span>#{inv.id}</span>
+                    <span className={`text-[9px] uppercase tracking-wider px-1 rounded ${isActive ? 'bg-emerald-900 text-emerald-300' : 'bg-gray-100 text-gray-400'}`}>
+                      {isActive ? 'Fiscalised' : 'Pending'}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* MECHANICAL HOVERING ENGINE UNIT: DRIVING THE CORE eTIMS LOGO SHIELD STAMPER */}
+            <div className="absolute bottom-2.5 right-2.5 w-20 h-20 animate-mechanical-stamp preserve-3d-layers z-30 pointer-events-none">
               
-              {/* Top face details of the stamper */}
-              <div className="w-full flex justify-between items-center mb-2">
-                 <span className="h-1.5 w-1.5 bg-blue-500 rounded-full animate-ping"></span>
-                 <span className="text-[7px] text-gray-400 font-bold tracking-widest uppercase">eTIMS Core</span>
-              </div>
-              
-              {/* The "Generated QR" pushing out the bottom */}
-              <div className="w-16 h-16 bg-white rounded-lg p-1.5 grid grid-cols-3 gap-0.5 relative">
-                 <div className="bg-gray-950 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-gray-950 rounded-[1px]"></div>
-                 <div className="bg-gray-200 rounded-[1px]"></div><div className="bg-gray-950 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div>
-                 <div className="bg-gray-950 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-gray-950 rounded-[1px]"></div>
-                 
-                 {/* Laser scanning effect inside the module */}
-                 <div className="absolute left-0 right-0 h-[2px] bg-emerald-400 animate-scanner-beam shadow-[0_0_8px_#34d399] z-10"></div>
+              {/* Floating Shield Connector Frame */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-950 p-0.5 shadow-2xl flex items-center justify-center border border-white/20">
+                
+                {/* Embedded eTIMS Core Logo Graphic Node */}
+                <div className="w-full h-full bg-slate-950/40 rounded-[10px] flex flex-col items-center justify-center p-1 relative overflow-hidden backdrop-blur-sm">
+                  
+                  {/* Dynamic Shield SVG Representation */}
+                  <svg className="w-9 h-9 drop-shadow-[0_4px_10px_rgba(37,99,235,0.5)]" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 0L2 5V20C2 31.5 9.5 40 20 44C30.5 40 38 31.5 38 20V5L20 0Z" fill="#1E3A8A" fillOpacity="0.9"/>
+                    <path d="M20 3L5 7.2V20C5 29.8 11.3 37.2 20 40.7C28.7 37.2 35 29.8 35 20V7.2L20 3Z" fill="#2563EB"/>
+                    {/* Internal Cross-Strap Core Elements */}
+                    <path d="M20 8V35" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+                    <path d="M10 20H30" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+                    <circle cx="20" cy="20" r="4" fill="#EF4444" stroke="white" strokeWidth="1.5"/>
+                  </svg>
+
+                  <span className="text-[7px] text-blue-200 font-mono tracking-widest uppercase font-black mt-1">eTIMS</span>
+
+                  {/* Micro Electrical Impact Glow lines */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent animate-pulse"></div>
+                </div>
               </div>
 
-              {/* Connecting light beam projecting downwards (Creates the illusion of data transfer) */}
-              <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-16 h-24 bg-gradient-to-b from-emerald-400/20 to-transparent blur-sm -z-10 pointer-events-none"></div>
+              {/* Data projection beam projecting downward onto document surface */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-12 h-36 bg-gradient-to-b from-blue-500/20 via-emerald-400/10 to-transparent blur-sm pointer-events-none -z-10"></div>
             </div>
 
           </div>
@@ -171,9 +295,9 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
-      {/* SECTION 2: BENTO GRID                      */}
+      {/* SECTION 2: BENTO FEATURE ARCHITECTURE      */}
       {/* ========================================== */}
-      <section className="canvas-grid-pattern snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-6xl mx-auto">
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-3">Product Infrastructure</h2>
           <p className="text-3xl md:text-5xl font-black text-gray-950 tracking-tight">
@@ -234,7 +358,7 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
-      {/* SECTION 3: DARK CONFIGBlueprint            */}
+      {/* SECTION 3: STEP CONFIGURATION DECK         */}
       {/* ========================================== */}
       <section className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12">
         <div className="max-w-5xl mx-auto bg-gray-950 border border-gray-900 rounded-3xl p-8 md:p-16 shadow-2xl w-full relative overflow-hidden backdrop-blur-sm shadow-[0_30px_60px_-10px_rgba(0,0,0,0.5)]">
@@ -272,7 +396,7 @@ export default function LandingPage() {
             <div className="flex flex-col justify-between items-center text-center p-6 bg-gray-900/40 rounded-2xl border border-gray-800 min-h-[250px] transform hover:translate-y-[-4px] transition-transform duration-300 shadow-md">
               <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center text-sm font-bold text-white border border-gray-800 shadow-inner">3</div>
               <div>
-                <h3 className="font-bold text-base text-white mb-2"> Guided Mapper</h3>
+                <h3 className="font-bold text-base text-white mb-2">Guided Mapper</h3>
                 <p className="text-gray-400 text-xs leading-relaxed">Map your native QuickBooks functional definitions directly to structural eTIMS pillars.</p>
               </div>
               <span className="inline-block text-[10px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 px-3 py-1.5 rounded-full border border-emerald-900 mt-4 shadow-inner">
@@ -284,13 +408,13 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
-      {/* SECTION 4: ECOSYSTEM MATRIX & PARTNERS     */}
+      {/* SECTION 4: ECOSYSTEM MATRIX ARRAY          */}
       {/* ========================================== */}
-      <section className="canvas-grid-pattern snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-5xl mx-auto">
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div className="bg-white border border-gray-100 hover:border-gray-200 p-8 rounded-3xl shadow-lg">
             <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600 block mb-2">Operational Integrity</span>
-            <h3 className="text-xl font-black text-gray-950 mb-3"> Designed for Accountants, Backed by IT</h3>
+            <h3 className="text-xl font-black text-gray-950 mb-3">Designed for Accountants, Backed by IT</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
               Your software configuration stays exactly the same. Generate statements, adjustments, and documentation within your legacy workflows while our pipeline executes regulatory compliance downstream. Zero IT friction demanded.
             </p>
@@ -328,12 +452,12 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
-      {/* SECTION 5: HIGH-CONTRAST PRICING GRID      */}
+      {/* SECTION 5: PRICING LEDGER PROFILE TIERS   */}
       {/* ========================================== */}
-      <section className="canvas-grid-pattern snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 bg-gray-50 rounded-[3rem] border-t border-gray-100 mt-12">
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 bg-gray-50 rounded-[3rem] border-t border-gray-100 mt-12">
         <div className="max-w-5xl mx-auto w-full">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-950 mb-4 tracking-tight">Transparent Operational Tiers</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-950 mb-4 tracking-tight">Transparent Pricing Matrix</h2>
             <p className="text-gray-600 text-sm md:text-base">Absolute transactional alignment. Zero processing surcharges or surprise operational fees.</p>
           </div>
 
@@ -359,7 +483,7 @@ export default function LandingPage() {
               </a>
             </div>
 
-            {/* Business Tier (Featured) */}
+            {/* Business Tier */}
             <div className="bg-white p-8 rounded-3xl border-2 border-blue-600 shadow-[0_15px_40px_-5px_rgba(37,99,235,0.25)] flex flex-col justify-between relative transform lg:-translate-y-3 transition-all">
               <div className="absolute top-0 right-6 transform -translate-y-1/2 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-lg">
                 Popular Base
@@ -422,7 +546,7 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================== */}
-      {/* SECTION 6: INQUIRY ARRAY & FOOTER          */}
+      {/* SECTION 6: INQUIRY ARRAY & FOOTER CORE     */}
       {/* ========================================== */}
       <section id="inquiry" className="snap-start scroll-mt-20 min-h-screen flex flex-col justify-between bg-white pt-24">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6 w-full flex-1">
@@ -460,8 +584,9 @@ export default function LandingPage() {
           </div>
         </div>
 
+        {/* BOTTOM CALL TO ACTION FLAG LINE */}
         <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 text-white py-16 px-6 text-center mt-20 relative overflow-hidden shadow-2xl">
-          <div className="absolute inset-0 canvas-grid-pattern opacity-10"></div>
+          <div className="absolute inset-0 canvas-grid-dots opacity-10"></div>
           <div className="max-w-3xl mx-auto relative z-10">
             <h2 className="text-2xl md:text-4xl font-extrabold mb-4 tracking-tight">Ready to put your eTIMS workflow on autopilot?</h2>
             <p className="text-blue-50 text-sm md:text-base mb-8 max-w-xl mx-auto opacity-90 leading-relaxed">
@@ -473,6 +598,7 @@ export default function LandingPage() {
           </div>
         </div>
 
+        {/* STRUCTURAL REFERENCE REGULATORY SYSTEM FOOTER */}
         <footer className="bg-gray-950 text-gray-500 py-12 px-6 text-xs border-t border-gray-900 w-full">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="flex items-center space-x-3 text-center md:text-left">
