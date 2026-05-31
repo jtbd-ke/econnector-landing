@@ -47,21 +47,32 @@ export default function LandingPage() {
         .perspective-canvas { perspective: 1400px; }
         .preserve-3d-layers { transform-style: preserve-3d; }
         
-        /* OPTION 1 RESPONSIVE ENGINE TRANSFORM SETTINGS */
+        /* OPTION 2 LIVING BACKDROP / WATERMARK TRANSFORM SETTINGS */
         @media (max-width: 1023px) {
-          .platform-tilt {
-            transform: rotateX(0deg) rotateZ(0deg) translateY(0px) !important;
+          .engine-container-responsive {
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 0 !important;
+            opacity: 0.22; /* Integrated background watermark blend */
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0.9) translateY(40px) rotateX(25deg) rotateZ(-12deg) !important;
           }
           :root {
-            --tz-entering: 0px;  --ty-entering: -15px; --rx-entering: 0deg;  --sc-entering: 0.95;
-            --tz-ready: 0px;     --ty-ready: -4px;    --rx-ready: 0deg;     --sc-ready: 1;
-            --tz-impact: 0px;    --ty-impact: 0px;    --rx-impact: 0deg;    --sc-impact: 0.94;
-            --tz-stamped: 0px;   --ty-stamped: -8px;   --rx-stamped: 0deg;   --sc-stamped: 1;
+            --tz-entering: 100px; --ty-entering: -20px; --rx-entering: -2deg; --sc-entering: 0.95;
+            --tz-ready: 40px;     --ty-ready: -4px;    --rx-ready: 0deg;    --sc-ready: 1;
+            --tz-impact: 0px;     --ty-impact: 0px;    --rx-impact: 0deg;    --sc-impact: 0.96;
+            --tz-stamped: 50px;   --ty-stamped: -8px;   --rx-stamped: 2deg;   --sc-stamped: 1;
           }
         }
 
         @media (min-width: 1024px) {
-          .platform-tilt {
+          .engine-container-responsive {
+            position: relative !important;
             transform: rotateX(55deg) rotateZ(-35deg) translateY(-10px);
             transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
@@ -95,11 +106,11 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* SECTION 1: HERO CONTAINER WITH ACTIVE MOCK */}
+      {/* SECTION 1: HERO CONTAINER WITH IMMERSIVE BACKDROP MOCK */}
       <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex items-center justify-center px-4 md:px-6 py-8 lg:py-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 relative overflow-hidden">
         
-        {/* Left Column */}
-        <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left z-10 pt-4 lg:pt-0">
+        {/* Foreground Content Stack */}
+        <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left z-10 pt-4 lg:pt-0 pointer-events-auto">
           <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold mb-4 lg:mb-6 border border-emerald-200 tracking-wide shadow-sm">
             <span className="relative flex h-2 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -124,16 +135,16 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Right Column - Rebalanced with Option 1 Flat Engine Stack */}
+        {/* Backdrop Visual Container (Swaps from relative side column to absolute watermark) */}
         <div className="lg:col-span-7 w-full flex items-center justify-center min-h-[22rem] sm:min-h-[26rem] md:min-h-[30rem] lg:min-h-[34rem] relative perspective-canvas select-none">
           
-          <div className="relative w-full max-w-[21rem] sm:max-w-[24rem] md:max-w-[28rem] h-[22rem] sm:h-[25rem] md:h-[28rem] lg:h-[30rem] platform-tilt preserve-3d-layers scale-95 sm:scale-100 transition-transform origin-center">
+          <div className="w-full max-w-[21rem] sm:max-w-[24rem] md:max-w-[28rem] h-[22rem] sm:h-[25rem] md:h-[28rem] lg:h-[30rem] engine-container-responsive preserve-3d-layers origin-center transition-all duration-700">
             
-            {/* UNDERLYING STATIC INVOICE DECK (Hidden or flattened elegantly depending on context) */}
+            {/* UNDERLYING STATIC DECK EXTRA DEPTH */}
             <div className="absolute inset-0 bg-white/40 rounded-2xl border border-gray-200/40 pointer-events-none shadow-sm" style={{ transform: 'translateZ(-24px) scale(0.94) translateX(12px) translateY(12px)' }}></div>
             <div className="absolute inset-0 bg-white/70 rounded-2xl border border-gray-200/60 pointer-events-none shadow-sm" style={{ transform: 'translateZ(-12px) scale(0.97) translateX(6px) translateY(6px)' }}></div>
 
-            {/* LIVE DOCUMENT ACTIVE INGESTION TRACK */}
+            {/* AUTOMATED TRANSACTION SHEET */}
             <div 
               style={{
                 transition: 'all 600ms cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -147,12 +158,10 @@ export default function LandingPage() {
               <div>
                 <div className="flex justify-between items-start border-b border-gray-100 pb-3 md:pb-5 mb-3 md:mb-5">
                   <div className="flex items-center space-x-2.5">
-                    {/* Neutralized safe brand icon */}
                     <div className="h-7 w-7 md:h-8 md:w-8 bg-emerald-600 rounded-lg flex items-center justify-center shadow-inner">
                       <div className="h-2.5 w-2.5 bg-white/90 rounded-sm rotate-45" />
                     </div>
                     <div>
-                      {/* Non-copyright generic text */}
                       <span className="text-[11px] md:text-xs font-black text-gray-950 uppercase tracking-wider block">Accounting</span>
                       <span className="text-[8px] md:text-[9px] font-medium text-gray-400 block mt-0.5">Online Document</span>
                     </div>
@@ -169,7 +178,7 @@ export default function LandingPage() {
                 </div>
 
                 <div className="flex justify-between items-end mb-3 md:mb-5">
-                   <div className="bg-gray-50/80 rounded-xl p-2.5 md:p-4 border border-gray-100 flex-1 mr-3 md:mr-4">
+                  <div className="bg-gray-50/80 rounded-xl p-2.5 md:p-4 border border-gray-100 flex-1 mr-3 md:mr-4">
                     <div className="text-[8px] md:text-[9px] uppercase font-bold tracking-wider text-gray-400">Bill To:</div>
                     <div className="text-xs md:text-base font-bold text-gray-800 mt-0.5 md:mt-1 truncate">{batchInvoices[currentIdx].client}</div>
                   </div>
@@ -208,6 +217,7 @@ export default function LandingPage() {
                     Awaiting Sync Sequence
                   </div>
                   
+                  {/* Robust bounding container for the target block */}
                   <div className={`relative w-16 h-16 md:w-24 md:h-24 rounded-xl transition-all duration-300 flex items-center justify-center overflow-hidden ${
                     stage === "impact" ? "border-2 border-emerald-500 bg-emerald-50/20 scale-95" :
                     isFiscalised ? "border-2 border-emerald-500/30 bg-white shadow-sm" : "border-2 border-dashed border-gray-300 bg-gray-50/50"
@@ -236,7 +246,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* RESPONSIVE STAMPER ENGINE (Reads responsive CSS variables for physics stages) */}
+            {/* RESPONSIVE STAMPER CORE ENGINE */}
             <div 
               style={{
                 bottom: '20px',
@@ -271,7 +281,7 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 2: BENTO FEATURE ARCHITECTURE */}
-      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-6xl mx-auto">
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-12 max-w-6xl mx-auto relative z-10 bg-white">
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-3">Product Infrastructure</h2>
           <p className="text-2xl md:text-5xl font-black text-gray-950 tracking-tight">
@@ -332,7 +342,7 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 3: STEP-BY-STEP OPERATION PIPELINE */}
-      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen bg-gray-50/60 border-y border-gray-100 flex flex-col justify-center px-6 py-16">
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen bg-gray-50/60 border-y border-gray-100 flex flex-col justify-center px-6 py-16 relative z-10">
         <div className="max-w-4xl mx-auto w-full">
           <div className="text-center mb-16">
             <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-3">Sync Framework</h2>
@@ -358,7 +368,7 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 4: TRANSPARENT COMPLIANCE PRICING TIERS */}
-      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-16 max-w-5xl mx-auto w-full">
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-16 max-w-5xl mx-auto w-full relative z-10 bg-white">
         <div className="text-center mb-16">
           <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-3">Simple Pricing</h2>
           <p className="text-3xl md:text-4xl font-black text-gray-950 tracking-tight">Predictable plans for growing businesses</p>
@@ -415,7 +425,7 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 5: FAQS MODULE ACCORDION */}
-      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen bg-gray-50/60 border-t border-gray-100 flex flex-col justify-center px-6 py-16">
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen bg-gray-50/60 border-t border-gray-100 flex flex-col justify-center px-6 py-16 relative z-10">
         <div className="max-w-3xl mx-auto w-full">
           <div className="text-center mb-12">
             <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-3">Answering Questions</h2>
@@ -446,7 +456,7 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 6: CONVERTING TERMINATION BANNER */}
-      <footer className="snap-start bg-gray-950 text-white px-6 py-16 text-center relative overflow-hidden flex flex-col justify-center min-h-[360px]">
+      <footer className="snap-start bg-gray-950 text-white px-6 py-16 text-center relative overflow-hidden flex flex-col justify-center min-h-[360px] z-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_120%,rgba(37,99,235,0.18),transparent)] pointer-events-none"></div>
         <div className="max-w-2xl mx-auto relative z-10">
           <h2 className="text-2xl md:text-4xl font-black tracking-tight mb-4 text-white">Automate your eTIMS workflow today.</h2>
