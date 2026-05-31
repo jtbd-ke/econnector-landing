@@ -47,17 +47,15 @@ export default function LandingPage() {
         .perspective-canvas { perspective: 1400px; }
         .preserve-3d-layers { transform-style: preserve-3d; }
         
-        /* OPTION 1 RESPONSIVE ENGINE TRANSFORM SETTINGS */
         @media (max-width: 1023px) {
           .platform-tilt {
             transform: rotateX(0deg) rotateZ(0deg) translateY(0px) !important;
           }
           :root {
-            /* STAMPER REVEAL MECHANICS FOR MOBILE: Stamper flies out of the way on stamped phase */
-            --tz-entering: 0px;    --ty-entering: -40px; --rx-entering: 0deg;  --sc-entering: 0.2;  --op-entering: 0;
-            --tz-ready: 0px;       --ty-ready: -12px;   --rx-ready: 0deg;     --sc-ready: 1;    --op-ready: 1;
-            --tz-impact: 0px;      --ty-impact: 0px;     --rx-impact: 0deg;    --sc-impact: 0.94; --op-impact: 1;
-            --tz-stamped: 0px;     --ty-stamped: -120px; --rx-stamped: 0deg;   --sc-stamped: 0.5; --op-stamped: 0;
+            --tz-entering: 0px;    --ty-entering: -30px; --rx-entering: 0deg;  --sc-entering: 0.3;  --op-entering: 0;
+            --tz-ready: 0px;       --ty-ready: -8px;    --rx-ready: 0deg;     --sc-ready: 1;    --op-ready: 1;
+            --tz-impact: 0px;      --ty-impact: 0px;     --rx-impact: 0deg;    --sc-impact: 0.95; --op-impact: 1;
+            --tz-stamped: 0px;     --ty-stamped: -100px; --rx-stamped: 0deg;   --sc-stamped: 0.6; --op-stamped: 0;
           }
         }
 
@@ -67,7 +65,6 @@ export default function LandingPage() {
             transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
           :root {
-            /* CLASSIC 3D DEPTH STACK FOR DESKTOP VIEWPORTS */
             --tz-entering: 180px;  --ty-entering: -30px; --rx-entering: -5deg; --sc-entering: 1;  --op-entering: 1;
             --tz-ready: 80px;      --ty-ready: -5px;     --rx-ready: 2deg;     --sc-ready: 1;    --op-ready: 1;
             --tz-impact: 2px;       --ty-impact: 0px;      --rx-impact: 0deg;    --sc-impact: 0.98; --op-impact: 1;
@@ -81,8 +78,8 @@ export default function LandingPage() {
         }
       `}</style>
 
-      {/* FLOATING NAVIGATION ARRAY - Tightened for Mobile Heights */}
-      <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-100 px-6 py-2.5 lg:py-4">
+      {/* FLOATING NAVIGATION ARRAY */}
+      <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-100 px-6 py-3 lg:py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-sm shadow-[0_4px_15px_rgba(37,99,235,0.2)]">eC</span>
@@ -90,48 +87,61 @@ export default function LandingPage() {
           </div>
           <div className="flex items-center space-x-4">
             <a href="#/connector-dashboard/signin" className="text-sm font-semibold text-gray-600 hover:text-gray-950 transition-colors">Sign In</a>
-            <a href="#/connector-dashboard/signup" className="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold py-1.5 px-3.5 rounded-lg transition-all shadow-md">
+            <a href="#/connector-dashboard/signup" className="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold py-1.5 px-4 rounded-lg transition-all shadow-md">
               Sign Up
             </a>
           </div>
         </div>
       </header>
 
-      {/* SECTION 1: HERO CONTAINER - Optimised Spacing for Above-the-Fold Alignment */}
-      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-[calc(100vh-60px)] flex flex-col lg:grid lg:grid-cols-12 gap-4 lg:gap-4 justify-start lg:items-center px-4 md:px-6 py-4 lg:py-12 max-w-7xl mx-auto relative overflow-hidden">
+      {/* SECTION 1: HERO CONTAINER - Maximized Headline Scale & Compressed Spacing */}
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-[calc(100vh-65px)] flex flex-col lg:grid lg:grid-cols-12 gap-5 lg:gap-4 justify-start lg:items-center px-4 md:px-6 py-4 lg:py-12 max-w-7xl mx-auto relative overflow-hidden">
         
-        {/* Left Text Column */}
-        <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left z-10 pt-1 lg:pt-0">
-          <div className="inline-flex items-center px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] lg:text-xs font-semibold mb-2 lg:mb-6 border border-emerald-200 tracking-wide shadow-sm">
-            <span className="relative flex h-1.5 w-1.5 mr-1.5">
+        {/* Left Column Text Stack */}
+        <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left z-10 pt-2 lg:pt-0">
+          
+          {/* Desktop Only Pill Badge - Hidden completely on mobile to clean the header ceiling */}
+          <div className="hidden lg:inline-flex items-center px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold mb-6 border border-emerald-200 tracking-wide shadow-sm">
+            <span className="relative flex h-2 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             Real-Time eTIMS Sync Loop Active
           </div>
 
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight mb-2 lg:mb-6 text-gray-950 leading-[1.15] lg:leading-[1.05] max-w-2xl">
+          {/* High Attention Punchline - Amplified back to full attention weight on mobile */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black tracking-tight mb-3 lg:mb-6 text-gray-950 leading-[1.12] lg:leading-[1.05] max-w-2xl">
             Get eTIMS compliant without changing how you invoice.
           </h1>
 
-          <p className="text-xs sm:text-base md:text-lg text-gray-600 mb-4 lg:mb-8 max-w-md leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-5 lg:mb-8 max-w-md leading-relaxed">
             An automated background bridge that syncs your <strong className="text-gray-950 font-semibold">QuickBooks Online</strong> transactions directly to eTIMS. No manual entries, no workflow changes, and zero IT headaches.
           </p>
 
-          <div className="flex flex-col items-center lg:items-start w-full sm:w-auto mb-2 lg:mb-0">
-            <button className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm lg:text-base py-3 px-6 lg:py-4 lg:px-10 rounded-xl shadow-[0_10px_25px_-5px_rgba(37,99,235,0.3)] transition-all duration-300">
+          <div className="flex flex-col items-center lg:items-start w-full sm:w-auto">
+            <button className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white font-bold text-base py-3.5 px-8 lg:py-4 lg:px-10 rounded-xl shadow-[0_10px_25px_-5px_rgba(37,99,235,0.3)] transition-all duration-300">
               Connect QuickBooks Now
             </button>
-            <span className="text-[10px] text-gray-500 mt-1.5 font-medium tracking-wide">Setup takes less than 5 minutes.</span>
+            
+            {/* Integrated Mobile Micro Indicator Status */}
+            <div className="lg:hidden flex items-center space-x-1.5 mt-2.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-100/60">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+              </span>
+              <span>Active background loop tracking live</span>
+            </div>
+
+            <span className="hidden lg:block text-xs text-gray-500 mt-3 font-medium tracking-wide">Setup takes less than 5 minutes.</span>
           </div>
         </div>
 
-        {/* Right Column - Flat Mobile Engine Frame with Tightened Boundary Heights */}
-        <div className="lg:col-span-7 w-full flex items-center justify-center min-h-[17rem] sm:min-h-[22rem] lg:min-h-[34rem] relative perspective-canvas select-none mt-2 lg:mt-0">
+        {/* Right Column Visual Frame - Perfectly utilizes remaining fold area */}
+        <div className="lg:col-span-7 w-full flex items-center justify-center min-h-[18rem] sm:min-h-[22rem] lg:min-h-[34rem] relative perspective-canvas select-none mt-1 lg:mt-0">
           
-          <div className="relative w-full max-w-[20rem] sm:max-w-[24rem] md:max-w-[28rem] h-[17rem] sm:h-[22rem] lg:h-[30rem] platform-tilt preserve-3d-layers scale-95 sm:scale-100 transition-transform origin-center">
+          <div className="relative w-full max-w-[20rem] sm:max-w-[24rem] md:max-w-[28rem] h-[18rem] sm:h-[22rem] lg:h-[30rem] platform-tilt preserve-3d-layers scale-100 transition-transform origin-center">
             
-            {/* STACK DEPTH DECK (Maintained structurally) */}
+            {/* STACK DEPTH DECK */}
             <div className="absolute inset-0 bg-white/40 rounded-2xl border border-gray-200/40 pointer-events-none shadow-sm hidden lg:block" style={{ transform: 'translateZ(-24px) scale(0.94) translateX(12px) translateY(12px)' }}></div>
             <div className="absolute inset-0 bg-white/70 rounded-2xl border border-gray-200/60 pointer-events-none shadow-sm hidden lg:block" style={{ transform: 'translateZ(-12px) scale(0.97) translateX(6px) translateY(6px)' }}></div>
 
@@ -144,10 +154,10 @@ export default function LandingPage() {
                   stage === "exiting"  ? 'translateZ(60px) translateY(80px) opacity(0) scale(1.03)' :
                   'translateZ(0px) translateX(0px) translateY(0px) opacity(1) scale(1)'
               }}
-              className="absolute inset-0 bg-white rounded-2xl shadow-[-5px_5px_20px_rgba(0,0,0,0.04)] lg:shadow-[-20px_20px_45px_rgba(0,0,0,0.06)] border border-gray-200 p-4 lg:p-8 flex flex-col justify-between preserve-3d-layers"
+              className="absolute inset-0 bg-white rounded-2xl shadow-[-5px_5px_25px_rgba(0,0,0,0.05)] lg:shadow-[-20px_20px_45px_rgba(0,0,0,0.06)] border border-gray-200 p-4 lg:p-8 flex flex-col justify-between preserve-3d-layers"
             >
               <div>
-                <div className="flex justify-between items-start border-b border-gray-100 pb-2 lg:pb-5 mb-2 lg:mb-5">
+                <div className="flex justify-between items-start border-b border-gray-100 pb-2.5 lg:pb-5 mb-2.5 lg:mb-5">
                   <div className="flex items-center space-x-2">
                     <div className="h-6 w-6 lg:h-8 lg:w-8 bg-emerald-600 rounded-lg flex items-center justify-center shadow-inner">
                       <div className="h-2 w-2 bg-white/90 rounded-sm rotate-45" />
@@ -168,7 +178,7 @@ export default function LandingPage() {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-end mb-2 lg:mb-5">
+                <div className="flex justify-between items-end mb-2.5 lg:mb-5">
                    <div className="bg-gray-50/80 rounded-lg lg:rounded-xl p-2 lg:p-4 border border-gray-100 flex-1 mr-3 lg:mr-4">
                     <div className="text-[7px] lg:text-[9px] uppercase font-bold tracking-wider text-gray-400">Bill To:</div>
                     <div className="text-[11px] lg:text-base font-bold text-gray-800 mt-0.5 truncate">{batchInvoices[currentIdx].client}</div>
@@ -196,20 +206,20 @@ export default function LandingPage() {
               </div>
 
               <div>
-                <div className="flex justify-between items-center border-t border-gray-100 pt-2 lg:pt-5 mb-1.5 lg:mb-3">
+                <div className="flex justify-between items-center border-t border-gray-100 pt-2.5 lg:pt-5 mb-1.5 lg:mb-3">
                   <span className="text-[8px] lg:text-xs font-bold text-gray-400 uppercase tracking-wider">Total Balance Due</span>
                   <span className="text-xs lg:text-lg font-mono font-black text-blue-600 bg-blue-50/70 px-2 py-0.5 lg:px-3 lg:py-1.5 rounded-md border border-blue-100">
                     {batchInvoices[currentIdx].amount}
                   </span>
                 </div>
 
-                <div className="flex justify-between items-center mt-2 lg:mt-5 pt-2 lg:pt-4 border-t border-dashed border-gray-200 relative">
+                <div className="flex justify-between items-center mt-2.5 lg:mt-5 pt-2.5 lg:pt-4 border-t border-dashed border-gray-200 relative">
                   <div className="text-[7px] lg:text-[10px] font-mono tracking-tight text-gray-400 uppercase">
                     Awaiting eTIMS Validation
                   </div>
                   
-                  {/* REVEAL MATRIX CONTAINER (Always uncovered during stamped phase on mobile) */}
-                  <div className={`relative w-12 h-12 lg:w-24 lg:h-24 rounded-lg lg:rounded-xl transition-all duration-300 flex items-center justify-center overflow-hidden ${
+                  {/* REVEAL MATRIX CONTAINER */}
+                  <div className={`relative w-14 h-14 lg:w-24 lg:h-24 rounded-lg lg:rounded-xl transition-all duration-300 flex items-center justify-center overflow-hidden ${
                     stage === "impact" ? "border-2 border-emerald-500 bg-emerald-50/20 scale-95" :
                     isFiscalised ? "border-2 border-emerald-500/30 bg-white shadow-sm" : "border-2 border-dashed border-gray-300 bg-gray-50/50"
                   }`}>
@@ -220,12 +230,12 @@ export default function LandingPage() {
                         <div className="w-1 h-1 border-t-2 border-r-2 border-gray-300 absolute top-1 right-1"></div>
                         <div className="w-1 h-1 border-b-2 border-l-2 border-gray-300 absolute bottom-1 left-1"></div>
                         <div className="w-1 h-1 border-b-2 border-r-2 border-gray-300 absolute bottom-1 right-1"></div>
-                        <span className="text-[5px] lg:text-[8px] font-bold text-gray-400 uppercase tracking-tight scale-75 lg:scale-90">TARGET</span>
+                        <span className="text-[6px] lg:text-[8px] font-bold text-gray-400 uppercase tracking-tight scale-75 lg:scale-90">TARGET</span>
                       </div>
                     )}
 
                     {(stage === "impact" || isFiscalised) && (
-                      <div className={`w-8 h-8 lg:w-16 lg:h-16 p-0.5 lg:p-1 bg-white rounded-md grid grid-cols-4 gap-[1px] lg:gap-[2px] transition-all duration-200 ${stage === "impact" ? "scale-105 opacity-90 blur-[0.2px]" : "scale-100 opacity-100"}`}>
+                      <div className={`w-9 h-9 lg:w-16 lg:h-16 p-0.5 lg:p-1 bg-white rounded-md grid grid-cols-4 gap-[1px] lg:gap-[2px] transition-all duration-200 ${stage === "impact" ? "scale-105 opacity-90 blur-[0.2px]" : "scale-100 opacity-100"}`}>
                         <div className="bg-neutral-950 rounded-[1px]"></div><div className="bg-neutral-950 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-neutral-950 rounded-[1px]"></div>
                         <div className="bg-neutral-950 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-neutral-950 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div>
                         <div className="bg-gray-200 rounded-[1px]"></div><div className="bg-neutral-950 rounded-[1px]"></div><div className="bg-neutral-950 rounded-[1px]"></div><div className="bg-neutral-950 rounded-[1px]"></div>
@@ -237,11 +247,11 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* HIGH-SPEED AUTOMATION STAMPER MODULE */}
+            {/* AUTOMATION STAMPER MODULE */}
             <div 
               style={{
-                bottom: '12px',
-                right: '12px',
+                bottom: '14px',
+                right: '14px',
                 transition: 
                   stage === "impact" ? 'transform 100ms cubic-bezier(0.4, 0, 1, 1)' : 
                   stage === "stamped" ? 'transform 500ms cubic-bezier(0.19, 1, 0.22, 1), opacity 400ms ease' : 
@@ -257,7 +267,7 @@ export default function LandingPage() {
                   stage === "impact"   ? 'var(--op-impact)' :
                                          'var(--op-stamped)'
               }}
-              className="absolute w-12 h-12 lg:w-24 lg:h-24 preserve-3d-layers z-30 pointer-events-none flex items-center justify-center"
+              className="absolute w-14 h-14 lg:w-24 lg:h-24 preserve-3d-layers z-30 pointer-events-none flex items-center justify-center"
             >
               <div className={`w-full h-full bg-black rounded-lg lg:rounded-2xl border flex items-center justify-center transition-all duration-300 ${
                 stage === "impact" 
