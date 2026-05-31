@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 
 export default function LandingPage() {
-  // Coordinated multi-stage engine lifecycle manager
   const [currentIdx, setCurrentIdx] = useState(0);
   const [stage, setStage] = useState("entering"); // entering -> ready -> impact -> stamped -> exiting
 
@@ -15,24 +14,23 @@ export default function LandingPage() {
   ];
 
   useEffect(() => {
-    // Explicitly typed array to completely bypass implicit type checking during Next.js builds
     let timers: any[] = [];
     
     const executeEngineSequence = () => {
-      // 1. Document slides into center frame
+      // 1. Document slides into center frame from the stack
       setStage("entering");
       
-      // 2. Document settles; engine is in smooth high hover phase
-      timers.push(setTimeout(() => setStage("ready"), 600));
+      // 2. Document settles; engine hovers in position
+      timers.push(setTimeout(() => setStage("ready"), 500));
       
-      // 3. Engine drives downward rapidly; instant impact connection
-      timers.push(setTimeout(() => setStage("impact"), 1500));
+      // 3. Engine drives downward rapidly; touches the document precisely
+      timers.push(setTimeout(() => setStage("impact"), 1400));
       
-      // 4. Verification completed; engine ascends while data imprint displays clearly
-      timers.push(setTimeout(() => setStage("stamped"), 1800));
+      // 4. Verification completed; engine ascends with a spring effect
+      timers.push(setTimeout(() => setStage("stamped"), 1650));
       
-      // 5. Finished document ejects from pipeline view
-      timers.push(setTimeout(() => setStage("exiting"), 3400));
+      // 5. Finished document ejects, pulling the next one up
+      timers.push(setTimeout(() => setStage("exiting"), 3200));
     };
 
     executeEngineSequence();
@@ -40,7 +38,7 @@ export default function LandingPage() {
     const masterLoopInterval = setInterval(() => {
       setCurrentIdx((prev) => (prev + 1) % batchInvoices.length);
       executeEngineSequence();
-    }, 4200);
+    }, 4000);
 
     return () => {
       clearInterval(masterLoopInterval);
@@ -51,24 +49,21 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen lg:h-screen lg:overflow-y-auto lg:snap-y lg:snap-mandatory scroll-smooth bg-white text-gray-900 font-sans antialiased bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),transparent)]">
       
-      {/* 3D Visual Rendering Infrastructure Styles */}
       <style>{`
-        .perspective-canvas { perspective: 1600px; }
+        .perspective-canvas { perspective: 1800px; }
         .preserve-3d-layers { transform-style: preserve-3d; }
         
-        /* Master base engine platform 3D tilt mapping */
         .platform-tilt {
-          transform: rotateX(53deg) rotateZ(-34deg) translateY(-10px);
+          transform: rotateX(55deg) rotateZ(-35deg) translateY(-10px);
           transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        /* Ambient pneumatic hover animation for eTIMS module when waiting */
         @keyframes stamper-hover-drift {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
+          0%, 100% { transform: translateZ(90px) translateY(-5px) rotateX(4deg); }
+          50% { transform: translateZ(98px) translateY(-8px) rotateX(6deg); }
         }
         .engine-idle-hover {
-          animation: stamper-hover-drift 2.2s ease-in-out infinite;
+          animation: stamper-hover-drift 2s ease-in-out infinite;
         }
 
         .canvas-grid-dots {
@@ -127,121 +122,122 @@ export default function LandingPage() {
         {/* Right Column: Premium High-End Engine Automation Frame */}
         <div className="lg:col-span-6 w-full flex items-center justify-center min-h-[34rem] relative perspective-canvas select-none">
           
-          {/* Main 3D Transform Viewport Platform */}
-          <div className="relative w-80 md:w-[26rem] h-[28rem] platform-tilt preserve-3d-layers">
+          <div className="relative w-80 md:w-[28rem] h-[30rem] platform-tilt preserve-3d-layers">
             
-            {/* UNDERLYING INVOICE BATCH DECK - CLEAN STACKED LOOK */}
-            <div className="absolute inset-0 bg-white/40 rounded-2xl border border-gray-200/40 translate-z-[-24px] scale-[0.94] translate-x-4 translateY(4) pointer-events-none shadow-sm"></div>
-            <div className="absolute inset-0 bg-white/70 rounded-2xl border border-gray-200/60 translate-z-[-12px] scale-[0.97] translate-x-2 translateY(2) pointer-events-none shadow-sm"></div>
+            {/* DYNAMIC INVOICE BATCH DECK - ANIMATES FORWARD ON EJECT */}
+            <div 
+              className="absolute inset-0 bg-white/40 rounded-2xl border border-gray-200/40 pointer-events-none shadow-sm"
+              style={{
+                transition: 'all 600ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+                transform: stage === "exiting" 
+                  ? 'translateZ(-14px) scale(0.96) translateX(10px) translateY(10px)'
+                  : 'translateZ(-28px) scale(0.92) translateX(20px) translateY(20px)'
+              }}
+            ></div>
+            <div 
+              className="absolute inset-0 bg-white/70 rounded-2xl border border-gray-200/60 pointer-events-none shadow-sm"
+              style={{
+                transition: 'all 600ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+                transform: stage === "exiting"
+                  ? 'translateZ(0px) scale(1) translateX(0px) translateY(0px)'
+                  : 'translateZ(-14px) scale(0.96) translateX(10px) translateY(10px)'
+              }}
+            ></div>
 
             {/* LIVE DOCUMENT ACTIVE INGESTION TRACK CONTAINER */}
             <div 
               style={{
-                transition: 'all 500ms cubic-bezier(0.4, 0, 0.2, 1)',
+                transition: 'all 600ms cubic-bezier(0.34, 1.56, 0.64, 1)',
                 transform: 
-                  stage === "entering" ? 'translateZ(0px) translateY(50px) opacity(0) scale(0.95)' :
-                  stage === "exiting"  ? 'translateZ(30px) translateY(-140px) opacity(0) scale(0.98)' :
+                  stage === "entering" ? 'translateZ(-14px) translateY(-30px) opacity(0) scale(0.96)' :
+                  stage === "exiting"  ? 'translateZ(60px) translateY(120px) opacity(0) scale(1.05)' :
                   'translateZ(0px) translateY(0px) opacity(1) scale(1)'
               }}
-              className="absolute inset-0 bg-white rounded-2xl shadow-[-20px_20px_45px_rgba(0,0,0,0.05)] border border-gray-200/90 p-6 flex flex-col justify-between preserve-3d-layers"
+              className="absolute inset-0 bg-white rounded-2xl shadow-[-20px_20px_45px_rgba(0,0,0,0.06)] border border-gray-200 p-8 flex flex-col justify-between preserve-3d-layers"
             >
-              {/* Document Header Fields */}
               <div>
-                <div className="flex justify-between items-start border-b border-gray-100 pb-4 mb-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="h-6 w-6 bg-emerald-600 rounded-md flex items-center justify-center text-white font-bold text-[10px]">qb</div>
+                <div className="flex justify-between items-start border-b border-gray-100 pb-5 mb-5">
+                  <div className="flex items-center space-x-3">
+                    <div className="h-8 w-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-inner">qb</div>
                     <div>
-                      <span className="text-[10px] font-black text-gray-950 uppercase tracking-tight block">QuickBooks</span>
-                      <span className="text-[8px] font-medium text-gray-400 block -mt-0.5">Online Document</span>
+                      <span className="text-xs font-black text-gray-950 uppercase tracking-tight block">QuickBooks</span>
+                      <span className="text-[9px] font-medium text-gray-400 block mt-0.5">Online Document</span>
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="text-xs font-mono font-bold text-gray-900 block">
+                    <span className="text-sm font-mono font-bold text-gray-900 block">
                       {batchInvoices[currentIdx].id}
                     </span>
-                    <span className="text-[9px] text-gray-400 font-medium block">
+                    <span className="text-[10px] text-gray-400 font-medium block mt-0.5">
                       {batchInvoices[currentIdx].date}
                     </span>
                   </div>
                 </div>
 
-                {/* Client Profile Component */}
-                <div className="bg-gray-50 rounded-xl p-3 border border-gray-100 mb-4">
-                  <div className="text-[8px] uppercase font-bold tracking-wider text-gray-400">Bill To:</div>
-                  <div className="text-xs font-bold text-gray-800 mt-0.5">{batchInvoices[currentIdx].client}</div>
+                <div className="bg-gray-50/80 rounded-xl p-4 border border-gray-100 mb-5">
+                  <div className="text-[9px] uppercase font-bold tracking-wider text-gray-400">Bill To:</div>
+                  <div className="text-sm font-bold text-gray-800 mt-1">{batchInvoices[currentIdx].client}</div>
                 </div>
 
-                {/* Simulated Ledger Content Rows */}
-                <div className="space-y-2.5">
-                  <div className="flex justify-between items-center bg-gray-50/50 px-2.5 py-2 rounded-lg border border-gray-100/50">
-                    <div className="w-24 h-2 bg-gray-200 rounded-full"></div>
-                    <div className="w-10 h-2 bg-gray-300 rounded-full"></div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center bg-gray-50/50 px-3 py-2.5 rounded-lg border border-gray-100/50">
+                    <div className="w-32 h-2.5 bg-gray-200 rounded-full"></div>
+                    <div className="w-12 h-2.5 bg-gray-300 rounded-full"></div>
                   </div>
-                  <div className="flex justify-between items-center bg-gray-50/50 px-2.5 py-2 rounded-lg border border-gray-100/50">
-                    <div className="w-32 h-2 bg-gray-200 rounded-full"></div>
-                    <div className="w-6 h-2 bg-gray-300 rounded-full"></div>
+                  <div className="flex justify-between items-center bg-gray-50/50 px-3 py-2.5 rounded-lg border border-gray-100/50">
+                    <div className="w-40 h-2.5 bg-gray-200 rounded-full"></div>
+                    <div className="w-8 h-2.5 bg-gray-300 rounded-full"></div>
                   </div>
                 </div>
               </div>
 
-              {/* Lower Section: Totals Profile & Physical Stamp Impact Target */}
               <div>
-                <div className="flex justify-between items-center border-t border-gray-100 pt-4 mb-2">
-                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-wider">Total Balance Due</span>
-                  <span className="text-sm font-mono font-black text-blue-600 bg-blue-50/70 px-2.5 py-1 rounded-md border border-blue-100">
+                <div className="flex justify-between items-center border-t border-gray-100 pt-5 mb-3">
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Total Balance Due</span>
+                  <span className="text-base font-mono font-black text-blue-600 bg-blue-50/70 px-3 py-1.5 rounded-md border border-blue-100">
                     {batchInvoices[currentIdx].amount}
                   </span>
                 </div>
 
-                {/* BOUNDING ATTACHMENT REGULATORY TARGET AREA */}
-                <div className="flex justify-between items-end mt-4 pt-3 border-t border-dashed border-gray-200">
-                  <div className="flex items-center space-x-1.5 text-gray-400">
-                    <span className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${stage === "stamped" || stage === "exiting" ? 'bg-emerald-500' : 'bg-amber-400 animate-pulse'}`}></span>
-                    <span className="text-[8px] font-mono tracking-tight text-gray-500 uppercase">
+                <div className="flex justify-between items-end mt-5 pt-4 border-t border-dashed border-gray-200 relative">
+                  <div className="flex items-center space-x-2 text-gray-400 mb-2">
+                    <span className={`h-2 w-2 rounded-full transition-colors duration-300 ${stage === "stamped" || stage === "exiting" ? 'bg-emerald-500' : 'bg-amber-400 animate-pulse'}`}></span>
+                    <span className="text-[9px] font-mono tracking-tight text-gray-500 uppercase">
                       {stage === "entering" || stage === "ready" ? "Awaiting Data Bridge" : "Pipeline Synced"}
                     </span>
                   </div>
                   
                   {/* Target Imprint Landing Box */}
-                  <div className={`relative w-20 h-20 rounded-xl bg-gray-50 border-2 transition-all duration-300 flex items-center justify-center overflow-hidden ${
-                    stage === "impact" ? "border-emerald-500 bg-emerald-50/20 scale-95" :
-                    stage === "stamped" || stage === "exiting" ? "border-emerald-500/30 bg-white shadow-inner" : "border-dashed border-gray-300"
+                  <div className={`relative w-24 h-24 rounded-xl transition-all duration-300 flex items-center justify-center overflow-hidden ${
+                    stage === "impact" ? "border-2 border-emerald-500 bg-emerald-50/20 scale-95" :
+                    stage === "stamped" || stage === "exiting" ? "border-2 border-emerald-500/30 bg-white shadow-sm" : "border-2 border-dashed border-gray-300 bg-gray-50/50"
                   }`}>
                     
-                    {/* State 1: Bounding Area Target Box (Pre-impact) */}
                     {(stage === "entering" || stage === "ready") && (
-                      <div className="text-center p-1 flex flex-col items-center justify-center space-y-1">
-                        <div className="w-2 h-2 border-t border-l border-gray-400 absolute top-1 left-1"></div>
-                        <div className="w-2 h-2 border-t border-r border-gray-400 absolute top-1 right-1"></div>
-                        <div className="w-2 h-2 border-b border-l border-gray-400 absolute bottom-1 left-1"></div>
-                        <div className="w-2 h-2 border-b border-r border-gray-400 absolute bottom-1 right-1"></div>
-                        <span className="text-[7px] font-bold text-gray-400 uppercase tracking-tight scale-90">QR TARGET</span>
+                      <div className="text-center p-1 flex flex-col items-center justify-center">
+                        <div className="w-2.5 h-2.5 border-t-2 border-l-2 border-gray-300 absolute top-2 left-2"></div>
+                        <div className="w-2.5 h-2.5 border-t-2 border-r-2 border-gray-300 absolute top-2 right-2"></div>
+                        <div className="w-2.5 h-2.5 border-b-2 border-l-2 border-gray-300 absolute bottom-2 left-2"></div>
+                        <div className="w-2.5 h-2.5 border-b-2 border-r-2 border-gray-300 absolute bottom-2 right-2"></div>
+                        <span className="text-[8px] font-bold text-gray-400 uppercase tracking-tight">QR TARGET</span>
                       </div>
                     )}
 
-                    {/* State 2: High-Density Vector QR Imprint (Post-impact / Stamped) */}
                     {(stage === "impact" || stage === "stamped" || stage === "exiting") && (
-                      <div className={`w-16 h-16 p-1 bg-white rounded-md grid grid-cols-4 gap-0.5 transition-all duration-200 ${stage === "impact" ? "scale-110 opacity-90 blur-[0.5px]" : "scale-100 opacity-100"}`}>
+                      <div className={`w-16 h-16 p-1 bg-white rounded-md grid grid-cols-4 gap-[2px] transition-all duration-200 ${stage === "impact" ? "scale-110 opacity-90 blur-[0.5px]" : "scale-100 opacity-100"}`}>
                         <div className="bg-neutral-900 rounded-[1px]"></div><div className="bg-neutral-900 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-neutral-900 rounded-[1px]"></div>
                         <div className="bg-neutral-900 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-neutral-900 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div>
                         <div className="bg-gray-200 rounded-[1px]"></div><div className="bg-neutral-900 rounded-[1px]"></div><div className="bg-neutral-900 rounded-[1px]"></div><div className="bg-neutral-900 rounded-[1px]"></div>
                         <div className="bg-neutral-900 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-gray-200 rounded-[1px]"></div><div className="bg-neutral-900 rounded-[1px]"></div>
                       </div>
                     )}
-
-                    {/* Dynamic Real-time Emerald Flash Wave Layer */}
-                    <div style={{
-                      transition: 'all 400ms cubic-bezier(0.1, 0.8, 0.3, 1)',
-                      transform: stage === "impact" ? 'scale(1.8)' : 'scale(0.6)',
-                      opacity: stage === "impact" ? 1 : 0
-                    }} className="absolute inset-0 border-2 border-emerald-500 rounded-xl pointer-events-none bg-emerald-400/20 blur-[1px]"></div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* REAL-TIME LEDGER DATA TRACK LABELS SIDEBAR */}
-            <div className="absolute -left-14 top-8 flex flex-col space-y-2 pointer-events-none translate-z-[40px]">
+            <div className="absolute -left-16 top-10 flex flex-col space-y-3 pointer-events-none translate-z-[40px]">
               {batchInvoices.map((inv, idx) => {
                 const isActive = idx === currentIdx;
                 const isFiscalised = (isActive && (stage === "stamped" || stage === "exiting" || stage === "impact")) || idx < currentIdx || (currentIdx === 0 && idx === batchInvoices.length - 1 && stage === "entering");
@@ -249,15 +245,15 @@ export default function LandingPage() {
                 return (
                   <div 
                     key={inv.id}
-                    className={`px-3 py-1.5 rounded-xl border text-[10px] font-mono font-bold tracking-tight shadow-md flex items-center space-x-2 transition-all duration-500 bg-white ${
+                    className={`px-3 py-2 rounded-xl border text-[11px] font-mono font-bold tracking-tight shadow-md flex items-center space-x-2.5 transition-all duration-500 bg-white ${
                       isActive 
-                        ? 'border-gray-300 scale-105 opacity-100 translate-x-2 ring-1 ring-black/5 shadow-lg' 
-                        : 'border-gray-100 opacity-35 scale-95 translate-x-0'
+                        ? 'border-gray-300 scale-105 opacity-100 translate-x-3 ring-1 ring-black/5 shadow-lg' 
+                        : 'border-gray-100 opacity-40 scale-95 translate-x-0'
                     }`}
                   >
-                    <span className={`h-1.5 w-1.5 rounded-full ${isFiscalised ? 'bg-emerald-500' : 'bg-amber-400'}`}></span>
+                    <span className={`h-2 w-2 rounded-full ${isFiscalised ? 'bg-emerald-500' : 'bg-amber-400'}`}></span>
                     <span className="text-gray-800">#{inv.id}</span>
-                    <span className={`text-[8px] uppercase tracking-wider px-1.5 py-0.5 rounded-md font-sans ${
+                    <span className={`text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-md font-sans ${
                       isFiscalised 
                         ? 'bg-emerald-50 text-emerald-700 border border-emerald-100' 
                         : 'bg-amber-50 text-amber-700 border border-amber-100'
@@ -269,54 +265,36 @@ export default function LandingPage() {
               })}
             </div>
 
-            {/* HIGH-END INDUSTRIAL eTIMS STAMPER MODULE (BLACK/RED CORE WITH GLOW) */}
+            {/* MINIMALIST BLACK & NEON RED eTIMS MODULE */}
             <div 
               style={{
-                top: '252px',
-                right: '20px',
+                bottom: '24px',
+                right: '24px',
                 transition: 
-                  stage === "impact" ? 'transform 120ms cubic-bezier(0.1, 0.4, 0.1, 1)' : 
-                  stage === "stamped" ? 'transform 400ms cubic-bezier(0.2, 1, 0.2, 1)' : 
+                  stage === "impact" ? 'transform 100ms cubic-bezier(0.4, 0, 1, 1)' : 
+                  stage === "stamped" ? 'transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)' : 
                   'transform 600ms cubic-bezier(0.4, 0, 0.2, 1)',
                 transform: 
-                  stage === "entering" ? 'translateZ(150px) translateY(10px)' :
-                  stage === "ready"    ? 'translateZ(130px) translateY(0px)' :
-                  stage === "impact"   ? 'translateZ(8px) translateY(0px) scaleX(0.97) scaleY(0.97)' :
-                  /* stamped & exiting */ 'translateZ(140px) translateY(0px)'
+                  stage === "entering" ? 'translateZ(140px) translateY(-20px) rotateX(-5deg)' :
+                  stage === "ready"    ? 'translateZ(90px) translateY(0px) rotateX(4deg)' :
+                  stage === "impact"   ? 'translateZ(2px) translateY(0px) rotateX(0deg) scale(0.98)' : // Direct contact, no z-fighting
+                  /* stamped/exiting */  'translateZ(100px) translateY(-10px) rotateX(6deg)'
               }}
-              className={`absolute w-20 h-20 preserve-3d-layers z-30 pointer-events-none ${stage === "ready" ? "engine-idle-hover" : ""}`}
+              className={`absolute w-24 h-24 preserve-3d-layers z-30 pointer-events-none flex items-center justify-center ${stage === "ready" ? "engine-idle-hover" : ""}`}
             >
-              {/* Luxury Obsidian Module Body with Vivid Crimson Base Aura Shadow */}
-              <div className={`absolute inset-0 rounded-xl bg-gradient-to-br from-neutral-800 via-neutral-950 to-neutral-900 p-0.5 border border-neutral-700/60 shadow-2xl flex items-center justify-center transition-all duration-300 ${
+              {/* Sleek Obsidian Core */}
+              <div className={`w-full h-full bg-black rounded-2xl border flex items-center justify-center transition-all duration-300 ${
                 stage === "impact" 
-                  ? "shadow-[0_0_40px_rgba(239,68,68,0.7)]" 
-                  : "shadow-[0_15px_35px_rgba(239,68,68,0.35)]"
+                  ? "border-red-500/80 shadow-[0_0_60px_rgba(239,68,68,0.8)]" 
+                  : "border-red-900/40 shadow-[0_10px_35px_rgba(239,68,68,0.35)]"
               }`}>
-                
-                {/* Core Shield Node Layout */}
-                <div className="w-full h-full bg-neutral-950 rounded-[10px] flex flex-col items-center justify-center p-1 relative overflow-hidden">
-                  
-                  {/* Subtle Tech Hexagon Lines Overlay Background */}
-                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ef4444_1px,transparent_1px)] [background-size:8px_8px]"></div>
-                  
-                  {/* Premium Vector eTIMS Red Shield Branding Graphic */}
-                  <svg className="w-9 h-9 drop-shadow-[0_4px_12px_rgba(220,38,38,0.6)]" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 0L2 5V20C2 31.5 9.5 40 20 44C30.5 40 38 31.5 38 20V5L20 0Z" fill="#7f1d1d" fillOpacity="0.9"/>
-                    <path d="M20 3L5 7.2V20C5 29.8 11.3 37.2 20 40.7C28.7 37.2 35 29.8 35 20V7.2L20 3Z" fill="#dc2626"/>
-                    <path d="M20 8V35" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
-                    <path d="M10 20H30" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
-                    <circle cx="20" cy="20" r="3.5" fill="#171717" stroke="white" strokeWidth="1.5"/>
-                  </svg>
-
-                  <span className="text-[7px] text-red-400 font-mono tracking-widest uppercase font-black mt-1">eTIMS ENGINE</span>
-
-                  {/* Laser Target Tracking Beam Glow Line */}
-                  <div className="absolute top-1 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-red-500 to-transparent animate-pulse"></div>
+                {/* Simple Neon Abstract Symbol */}
+                <div className={`w-8 h-8 relative transition-opacity duration-300 ${stage === "impact" ? "opacity-100" : "opacity-80"}`}>
+                  <div className="absolute inset-0 border-[2.5px] border-red-500 rounded-[4px] rotate-45 shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
+                  <div className="absolute inset-0 border-[2.5px] border-red-500 rounded-[4px] -rotate-45 shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
+                  <div className="absolute inset-0 bg-red-500 blur-md opacity-40"></div>
                 </div>
               </div>
-
-              {/* Downward Projecting Crimson Data Alignment Guide Laser */}
-              <div className={`absolute top-full left-1/2 -translate-x-1/2 w-10 h-32 bg-gradient-to-b from-red-500/20 via-red-500/5 to-transparent blur-xs pointer-events-none -z-10 transition-opacity duration-300 ${stage === "impact" ? "opacity-0" : "opacity-100"}`}></div>
             </div>
 
           </div>
@@ -491,7 +469,6 @@ export default function LandingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            {/* Starter Tier */}
             <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl flex flex-col justify-between transform hover:scale-[1.01] transition-transform">
               <div>
                 <h3 className="text-lg font-bold text-gray-950 mb-1">Starter</h3>
@@ -512,7 +489,6 @@ export default function LandingPage() {
               </a>
             </div>
 
-            {/* Business Tier */}
             <div className="bg-white p-8 rounded-3xl border-2 border-blue-600 shadow-[0_15px_40px_-5px_rgba(37,99,235,0.25)] flex flex-col justify-between relative transform lg:-translate-y-3 transition-all">
               <div className="absolute top-0 right-6 transform -translate-y-1/2 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-lg">
                 Popular Base
@@ -537,7 +513,6 @@ export default function LandingPage() {
               </a>
             </div>
 
-            {/* Group Tier */}
             <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl flex flex-col justify-between transform hover:scale-[1.01] transition-transform">
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1">Group</h3>
@@ -613,7 +588,6 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* BOTTOM CALL TO ACTION FLAG LINE */}
         <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 text-white py-16 px-6 text-center mt-20 relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 canvas-grid-dots opacity-10"></div>
           <div className="max-w-3xl mx-auto relative z-10">
@@ -627,7 +601,6 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* STRUCTURAL REFERENCE REGULATORY SYSTEM FOOTER */}
         <footer className="bg-gray-950 text-gray-500 py-12 px-6 text-xs border-t border-gray-900 w-full">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="flex items-center space-x-3 text-center md:text-left">
