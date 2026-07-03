@@ -2,6 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 
+// Dashboard app is the conversion destination for every CTA on this page.
+// Swap this ONE constant when the custom domain goes live.
+const DASHBOARD_URL = "https://econnector-dashboard-10.vercel.app";
+const SIGN_UP_URL = `${DASHBOARD_URL}/sign-up`;
+const SIGN_IN_URL = `${DASHBOARD_URL}/sign-in`;
+
 export default function LandingPage() {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [stage, setStage] = useState("entering"); 
@@ -87,8 +93,8 @@ export default function LandingPage() {
             <span className="font-bold text-xl tracking-tight text-gray-950">eConnector</span>
           </div>
           <div className="flex items-center space-x-4">
-            <a href="#/connector-dashboard/signin" className="text-sm font-semibold text-gray-600 hover:text-gray-950 transition-colors">Sign In</a>
-            <a href="#/connector-dashboard/signup" className="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold py-1.5 px-4 rounded-lg transition-all shadow-md">
+            <a href={SIGN_IN_URL} className="text-sm font-semibold text-gray-600 hover:text-gray-950 transition-colors">Sign In</a>
+            <a href={SIGN_UP_URL} className="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold py-1.5 px-4 rounded-lg transition-all shadow-md">
               Sign Up
             </a>
           </div>
@@ -122,10 +128,10 @@ export default function LandingPage() {
 
           {/* Primary Action Button - Cleared of redundant mobile status bar text block below it */}
           <div className="w-full sm:w-auto">
-            <button className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white font-bold text-base py-3.5 px-8 lg:py-4 lg:px-10 rounded-xl shadow-[0_10px_25px_-5px_rgba(37,99,235,0.3)] transition-all duration-300">
+            <a href={SIGN_UP_URL} className="block sm:inline-block w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white font-bold text-base py-3.5 px-8 lg:py-4 lg:px-10 rounded-xl shadow-[0_10px_25px_-5px_rgba(37,99,235,0.3)] transition-all duration-300">
               Connect QuickBooks Now
-            </button>
-            <span className="hidden lg:block text-xs text-gray-500 mt-3 font-medium tracking-wide">Setup takes less than 5 minutes.</span>
+            </a>
+            <span className="hidden lg:block text-xs text-gray-500 mt-3 font-medium tracking-wide">Connect your QuickBooks account in minutes.</span>
           </div>
         </div>
 
@@ -352,7 +358,7 @@ export default function LandingPage() {
             {[
               { step: "01", title: "Create invoice in QuickBooks", desc: "Keep operating exactly as you do today. Your team drafts and saves client invoices inside QuickBooks Online without opening any external portals." },
               { step: "02", title: "Automated eConnector intercept", desc: "Our secure data webhook registers the new transaction instantly, maps the custom item fields to KRA requirements, and requests confirmation safely." },
-              { step: "03", title: "Instant eTIMS generation", desc: "The transaction is fully fiscalised in under 2 seconds. A valid QR code and cryptographic signature are appended to your records immediately." }
+              { step: "03", title: "Instant eTIMS generation", desc: "The transaction is fiscalised in seconds. A valid KRA QR code and eTIMS invoice number are appended to your records automatically." }
             ].map((item, idx) => (
               <div key={idx} className="relative pl-8 group">
                 <div className="absolute -left-[17px] top-0 h-8 w-8 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-xs font-bold text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
@@ -366,60 +372,109 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* SECTION 4: COMPLIANCE PRICING TIERS */}
-      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-16 max-w-5xl mx-auto w-full">
-        <div className="text-center mb-16">
+      {/* SECTION 4: COMPLIANCE PRICING TIERS — v1.0 cost model (early adopter) */}
+      <section className="canvas-grid-dots snap-start scroll-mt-20 min-h-screen flex flex-col justify-center px-6 py-16 max-w-6xl mx-auto w-full">
+        <div className="text-center mb-12">
           <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-3">Simple Pricing</h2>
           <p className="text-3xl md:text-4xl font-black text-gray-950 tracking-tight">Predictable plans for growing businesses</p>
+          <p className="text-sm text-gray-500 mt-4 max-w-xl mx-auto">Early adopter pricing — the rate you sign up at is locked for 12 months.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Plan 1 */}
-          <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm relative flex flex-col justify-between min-h-[400px]">
-            <div>
-              <h3 className="text-xl font-bold text-gray-950 mb-2">Growth Bridge</h3>
-              <p className="text-gray-500 text-xs mb-6">Perfect for small to medium setups looking for simple background sync loops.</p>
-              <div className="flex items-baseline mb-6">
-                <span className="text-4xl font-black text-gray-950 tracking-tight">KES 4,500</span>
-                <span className="text-gray-500 text-sm ml-2">/ month</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          {[
+            {
+              name: "Starter",
+              blurb: "For a single business with one QuickBooks connection.",
+              kes: "KES 1,950",
+              usd: "$15",
+              per: "/ month",
+              features: [
+                "1 business, 1 QuickBooks connection",
+                "1 user",
+                "Automatic eTIMS fiscalisation of every invoice",
+                "KRA QR code written back to QuickBooks",
+                "Email support",
+              ],
+              highlight: false,
+            },
+            {
+              name: "Business",
+              blurb: "For SMEs running up to 3 businesses on separate books.",
+              kes: "KES 3,250",
+              usd: "$25",
+              per: "/ month per connection",
+              features: [
+                "Up to 3 businesses (1 connection each)",
+                "Up to 5 users",
+                "Everything in Starter, per business",
+                "Guided product mapping with expert review",
+              ],
+              highlight: true,
+            },
+            {
+              name: "Group",
+              blurb: "For holding groups with 4 or more business units.",
+              kes: "KES 2,600",
+              usd: "$20",
+              per: "/ month per connection",
+              features: [
+                "4 or more businesses (1 connection each)",
+                "Unlimited users",
+                "Everything in Business, at group scale",
+              ],
+              highlight: false,
+            },
+          ].map((plan) => (
+            <div
+              key={plan.name}
+              className={`bg-white rounded-3xl p-8 relative flex flex-col justify-between ${
+                plan.highlight ? "border-2 border-blue-600 shadow-md" : "border border-gray-200 shadow-sm"
+              }`}
+            >
+              {plan.highlight && (
+                <div className="absolute -top-3.5 left-6 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
+                  Most Popular
+                </div>
+              )}
+              <div>
+                <h3 className="text-xl font-bold text-gray-950 mb-2">{plan.name}</h3>
+                <p className="text-gray-500 text-xs mb-6">{plan.blurb}</p>
+                <div className="mb-1">
+                  <span className="text-4xl font-black text-gray-950 tracking-tight">{plan.kes}</span>
+                </div>
+                <div className="text-gray-500 text-xs mb-6">{plan.per} <span className="text-gray-400">· {plan.usd} USD</span></div>
+                <ul className="space-y-3.5 border-t border-gray-100 pt-6">
+                  {plan.features.map((f, i) => (
+                    <li key={i} className="text-sm text-gray-600 flex items-start">
+                      <span className={`${plan.highlight ? "text-blue-600" : "text-blue-500"} mr-2.5 font-bold`}>✓</span> {f}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-3.5 border-t border-gray-100 pt-6">
-                {["Up to 250 synced invoices monthly", "Real-time QR code generation", "Automated customer email attachments", "Standard email support response"].map((f, i) => (
-                  <li key={i} className="text-sm text-gray-600 flex items-center">
-                    <span className="text-blue-500 mr-2.5 font-bold">✓</span> {f}
-                  </li>
-                ))}
-              </ul>
+              <a
+                href={SIGN_UP_URL}
+                className={`block text-center w-full mt-8 font-bold text-sm py-3.5 px-4 rounded-xl transition-colors ${
+                  plan.highlight
+                    ? "bg-blue-600 hover:bg-blue-500 text-white shadow-md"
+                    : "bg-gray-900 hover:bg-gray-800 text-white"
+                }`}
+              >
+                Get started
+              </a>
             </div>
-            <button className="w-full mt-8 bg-gray-900 hover:bg-gray-800 text-white font-bold text-sm py-3.5 px-4 rounded-xl transition-colors">
-              Get Started Now
-            </button>
-          </div>
+          ))}
+        </div>
 
-          {/* Plan 2 */}
-          <div className="bg-white rounded-3xl p-8 border-2 border-blue-600 shadow-md relative flex flex-col justify-between min-h-[420px]">
-            <div className="absolute -top-3.5 left-6 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
-              Most Popular
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-gray-950 mb-2">Scale Pipeline</h3>
-              <p className="text-gray-500 text-xs mb-6">Built for high-volume enterprise operations requiring absolute infrastructure uptime.</p>
-              <div className="flex items-baseline mb-6">
-                <span className="text-4xl font-black text-gray-950 tracking-tight">KES 9,500</span>
-                <span className="text-gray-500 text-sm ml-2">/ month</span>
-              </div>
-              <ul className="space-y-3.5 border-t border-gray-100 pt-6">
-                {["Unlimited invoices synced monthly", "Multi-user dashboard permissions", "Instant error rollback safety warnings", "24/7 dedicated telephone support loop", "Custom item field mapping settings"].map((f, i) => (
-                  <li key={i} className="text-sm text-gray-600 flex items-center">
-                    <span className="text-blue-600 mr-2.5 font-bold">✓</span> {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <button className="w-full mt-8 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm py-3.5 px-4 rounded-xl transition-colors shadow-md">
-              Start Scale Trial
-            </button>
-          </div>
+        {/* VSCU pass-on disclosure — billed at cost, never marked up */}
+        <div className="mt-10 max-w-3xl mx-auto text-center space-y-2">
+          <p className="text-xs text-gray-600 leading-relaxed">
+            <strong className="text-gray-800">eTIMS compliance fee:</strong> every connected business also requires its own KRA-certified
+            VSCU subscription — KES 3,900–6,500 ($30–50) per business per month. We bill this through your invoice at the
+            vendor&apos;s own price and never mark it up.
+          </p>
+          <p className="text-[11px] text-gray-400">
+            KES amounts shown at an indicative rate of KES 130 per USD. Billing is in KES via M-Pesa.
+          </p>
         </div>
       </section>
 
@@ -433,8 +488,8 @@ export default function LandingPage() {
 
           <div className="space-y-4">
             {[
-              { q: "Is this tool authorized by the Kenya Revenue Authority?", a: "Yes. eConnector routes all transaction pipelines securely through fully certified KRA eTIMS software frameworks, ensuring total validity." },
-              { q: "What happens if our internet network drops out mid-invoice?", a: "QuickBooks saves your data normally. Our automated bridge loop continuously tracks missing stamps and syncs the backlog instantly when connectivity returns." },
+              { q: "Is this tool authorized by the Kenya Revenue Authority?", a: "Yes. Every invoice is submitted through a KRA-certified eTIMS integration (VSCU), so each document is validated and fiscalised by KRA itself — complete with an official QR code and eTIMS invoice number." },
+              { q: "What happens if our internet network drops out mid-invoice?", a: "QuickBooks saves your invoice as normal. eConnector picks it up automatically once the connection returns and retries any submission that didn't complete — nothing is lost and nothing needs re-entering." },
               { q: "Do we need to install any heavy internal business infrastructure?", a: "No. eConnector operates completely via native secure cloud webhooks. There are absolutely zero plugins or software programs to install on your computer hardware." }
             ].map((faq, index) => (
               <div key={index} className="bg-white border border-gray-200/80 rounded-2xl overflow-hidden transition-all">
@@ -460,11 +515,11 @@ export default function LandingPage() {
         <div className="max-w-2xl mx-auto relative z-10">
           <h2 className="text-2xl md:text-4xl font-black tracking-tight mb-4 text-white">Automate your eTIMS workflow today.</h2>
           <p className="text-gray-400 text-sm md:text-base mb-8 max-w-md mx-auto leading-relaxed">
-            Join hundreds of Kenyan businesses processing millions in safe compliance transactions seamlessly every single day.
+            Be one of the first Kenyan businesses to put eTIMS compliance on autopilot — and lock in early adopter pricing for 12 months.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm md:text-base py-3.5 px-8 rounded-xl transition-all shadow-md hover:scale-[1.02]">
+          <a href={SIGN_UP_URL} className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm md:text-base py-3.5 px-8 rounded-xl transition-all shadow-md hover:scale-[1.02]">
             Connect Your Account
-          </button>
+          </a>
           <div className="text-xs text-gray-500 mt-6 font-mono">© 2026 eConnector Systems. All rights reserved.</div>
         </div>
       </footer>
